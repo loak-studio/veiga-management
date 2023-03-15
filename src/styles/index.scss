@@ -1,3 +1,6 @@
 @import "reset";
+@import "fonts";
+@import "headings";
+@import "colors";
 
-@import "../_includes/components/my-component/my-component";
+@import "components/my-component";

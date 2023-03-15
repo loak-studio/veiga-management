@@ -18,7 +18,9 @@
     <meta property="twitter:image" content="{{site.url}}/share.png">
     <link rel="stylesheet" href="/index.css">
   </head>
-  <body>
-    {{ content }}
+  <body class="layout">
+    {% render 'components/layout/header' %}
+    <main>{{ content }}</main>
+    {% render 'components/layout/footer' %}
   </body>
 </html>

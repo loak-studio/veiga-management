@@ -1,5 +1,6 @@
 ---
 import type { StoryblokClient } from "@storyblok/js";
+import Main from "../layouts/Main.astro";
 import { storyblokApi } from "../utils/storyblok";
 export async function getStaticPaths() {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", { version: "draft" });
@@ -12,6 +13,18 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+const page = Astro.props
 ---
 
-{slug}
+<Main title={page.name}>
+  {page.content.body.map(blok=>{
+    switch (blok.component) {
+      case "feature":
+        
+        break;
+    
+      default:
+        break;
+    }
+  })}
+</Main>

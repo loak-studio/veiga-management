@@ -21,23 +21,23 @@ const { slug } = Astro.params;
 const page = Astro.props;
 
 const metatags = {
-  title : page.content.meta_title,
-  description : page.content.meta_description,
-  image : page.content.meta_image?.filename ?? "#"
-}
-
+  title: page.content.meta_title,
+  description: page.content.meta_description,
+  image: page.content.meta_image?.filename ?? "",
+};
 ---
 
 <Main meta={metatags}>
-  {page.content?.body && 
-    page.content.body.map((blok) => {
-      switch (blok.component) {
-        case "feature":
-          break;
+  {
+    page.content?.body &&
+      page.content.body.map((blok: any) => {
+        switch (blok.component) {
+          case "feature":
+            break;
 
-        default:
-          break;
-      }
-    })
+          default:
+            break;
+        }
+      })
   }
 </Main>

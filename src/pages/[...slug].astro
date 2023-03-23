@@ -1,0 +1,17 @@
+---
+import type { StoryblokClient } from "@storyblok/js";
+import { storyblokApi } from "../utils/storyblok";
+export async function getStaticPaths() {
+  const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", { version: "draft" });
+  return data.stories.map((page: any) => {
+    return {
+      params: { slug:page.slug === "home" ? undefined : page.slug },
+      props: page,
+    };
+  });
+}
+
+const { slug } = Astro.params;
+---
+
+{slug}

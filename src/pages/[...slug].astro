@@ -8,7 +8,6 @@ export async function getStaticPaths() {
     version: "draft",
   });
   return data.stories.map((page: any) => {
-    console.log(page);
     return {
       params: {
         slug: page.full_slug === "home" ? undefined : clearSlug(page.full_slug),
@@ -24,14 +23,14 @@ const page = Astro.props;
 const metatags = {
   title : page.content.meta_title,
   description : page.content.meta_description,
-  image : page.content.meta_image.filename
+  image : page.content.meta_image?.filename ?? "#"
 }
 
 ---
 
 <Main meta={metatags}>
-  {
-    page.content?.body.map((blok) => {
+  {page.content?.body && 
+    page.content.body.map((blok) => {
       switch (blok.component) {
         case "feature":
           break;

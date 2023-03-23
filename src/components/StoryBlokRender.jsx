@@ -7,11 +7,12 @@ function StoryBlokRender({token}) {
     use: [apiPlugin],
     components: {
       feature: SomeComponent,
+      grid: SomeComponent,
+      teaser: SomeComponent
     },
 
   });
   const story = useStoryblok("home", { version: "draft" });
-  console.log("TOKEN",token)
   if (!story.content) {
     return <div>Loading...</div>;
   }

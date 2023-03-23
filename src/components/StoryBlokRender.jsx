@@ -1,6 +1,9 @@
 import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@storyblok/react";
 import SomeComponent from "./SomeComponent.jsx"
 function StoryBlokRender({token}) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
   storyblokInit({
     accessToken: token,
     // bridge: true,
@@ -12,7 +15,7 @@ function StoryBlokRender({token}) {
     },
 
   });
-  const story = useStoryblok("home", { version: "draft" });
+  const story = useStoryblok(urlParams.get('page'), { version: "draft" });
   if (!story.content) {
     return <div>Loading...</div>;
   }

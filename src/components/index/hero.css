@@ -11,3 +11,8 @@
 .hero__richtext b{
   font-weight: 700;
 }
+.hero__buttons{
+  display: flex;
+  justify-content: center;
+  gap:2rem;
+}

@@ -3,6 +3,7 @@ import "../styles/reset.css";
 import "../styles/font.css";
 import "../styles/colors.css";
 import "../styles/typography.css";
+import Header from "../components/layout/Header.astro";
 interface Meta {
   title: string;
   description: string;
@@ -45,6 +46,7 @@ const { meta } = Astro.props;
     <meta property="twitter:image" content={meta.image} />
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>

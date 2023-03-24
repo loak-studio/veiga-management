@@ -1,0 +1,123 @@
+---
+import type { StoryblokClient } from "@storyblok/js";
+import { storyblokApi } from "../../utils/storyblok";
+const config = async () => {
+    const { data } = await (storyblokApi as StoryblokClient).get(
+        "cdn/stories/configuration",
+        {
+            version: "draft",
+            resolve_relations: "Navigation",
+        }
+    );
+    return data;
+};
+const data = await config();
+const content = data.story.content;
+const rels = data.rels;
+
+const sortLinks = () => {
+    return rels.sort((a, b) => {
+        const index1 = content.Navigation.indexOf(a.uuid);
+        const index2 = content.Navigation.indexOf(b.uuid);
+        return index1 - index2;
+    });
+};
+
+const sortedLinks = sortLinks();
+
+const isHome = (slug: string) => {
+    if (slug == "home") {
+        return true;
+    }
+    return false;
+};
+
+const isActive = (slug: string) => {
+    if (slug == "home") {
+        slug = "/";
+    }
+    console.log(slug);
+    if (Astro.url.pathname == slug) {
+        return true;
+    }
+    return false;
+};
+
+console.log(Astro.url.pathname);
+---
+
+<header class="header">
+    <div class="container">
+        <a href="/">
+            <img class="header__logo" src={content.logo.filename} alt="" />
+        </a>
+        <nav class="header__nav">
+            <ul class="nav__list">
+                {
+                    sortedLinks.map((link: any) => (
+                        <li class="nav__item">
+                            <a
+                                class="nav__link h6"
+                                class:list={[
+                                    "nav__link",
+                                    "h6",
+                                    isActive(link.full_slug)
+                                        ? "nav__link--active"
+                                        : null,
+                                ]}
+                                href={
+                                    isHome(link.full_slug)
+                                        ? "/"
+                                        : "/" + link.full_slug
+                                }
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style scoped>
+    .header {
+        position: fixed;
+        width: 100%;
+        background: var(--background);
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 16px 80px;
+    }
+    .header__logo {
+        width: 120px;
+        height: 60px;
+    }
+    .header__nav {
+    }
+    .nav__list {
+        display: flex;
+        gap: 32px;
+    }
+    .nav__item {
+        width: fit-content;
+        border-bottom: transparent 2px solid;
+    }
+    .nav__link {
+        padding: 10px;
+        text-decoration: none;
+        color: var(--white);
+    }
+    .nav__link:hover {
+        border-bottom: var(--primary) 2px solid;
+    }
+    .nav__link--active {
+        border-bottom: var(--primary) 2px solid;
+    }
+</style>

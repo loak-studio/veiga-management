@@ -1,8 +1,5 @@
 
-import {bindedComponents} from "../utils/init-storyblok"
-import SomeComponent from "../components/SomeComponent.jsx"
-import ContainerBackgroundSpace from "../components/layout/ContainerBackgroundSpace.jsx"
-import Hero from "../components/index/Hero.jsx"
+import {bindedComponents} from "../utils/binded-component"
 import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@storyblok/react";
 function StoryBlokRender({token}) {
   const queryString = window.location.search;

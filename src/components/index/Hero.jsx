@@ -1,4 +1,10 @@
+import "./hero.css"
 import { storyblokEditable } from "@storyblok/react";
+import { renderRichText } from "@storyblok/react";
 export default function Hero(props){
-  return (<p {...storyblokEditable(props?.blok)}>{props?.blok?.title}</p>)
+  const __html = renderRichText(props.blok.description)
+  return (<div className="hero" {...storyblokEditable(props?.blok)}>
+    <h1 className="h1 hero__title">{props?.blok?.title}</h1>
+    <div className="text hero__richtext" dangerouslySetInnerHTML={{__html}}></div>
+  </div>)
 }

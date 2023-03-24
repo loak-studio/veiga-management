@@ -1,0 +1,13 @@
+.hero__title{
+  max-width: 1120px;
+  text-align: center;
+  margin: 0 auto;
+}
+.hero__richtext{
+  max-width: 617px;
+  margin:2rem auto;
+  text-align: center;
+}
+.hero__richtext b{
+  font-weight: 700;
+}

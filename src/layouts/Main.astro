@@ -47,6 +47,15 @@ const { meta } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
+
+<style scoped>
+  main{
+    margin-top: 100px;
+  }
+</style>

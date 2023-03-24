@@ -36,18 +36,16 @@ const isActive = (slug: string) => {
     if (slug == "home") {
         slug = "/";
     }
-    console.log(slug);
     if (Astro.url.pathname == slug) {
         return true;
     }
     return false;
 };
 
-console.log(Astro.url.pathname);
 ---
 
 <header class="header">
-    <div class="container">
+    <div class="header__container">
         <a href="/">
             <img class="header__logo" src={content.logo.filename} alt="" />
         </a>
@@ -86,8 +84,9 @@ console.log(Astro.url.pathname);
         position: fixed;
         width: 100%;
         background: var(--background);
+        top:0;
     }
-    .container {
+    .header__container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;

@@ -1,5 +1,7 @@
 .container{
-  border:2px solid black;
+  padding-top: 120px;
   background: url('/assets/background.png');
   color:white;
+  background-size: contain;
+  
 }

@@ -3,6 +3,8 @@ import type { StoryblokClient } from "@storyblok/js";
 import Main from "../layouts/Main.astro";
 import { clearSlug } from "../utils/remove-end-slash";
 import { storyblokApi } from "../utils/storyblok";
+import { StoryblokComponent } from "@storyblok/react";
+import { initStoryblok } from "../utils/init-storyblok";
 export async function getStaticPaths() {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
@@ -25,19 +27,11 @@ const metatags = {
   description: page.content.meta_description,
   image: page.content.meta_image?.filename ?? "",
 };
+
+initStoryblok()
+
 ---
 
 <Main meta={metatags}>
-  {
-    page.content?.body &&
-      page.content.body.map((blok: any) => {
-        switch (blok.component) {
-          case "feature":
-            break;
-
-          default:
-            break;
-        }
-      })
-  }
+  {page.content.body.map((blok,index)=><StoryblokComponent key={index} blok={blok} />)}
 </Main>

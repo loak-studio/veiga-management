@@ -33,5 +33,7 @@ initStoryblok()
 ---
 
 <Main meta={metatags}>
-  {page.content.body.map((blok,index)=><StoryblokComponent key={index} blok={blok} />)}
+  {page.content && page.content.body &&
+    page.content.body.map((blok,index)=><StoryblokComponent key={index} blok={blok} />)
+  }
 </Main>

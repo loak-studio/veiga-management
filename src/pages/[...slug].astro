@@ -3,8 +3,8 @@ import type { StoryblokClient } from "@storyblok/js";
 import Main from "../layouts/Main.astro";
 import { clearSlug } from "../utils/remove-end-slash";
 import { storyblokApi } from "../utils/storyblok";
-import { StoryblokComponent } from "@storyblok/react";
-import { initStoryblok } from "../utils/init-storyblok";
+import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@storyblok/react";
+import { bindedComponents } from "../utils/init-storyblok";
 export async function getStaticPaths() {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
@@ -28,7 +28,13 @@ const metatags = {
   image: page.content.meta_image?.filename ?? "",
 };
 
-initStoryblok()
+storyblokInit({
+    accessToken: import.meta.env.STORYBLOK_TOKEN,
+    // bridge: true,
+    use: [apiPlugin],
+    components:bindedComponents,
+
+  });
 
 ---
 

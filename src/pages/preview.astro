@@ -11,6 +11,6 @@ import { StoryBlokRender } from "../components/StoryBlokRender.jsx";
   <title>Document</title>
 </head>
 <body>
-  <StoryBlokRender client:only />
+  <StoryBlokRender token={import.meta.env.STORYBLOK_TOKEN} client:only />
 </body>
 </html>

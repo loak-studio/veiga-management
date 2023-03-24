@@ -1,9 +1,21 @@
-import { useStoryblok, StoryblokComponent } from "@storyblok/react";
-import {initStoryblok} from "../utils/init-storyblok"
-function StoryBlokRender() {
+
+import {bindedComponents} from "../utils/init-storyblok"
+import SomeComponent from "../components/SomeComponent.jsx"
+import ContainerBackgroundSpace from "../components/layout/ContainerBackgroundSpace.jsx"
+import Hero from "../components/index/Hero.jsx"
+import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@storyblok/react";
+function StoryBlokRender({token}) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  initStoryblok()
+
+  
+  storyblokInit({
+    accessToken: token,
+    // bridge: true,
+    use: [apiPlugin],
+    components: bindedComponents,
+
+  });
   const story = useStoryblok(urlParams.get('page'), { version: "draft" });
   if (!story.content) {
     return <div>Loading...</div>;

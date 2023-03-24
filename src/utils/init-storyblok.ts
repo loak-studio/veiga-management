@@ -5,7 +5,7 @@ import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@sto
 
 const initStoryblok = ()=>{
 
-  const test = storyblokInit({
+  storyblokInit({
     accessToken: import.meta.env.STORYBLOK_TOKEN,
     // bridge: true,
     use: [apiPlugin],
@@ -14,11 +14,15 @@ const initStoryblok = ()=>{
       grid: SomeComponent,
       teaser: SomeComponent,
       ContainerBackgroundSpace: ContainerBackgroundSpace,
-      Hero:Hero
+      Hero:Hero,
+      OurServices:SomeComponent,
+      Customers:SomeComponent,
+      Team:SomeComponent,
+      SomeNumbers:SomeComponent,
+      ContactForm:SomeComponent
     },
 
   });
-  console.log(test)
 }
 
 export {initStoryblok}

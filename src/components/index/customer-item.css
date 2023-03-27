@@ -1,0 +1,34 @@
+.customer-item__figure{
+  width: 208px;
+  height: 208px;
+}
+.customer-item__figure img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.customer-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.customer-item__name{
+  margin-top: 1rem;
+  margin-bottom: 8px;
+  color: var(--background);
+  text-align: center;
+}
+.customer-item__role{
+  color: var(--background);
+  text-align: center;
+}
+.customer-item__followers{
+  margin-top: 8px;
+  color: var(--secondary);
+}
+@media (max-width:809px) {
+  .customer-item__figure{
+    width: 168px;
+    height: 168px;
+  }
+}

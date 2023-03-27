@@ -22,3 +22,12 @@
 .hero-service-item__text b{
   color: var(--primary);
 }
+@media (max-width:809px) {
+    .hero-service-item__figure{
+      width: 36px;
+      height: 36px;
+    }
+    .hero-service-item{
+      padding: 1rem 36px;
+    }
+}

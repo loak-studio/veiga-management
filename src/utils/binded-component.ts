@@ -4,7 +4,8 @@ import Hero from "../components/index/Hero.jsx"
 import Button from "../components/layout/Button.jsx"
 import OurServices from "../components/index/OurServices.jsx"
 import HeroServiceItem from "../components/index/HeroServiceItem.jsx"
-
+import Customers from "../components/index/Customers.jsx"
+import CustomerItem from "../components/index/CustomerItem.jsx"
 const bindedComponents = {
   feature: SomeComponent,
   grid: SomeComponent,
@@ -13,7 +14,8 @@ const bindedComponents = {
   Hero:Hero,
   OurServices:OurServices,
   HeroServiceItem:HeroServiceItem,
-  Customers:SomeComponent,
+  Customers:Customers,
+  CustomerItem:CustomerItem,
   Team:SomeComponent,
   SomeNumbers:SomeComponent,
   ContactForm:SomeComponent,

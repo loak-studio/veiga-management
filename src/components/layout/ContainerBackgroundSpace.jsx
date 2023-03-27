@@ -3,7 +3,7 @@ import "./container.css"
 export default function Container(props){
 
 return(
-  <div className={"container" + " " + (props.blok.display_icons ? 'container__icons' :'')}>
+  <div className={"container" + " " + (props.blok.display_icons ? 'container__icons' :'') + (props.blok.arrow ?" " + 'container__arrow' : '')}>
     {props.blok.blocks.map((b, index)=><StoryblokComponent key={index} blok={b}/>)}
   </div>
 )

@@ -5,7 +5,20 @@
   background-size: cover;
 
   padding-bottom: 114px;
+  position: relative;
 } 
+.container__arrow::after{
+  height: 140px;
+  width: 140px;
+  background: #131214;
+  content:'';
+  display: block;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%) rotate(45deg);
+  bottom:-55px;
+  border-radius: 16px;
+}
 @media (max-width:809px) {
     .container{
       padding-bottom: 3rem;

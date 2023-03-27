@@ -16,6 +16,19 @@
   justify-content: center;
   gap:2rem;
 }
+.hero__logo{
+  max-width: 185px;
+  margin: 0 auto 64px auto;
+}
 .hero{
   margin-bottom: 270px;
+  padding: 0 1rem;
+}
+@media (max-width:809px) {
+    .hero__buttons{
+      flex-direction: column;
+    }
+    .hero{
+      margin-bottom: 2rem;
+    }
 }

@@ -3,6 +3,11 @@
   background: url('/assets/background.png');
   color:white;
   background-size: cover;
-  
+
   padding-bottom: 114px;
 } 
+@media (max-width:809px) {
+    .container{
+      padding-bottom: 3rem;
+    }
+}

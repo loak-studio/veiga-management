@@ -7,7 +7,7 @@ export default function OurServices(props){
   <div className="our-services" {...storyblokEditable(props.blok)}>
     <h2 className="our-services__title h2" dangerouslySetInnerHTML={{__html}}></h2>
     <p className="our-services__description text">{props.blok.description}</p>
-    <ul className="our-service__items">
+    <ul className="our-services__items">
     {props.blok.services.map((service,index)=><StoryblokComponent key={index} blok={service}/>)}
     </ul>
   </div>

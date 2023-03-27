@@ -1,5 +1,6 @@
-import { renderRichText, storyblokEditable } from "@storyblok/react";
 import "./hero-service-item.css"
+import { renderRichText, storyblokEditable } from "@storyblok/react";
+
 export default function HeroServiceItem(props){
   const __html = renderRichText(props.blok.title)
   return(
@@ -7,6 +8,6 @@ export default function HeroServiceItem(props){
     <figure className="hero-service-item__figure">
       <img src={props.blok.icon.filename} alt="" />
     </figure>
-    <p className="hero-service-item__text h5" dangerouslySetInnerHTML={{__html}}></p>
+    <div className="hero-service-item__text h5" dangerouslySetInnerHTML={{__html}}/>
   </div>)
 }

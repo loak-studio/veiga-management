@@ -9,6 +9,7 @@
 .hero-service-item__figure{
   height: 48px;
   width: 48px;
+  flex-shrink: 0;
 }
 .hero-service-item__figure img{
   height: 100%;

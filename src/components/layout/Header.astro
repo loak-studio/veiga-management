@@ -1,4 +1,5 @@
 ---
+import "hamburgers/dist/hamburgers.min.css"
 import type { StoryblokClient } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
 import { sortLinks } from "../../utils/sort-multi-select";
@@ -36,7 +37,20 @@ const isActive = (slug: string) => {
 };
 ---
 
-<div class="header__container">
+<script>
+  const button = document.querySelector('.header__hamburger') as HTMLButtonElement
+  const nav = document.querySelector('.header__nav') as HTMLElement
+  const html = document.querySelector('html') as HTMLElement
+  const navContainer = document.querySelector('.header__container') as HTMLElement
+  button.addEventListener('click',()=>{
+    nav.classList.toggle('header__nav--active')
+    button.classList.toggle('is-active')
+    html.classList.toggle('no-scroll')
+  })
+
+</script>
+
+<div id="navbar" class="header__container">
     <header class="header">
         <a href="/">
             <img class="header__logo" src={content.logo.filename} alt="" />
@@ -67,6 +81,12 @@ const isActive = (slug: string) => {
                 }
             </ul>
         </nav>
+        <button class="hamburger hamburger--collapse header__hamburger" type="button">
+        
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+      </button>
     </header>
 </div>
 
@@ -76,6 +96,7 @@ const isActive = (slug: string) => {
         width: 100%;
         background: var(--background);
         top: 0;
+        z-index: 5;
     }
     .header {
         max-width: 1280px;
@@ -90,8 +111,6 @@ const isActive = (slug: string) => {
     .header__logo {
         width: 120px;
         height: 60px;
-    }
-    .header__nav {
     }
     .nav__list {
         display: flex;
@@ -112,4 +131,51 @@ const isActive = (slug: string) => {
     .nav__link--active {
         border-bottom: var(--primary) 2px solid;
     }
+    .header__hamburger{
+      display: none;
+    }
+    @media (max-width: 1100px) {
+      .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before, .is-active.hamburger .hamburger-inner, .is-active.hamburger .hamburger-inner::before, .is-active.hamburger .hamburger-inner::after{
+        background: white;
+      }
+      .header__nav{
+        pointer-events: none;
+        transform: translateX(100vh);
+        opacity: 0;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+        left: 0;
+        top:0;
+        background: transparent;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+        
+      }
+
+      .header__nav.header__nav--active{
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+        background: var(--secondary);
+      }
+      .nav__list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .header{
+        padding: 1rem;
+      }
+      .header__hamburger{
+        display: block;
+        color:blue;
+        z-index: 15;
+        position: relative;
+      }
+    }
+
 </style>

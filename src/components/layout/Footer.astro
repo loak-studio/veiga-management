@@ -42,7 +42,6 @@ const socials = [
     },
 ];
 
-console.log(socials);
 
 const isHome = (slug: string) => {
     if (slug == "home") {
@@ -163,7 +162,8 @@ const isHome = (slug: string) => {
         gap: 32px;
     }
     .footer__block.w-fixed {
-        width: 360px;
+        max-width: 360px;
+        width: 100%;
     }
     .footer__list {
         display: flex;
@@ -172,8 +172,7 @@ const isHome = (slug: string) => {
     }
 
     .footer__logo {
-        width: 215px;
-        height: 105px;
+        max-width: 215px;
     }
     .footer__social-list {
         display: flex;
@@ -186,12 +185,18 @@ const isHome = (slug: string) => {
     .footer__copyright {
         text-align: center;
     }
+    @media (max-width:1150px){
+      .footer{
+       
+        padding: 120px 1rem 48px 1rem;
+      }
+    }
     @media screen and (max-width: 1100px) {
         .footer__group {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 48px;
-            margin: auto;
+            margin: 0 1rem;
         }
         .w-fixed {
             grid-column: span 2 / span 2;
@@ -205,10 +210,10 @@ const isHome = (slug: string) => {
         .footer__group {
             display: flex;
             flex-direction: column;
-            padding: 48px 16px;
+            margin:0;
         }
         .footer {
-            padding-top: 0;
+            padding:3rem 1rem;
         }
     }
 </style>

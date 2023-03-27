@@ -1,7 +1,6 @@
 import "./customer.css"
 import { renderRichText, StoryblokComponent, storyblokEditable } from "@storyblok/react"
 export default function Customers(props){
-  console.log(props.blok)
   const __html = renderRichText(props.blok.title)
   return (
   <div className={"customers h2" + (props.blok.arrow ? " customers__arrow" : "")} {...storyblokEditable(props.blok)}>

@@ -1,8 +1,10 @@
 .container{
   padding-top: 120px;
-  background: url('/assets/background.png');
+  background-image: url('/assets/background.png');
+  background-color: #131214;
   color:white;
-  background-size: cover;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   padding-bottom: 114px;
   position: relative;
   overflow-x: clip;
@@ -103,6 +105,7 @@
     .container__icon.small-twitter{
       left:527px;
       top:-10px;
+      display: none;
     }
     .container__icon.big-tiktok{
       right:48px;

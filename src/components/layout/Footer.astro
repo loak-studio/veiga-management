@@ -1,0 +1,51 @@
+---
+import type { StoryblokClient } from "@storyblok/js";
+import { storyblokApi } from "../../utils/storyblok";
+import { sortLinks } from "../../utils/sort-multi-select";
+const config = async () => {
+    const { data } = await (storyblokApi as StoryblokClient).get(
+        "cdn/stories/configuration",
+        {
+            version: "draft",
+            resolve_relations: ["navigation", "sitemap", "legal"],
+        }
+    );
+    return data;
+};
+const data = await config();
+const content = data.story.content;
+const rels = data.rels;
+
+const navigationSorted = sortLinks(content.navigation, rels);
+const sitemapSorted = sortLinks(content.sitemap, rels);
+const legalSorted = sortLinks(content.legal, rels);
+
+const isHome = (slug: string) => {
+    if (slug == "home") {
+        return true;
+    }
+    return false;
+};
+---
+
+<footer>
+    <ul>
+        {
+            legalSorted.map((link: any) => (
+                <li class="nav__item">
+                    <a
+                        class="nav__link h6"
+                        class="nav__link h6"
+                        href={
+                            isHome(link.full_slug) ? "/" : "/" + link.full_slug
+                        }
+                    >
+                        {link.name}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</footer>
+
+<style scoped></style>

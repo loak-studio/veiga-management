@@ -1,9 +1,7 @@
 import "./button.css"
 export default function Button(props) {
-  const href = props.blok.href
-  console.log(href)
+  const href = props.blok?.link?.cached_url
   const Element = href ? 'a' : 'button'
-
   const getClass = (style) => {
     switch (style) {
       case "red":
@@ -20,7 +18,7 @@ export default function Button(props) {
     }
   }
   return (
-    <Element {...href} className={"button"+ " " + getClass(props.blok.style)}>
+    <Element href={"/" + href + "/"} className={"button"+ " " + getClass(props.blok.style)}>
       <span className="text">{props.blok.label}</span>
     </Element>
   )

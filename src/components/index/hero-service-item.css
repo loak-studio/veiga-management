@@ -1,0 +1,23 @@
+.hero-service-item{
+  background: white;
+  border-radius: 80px;
+  padding: 1rem 64px;
+  display: flex;
+  align-items: center;
+  gap:26px;
+}
+.hero-service-item__figure{
+  height: 48px;
+  width: 48px;
+}
+.hero-service-item__figure img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.hero-service-item__text{
+  color:black;
+}
+.hero-service-item__text b{
+  color: var(--primary);
+}

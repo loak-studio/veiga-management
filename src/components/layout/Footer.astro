@@ -2,6 +2,11 @@
 import type { StoryblokClient } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
 import { sortLinks } from "../../utils/sort-multi-select";
+import Facebook from "../../assets/footer/facebook.svg";
+import Twitter from "../../assets/footer/twitter.svg";
+import Linkedin from "../../assets/footer/linkedin.svg";
+import Instagram from "../../assets/footer/instagram.svg";
+
 const config = async () => {
     const { data } = await (storyblokApi as StoryblokClient).get(
         "cdn/stories/configuration",
@@ -15,10 +20,29 @@ const config = async () => {
 const data = await config();
 const content = data.story.content;
 const rels = data.rels;
-
-const navigationSorted = sortLinks(content.navigation, rels);
 const sitemapSorted = sortLinks(content.sitemap, rels);
 const legalSorted = sortLinks(content.legal, rels);
+
+const socials = [
+    {
+        logo: Facebook,
+        href: content.facebook,
+    },
+    {
+        logo: Instagram,
+        href: content.instagram,
+    },
+    {
+        logo: Linkedin,
+        href: content.linkedin,
+    },
+    {
+        logo: Twitter,
+        href: content.twitter,
+    },
+];
+
+console.log(socials)
 
 const isHome = (slug: string) => {
     if (slug == "home") {
@@ -28,24 +52,136 @@ const isHome = (slug: string) => {
 };
 ---
 
-<footer>
-    <ul>
-        {
-            legalSorted.map((link: any) => (
-                <li class="nav__item">
-                    <a
-                        class="nav__link h6"
-                        class="nav__link h6"
-                        href={
-                            isHome(link.full_slug) ? "/" : "/" + link.full_slug
+<footer class="footer__wrapper">
+    <div class="footer">
+        <div class="footer__group">
+            <div class="footer__block w-fixed">
+                <img class="footer__logo" src={content.logo.filename} alt="" />
+                <p class="bold">{content.tagline.toUpperCase()}</p>
+            </div>
+            <div class="footer__block">
+                <h6 class="h5">Plan du site</h6>
+                <nav>
+                    <ul class="footer__list">
+                        {
+                            sitemapSorted.map((link: any) => (
+                                <li>
+                                    <a
+                                        class="link"
+                                        href={
+                                            isHome(link.full_slug)
+                                                ? "/"
+                                                : "/" + link.full_slug
+                                        }
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
                         }
-                    >
-                        {link.name}
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__block">
+                <h6 class="h5">Suivez-nous</h6>
+                <ul class="footer__social-list">
+                    {
+                        socials.map((social: any) => {
+                            if (social.href) {
+                                <li>
+                                    <a href={social.href}>
+                                        <img
+                                            class="footer__social-logo"
+                                            src={social.logo}
+                                            alt=""
+                                        />
+                                    </a>
+                                </li>;
+                            }
+                        })
+                    }
+                </ul>
+                <nav>
+                    <ul class="footer__list">
+                        {
+                            legalSorted.map((link: any) => (
+                                <li>
+                                    <a
+                                        class="link"
+                                        href={
+                                            isHome(link.full_slug)
+                                                ? "/"
+                                                : "/" + link.full_slug
+                                        }
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p class="text">© <span id="year"></span> Veiga Management</p>
+        </div>
+    </div>
 </footer>
 
-<style scoped></style>
+<script>
+    const now = new Date();
+    const year = now.getFullYear();
+    const el = document.querySelector("#year") as HTMLElement;
+    el.innerText = year.toString();
+</script>
+
+<style scoped>
+    .footer__wrapper {
+        background: var(--background);
+        color: var(--white);
+    }
+
+    .footer {
+        max-width: 1120px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 120px 0 48px 0;
+    }
+
+    .footer__group {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 48px;
+    }
+
+    .footer__block {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    .footer__block.w-fixed {
+        width: 360px;
+    }
+    .footer__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer__logo {
+        width: 215px;
+        height: 105px;
+    }
+    .footer__social-list {
+        display: flex;
+        gap: 8px;
+    }
+    .footer__social-logo {
+        width: 32px;
+        height: 32px;
+    }
+    .footer__copyright {
+        text-align: center;
+    }
+</style>

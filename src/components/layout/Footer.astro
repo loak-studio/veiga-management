@@ -42,7 +42,7 @@ const socials = [
     },
 ];
 
-console.log(socials)
+console.log(socials);
 
 const isHome = (slug: string) => {
     if (slug == "home") {
@@ -88,15 +88,17 @@ const isHome = (slug: string) => {
                     {
                         socials.map((social: any) => {
                             if (social.href) {
-                                <li>
-                                    <a href={social.href}>
-                                        <img
-                                            class="footer__social-logo"
-                                            src={social.logo}
-                                            alt=""
-                                        />
-                                    </a>
-                                </li>;
+                                return (
+                                    <li>
+                                        <a href={social.href}>
+                                            <img
+                                                class="footer__social-logo"
+                                                src={social.logo}
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                );
                             }
                         })
                     }

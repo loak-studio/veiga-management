@@ -97,6 +97,10 @@
     text-decoration-line: underline;
 }
 
+.link:hover {
+    text-decoration-line: none;
+}
+
 .italic {
     font-family: 'Neue Montreal';
     font-style: italic;

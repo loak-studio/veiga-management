@@ -28,7 +28,7 @@
 }
 @media (max-width:1000px) {
   .our-services__items{
-    gap:1rem;
+    gap:2rem;
   }
 }
 @media (max-width:809px) {

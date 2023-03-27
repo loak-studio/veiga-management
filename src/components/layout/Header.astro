@@ -1,6 +1,7 @@
 ---
 import type { StoryblokClient } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
+import { sortLinks } from "../../utils/sort-multi-select";
 const config = async () => {
     const { data } = await (storyblokApi as StoryblokClient).get(
         "cdn/stories/configuration",
@@ -11,19 +12,11 @@ const config = async () => {
     );
     return data;
 };
+
 const data = await config();
 const content = data.story.content;
 const rels = data.rels;
-
-const sortLinks = () => {
-    return rels.sort((a, b) => {
-        const index1 = content.Navigation.indexOf(a.uuid);
-        const index2 = content.Navigation.indexOf(b.uuid);
-        return index1 - index2;
-    });
-};
-
-const sortedLinks = sortLinks();
+const sortedLinks = sortLinks(content.navigation, rels);
 
 const isHome = (slug: string) => {
     if (slug == "home") {
@@ -41,7 +34,6 @@ const isActive = (slug: string) => {
     }
     return false;
 };
-
 ---
 
 <header class="header">
@@ -84,7 +76,7 @@ const isActive = (slug: string) => {
         position: fixed;
         width: 100%;
         background: var(--background);
-        top:0;
+        top: 0;
     }
     .header__container {
         display: flex;

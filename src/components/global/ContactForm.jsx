@@ -13,11 +13,10 @@ export default function ContactForm(props){
       </div>
     </div>
     <form className="contact-form__form" action="">
-      <Input name="lastname" id="lastname" label="Nom" required/>
-      <Input name="firstname" id="firstname" label="Prénom" required/>
+      <Input name="name" id="name" label="Nom" required/>
       <Input name="email" id="email" label="E-mail" type="email" required/>
-      <Input name="subject" id="subject" label="Objet"/>
-      <Input name="message" id="message" label="Votre demande" type="textarea"/>
+      <Input name="subject" id="subject" label="Objet" required/>
+      <Input name="message" id="message" label="Votre demande" type="textarea" required/>
       <Button style="red" label="Envoyer mon message"/>
     </form>
     </div>

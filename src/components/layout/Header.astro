@@ -35,6 +35,22 @@ const isActive = (slug: string) => {
     }
     return false;
 };
+
+const cleanHref = (slug: string)=>{
+  let href = ""
+  href = slug
+  if(slug === "home"){
+    href = "/"
+  }
+  if(href.slice(-1) !=="/"){
+    href = href + "/"
+  }
+  if(href.slice(0) !== "/"){
+    href = "/"+href
+  }
+  console.log(href)
+  return href
+}
 ---
 
 <script>
@@ -64,14 +80,11 @@ const isActive = (slug: string) => {
                                 class:list={[
                                     "nav__link",
                                     "h6",
-                                    isActive(link.full_slug)
+                                    isActive(cleanHref(link.full_slug))
                                         ? "nav__link--active"
                                         : null,
                                 ]}
-                                href={
-                                    isHome(link.full_slug)
-                                        ? "/"
-                                        : "/" + link.full_slug
+                                href={cleanHref(link.full_slug)
                                 }
                             >
                                 {link.name}

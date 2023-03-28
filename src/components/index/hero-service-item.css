@@ -20,7 +20,7 @@
   color:black;
 }
 .hero-service-item__text b{
-  color: var(--primary);
+  color: var(--secondary);
 }
 @media (max-width:809px) {
     .hero-service-item__figure{

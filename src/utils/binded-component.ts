@@ -6,6 +6,8 @@ import OurServices from "../components/index/OurServices.jsx"
 import HeroServiceItem from "../components/index/HeroServiceItem.jsx"
 import Customers from "../components/index/Customers.jsx"
 import CustomerItem from "../components/index/CustomerItem.jsx"
+import SomeNumbers from "../components/index/SomeNumbers.jsx"
+import SomeNumbersItem from "../components/index/SomeNumbersItem.jsx"
 const bindedComponents = {
   feature: SomeComponent,
   grid: SomeComponent,
@@ -17,7 +19,8 @@ const bindedComponents = {
   Customers:Customers,
   CustomerItem:CustomerItem,
   Team:SomeComponent,
-  SomeNumbers:SomeComponent,
+  SomeNumbers:SomeNumbers,
+  SomeNumbersItem,
   ContactForm:SomeComponent,
   Button:Button
 }

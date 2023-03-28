@@ -1,3 +1,4 @@
+import "./container.css"
 import { StoryblokComponent } from "@storyblok/react"
 import smallFacebook from "../../assets/hero/facebook_petit.png"
 import bigInstagram from "../../assets/hero/instagram_grand.png"
@@ -10,8 +11,6 @@ import smallTwitter from "../../assets/hero/twitter_petit.png"
 import bigTwitter from "../../assets/hero/twitter_grand.png"
 import bigYoutube from "../../assets/hero/youtube_grand.png"
 import smallYoutube from "../../assets/hero/youtube_petit.png"
-
-import "./container.css"
 
 const images = [
   {

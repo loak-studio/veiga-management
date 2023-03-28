@@ -1,16 +1,16 @@
-.some-numbers-item{
+.some-numbers-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.some-numbers-item__number{
-  color:white;
+.some-numbers-item__number {
+  color: white;
   display: block;
   text-align: center;
 }
-.some-numbers-item__label{
-  color:white;
+.some-numbers-item__label {
+  color: white;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -18,17 +18,17 @@
   text-align: center;
   position: relative;
 }
-.some-numbers-item__label span{
+.some-numbers-item__label span {
   z-index: 2;
 }
-.some-numbers-item__label::after{
+.some-numbers-item__label::after {
   position: absolute;
-  content:'';
+  content: "";
   height: 8px;
   border-radius: 11px;
   width: 100%;
   bottom: 0;
   background: var(--secondary);
-  left:0;
+  left: 0;
   z-index: 0;
 }

@@ -1,18 +1,18 @@
 ---
-import "hamburgers/dist/hamburgers.min.css"
+import "hamburgers/dist/hamburgers.min.css";
 import type { StoryblokClient } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
 import { sortLinks } from "../../utils/sort-multi-select";
 import { cleanHref } from "../../utils/clean-href";
 const config = async () => {
-    const { data } = await (storyblokApi as StoryblokClient).get(
-        "cdn/stories/configuration",
-        {
-            version: "draft",
-            resolve_relations: "Navigation",
-        }
-    );
-    return data;
+  const { data } = await (storyblokApi as StoryblokClient).get(
+    "cdn/stories/configuration",
+    {
+      version: "draft",
+      resolve_relations: "Navigation",
+    }
+  );
+  return data;
 };
 
 const data = await config();
@@ -22,140 +22,149 @@ const sortedLinks = sortLinks(content.navigation, rels);
 ---
 
 <script>
-  const button = document.querySelector('.header__hamburger') as HTMLButtonElement
-  const nav = document.querySelector('.header__nav') as HTMLElement
-  const html = document.querySelector('html') as HTMLElement
-  const navContainer = document.querySelector('.header__container') as HTMLElement
-  button.addEventListener('click',()=>{
-    nav.classList.toggle('header__nav--active')
-    button.classList.toggle('is-active')
-    html.classList.toggle('no-scroll')
-  })
-
+  const button = document.querySelector(
+    ".header__hamburger"
+  ) as HTMLButtonElement;
+  const nav = document.querySelector(".header__nav") as HTMLElement;
+  const html = document.querySelector("html") as HTMLElement;
+  const navContainer = document.querySelector(
+    ".header__container"
+  ) as HTMLElement;
+  button.addEventListener("click", () => {
+    nav.classList.toggle("header__nav--active");
+    button.classList.toggle("is-active");
+    html.classList.toggle("no-scroll");
+  });
 </script>
 
 <div id="navbar" class="header__container">
-    <header class="header">
-        <a title="Retour à l'accueil" href="/">
-            <img class="header__logo" src={content.logo.filename} alt="" />
-        </a>
-        <nav class="header__nav">
-            <ul class="nav__list">
-                {
-                    sortedLinks.map((link: any) => (
-                        <li class="nav__item">
-                            <a
-                                class:list={[
-                                    "nav__link",
-                                    "h6",
-                                    Astro.url.pathname == cleanHref(link.full_slug) ? 'nav__link--active':null
-                                ]}
-                                href={cleanHref(link.full_slug)
-                                }
-                            >
-                                {link.name}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
-        <button title="Ouvrir le menu" class="hamburger hamburger--collapse header__hamburger" type="button">
-        
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-      </button>
-    </header>
+  <header class="header">
+    <a title="Retour à l'accueil" href="/">
+      <img class="header__logo" src={content.logo.filename} alt="" />
+    </a>
+    <nav class="header__nav">
+      <ul class="nav__list">
+        {
+          sortedLinks.map((link: any) => (
+            <li class="nav__item">
+              <a
+                class:list={[
+                  "nav__link",
+                  "h6",
+                  Astro.url.pathname == cleanHref(link.full_slug)
+                    ? "nav__link--active"
+                    : null,
+                ]}
+                href={cleanHref(link.full_slug)}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <button
+      title="Ouvrir le menu"
+      class="hamburger hamburger--collapse header__hamburger"
+      type="button"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </header>
 </div>
 
 <style scoped>
-    .header__container {
-        position: fixed;
-        width: 100%;
-        background: var(--background);
-        top: 0;
-        z-index: 5;
-        border-bottom: 2px solid grey;
+  .header__container {
+    position: fixed;
+    width: 100%;
+    background: var(--background);
+    top: 0;
+    z-index: 5;
+    border-bottom: 2px solid grey;
+  }
+  .header {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 16px 80px;
+  }
+  .header__logo {
+    width: 120px;
+    height: 60px;
+  }
+  .nav__list {
+    display: flex;
+    gap: 32px;
+  }
+  .nav__item {
+    width: fit-content;
+    border-bottom: transparent 2px solid;
+  }
+  .nav__link {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .nav__link:hover {
+    border-bottom: var(--primary) 2px solid;
+  }
+  .nav__link--active {
+    border-bottom: var(--primary) 2px solid;
+  }
+  .header__hamburger {
+    display: none;
+  }
+  @media (max-width: 1100px) {
+    .hamburger-inner,
+    .hamburger-inner::after,
+    .hamburger-inner::before,
+    .is-active.hamburger .hamburger-inner,
+    .is-active.hamburger .hamburger-inner::before,
+    .is-active.hamburger .hamburger-inner::after {
+      background: white;
     }
-    .header {
-        max-width: 1280px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        padding: 16px 80px;
+    .header__nav {
+      pointer-events: none;
+      transform: translateX(100vh);
+      opacity: 0;
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      background: transparent;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
     }
-    .header__logo {
-        width: 120px;
-        height: 60px;
+
+    .header__nav.header__nav--active {
+      pointer-events: all;
+      opacity: 1;
+      transform: translateX(0);
+      background: var(--secondary);
     }
     .nav__list {
-        display: flex;
-        gap: 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
-    .nav__item {
-        width: fit-content;
-        border-bottom: transparent 2px solid;
+    .header {
+      padding: 1rem;
     }
-    .nav__link {
-        padding: 10px;
-        text-decoration: none;
-        color: var(--white);
+    .header__hamburger {
+      display: block;
+      color: blue;
+      z-index: 15;
+      position: relative;
     }
-    .nav__link:hover {
-        border-bottom: var(--primary) 2px solid;
-    }
-    .nav__link--active {
-        border-bottom: var(--primary) 2px solid;
-    }
-    .header__hamburger{
-      display: none;
-    }
-    @media (max-width: 1100px) {
-      .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before, .is-active.hamburger .hamburger-inner, .is-active.hamburger .hamburger-inner::before, .is-active.hamburger .hamburger-inner::after{
-        background: white;
-      }
-      .header__nav{
-        pointer-events: none;
-        transform: translateX(100vh);
-        opacity: 0;
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        z-index: 2;
-        left: 0;
-        top:0;
-        background: transparent;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-        
-      }
-
-      .header__nav.header__nav--active{
-        pointer-events: all;
-        opacity: 1;
-        transform: translateX(0);
-        background: var(--secondary);
-      }
-      .nav__list{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-      .header{
-        padding: 1rem;
-      }
-      .header__hamburger{
-        display: block;
-        color:blue;
-        z-index: 15;
-        position: relative;
-      }
-    }
-
+  }
 </style>

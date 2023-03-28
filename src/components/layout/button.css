@@ -1,4 +1,4 @@
-.button{
+.button {
   text-align: center;
   padding: 12px 24px;
   border-radius: 48px;
@@ -9,24 +9,24 @@
   transition: background 300ms ease-in-out, color 300ms ease-in-out;
 }
 
-.button__red{
+.button__red {
   background: var(--secondary);
   border-color: var(--secondary);
-  color:white;
+  color: white;
 }
-.button__red:hover{
+.button__red:hover {
   color: var(--secondary);
   background: white;
 }
-.button__white{
+.button__white {
   border-color: white;
 }
-.button__white:hover{
+.button__white:hover {
   background: white;
   color: black;
 }
-.button__black:hover{
+.button__black:hover {
   border-color: var(--background);
   background: var(--background);
-  color:white;
+  color: white;
 }

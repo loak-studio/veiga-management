@@ -3,7 +3,12 @@ import type { StoryblokClient } from "@storyblok/js";
 import Main from "../layouts/Main.astro";
 import { clearSlug } from "../utils/remove-end-slash";
 import { storyblokApi } from "../utils/storyblok";
-import { apiPlugin, storyblokInit, useStoryblok, StoryblokComponent } from "@storyblok/react";
+import {
+  apiPlugin,
+  storyblokInit,
+  useStoryblok,
+  StoryblokComponent,
+} from "@storyblok/react";
 import { bindedComponents } from "../utils/binded-component";
 export async function getStaticPaths() {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
@@ -29,17 +34,19 @@ const metatags = {
 };
 
 storyblokInit({
-    accessToken: import.meta.env.STORYBLOK_TOKEN,
-    // bridge: true,
-    use: [apiPlugin],
-    components:bindedComponents,
-
-  });
-
+  accessToken: import.meta.env.STORYBLOK_TOKEN,
+  // bridge: true,
+  use: [apiPlugin],
+  components: bindedComponents,
+});
 ---
 
 <Main meta={metatags}>
-  {page.content && page.content.body &&
-    page.content.body.map((blok,index)=><StoryblokComponent key={index} blok={blok} />)
+  {
+    page.content &&
+      page.content.body &&
+      page.content.body.map((blok, index) => (
+        <StoryblokComponent key={index} blok={blok} />
+      ))
   }
 </Main>

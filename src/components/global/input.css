@@ -1,9 +1,9 @@
-.input{
+.input {
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
 }
-.input__input{
+.input__input {
   border: none;
   border-bottom: 2px solid var(--background);
   padding: 8px;
@@ -11,7 +11,7 @@
   font-size: 1rem;
   line-height: 150%;
 }
-.input__input:focus-within{
+.input__input:focus-within {
   outline: none;
   border-bottom-color: var(--secondary);
 }

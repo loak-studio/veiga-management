@@ -8,14 +8,14 @@ import Linkedin from "../../assets/footer/linkedin.svg";
 import Instagram from "../../assets/footer/instagram.svg";
 import { cleanHref } from "../../utils/clean-href";
 const config = async () => {
-    const { data } = await (storyblokApi as StoryblokClient).get(
-        "cdn/stories/configuration",
-        {
-            version: "draft",
-            resolve_relations: ["navigation", "sitemap", "legal"],
-        }
-    );
-    return data;
+  const { data } = await (storyblokApi as StoryblokClient).get(
+    "cdn/stories/configuration",
+    {
+      version: "draft",
+      resolve_relations: ["navigation", "sitemap", "legal"],
+    }
+  );
+  return data;
 };
 const data = await config();
 const content = data.story.content;
@@ -24,187 +24,177 @@ const sitemapSorted = sortLinks(content.sitemap, rels);
 const legalSorted = sortLinks(content.legal, rels);
 
 const socials = [
-    {
-        logo: Facebook,
-        href: content.facebook,
-        name:'Facebook'
-    },
-    {
-        logo: Instagram,
-        href: content.instagram,
-        name:'Instagram'
-    },
-    {
-        logo: Linkedin,
-        href: content.linkedin,
-        name:'LinkedIn'
-    },
-    {
-        logo: Twitter,
-        href: content.twitter,
-        name:'Twitter'
-    },
+  {
+    logo: Facebook,
+    href: content.facebook,
+    name: "Facebook",
+  },
+  {
+    logo: Instagram,
+    href: content.instagram,
+    name: "Instagram",
+  },
+  {
+    logo: Linkedin,
+    href: content.linkedin,
+    name: "LinkedIn",
+  },
+  {
+    logo: Twitter,
+    href: content.twitter,
+    name: "Twitter",
+  },
 ];
 ---
 
 <footer class="footer__wrapper">
-    <div class="footer">
-        <div class="footer__group">
-            <div class="footer__block w-fixed">
-                <img class="footer__logo" src={content.logo.filename} alt="" />
-                <p class="bold">{content.tagline.toUpperCase()}</p>
-            </div>
-            <div class="footer__block">
-                <h6 class="h5">Plan du site</h6>
-                <nav>
-                    <ul class="footer__list">
-                        {
-                            sitemapSorted.map((link: any) => (
-                                <li>
-                                    <a
-                                        class="link"
-                                        href={cleanHref(link.full_slug)
-                                        }
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer__block">
-                <h6 class="h5">Suivez-nous</h6>
-                <ul class="footer__social-list">
-                    {
-                        socials.map((social: any) => {
-                            if (social.href) {
-                                return (
-                                    <li>
-                                        <a title={social.name} href={social.href}>
-                                            <img
-                                                class="footer__social-logo"
-                                                src={social.logo}
-                                                alt=""
-                                            />
-                                        </a>
-                                    </li>
-                                );
-                            }
-                        })
-                    }
-                </ul>
-                <nav>
-                    <ul class="footer__list">
-                        {
-                            legalSorted.map((link: any) => (
-                                <li>
-                                    <a
-                                        class="link"
-                                        href={
-                                           cleanHref(link.full_slug)
-                                        }
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="footer__copyright">
-            <p class="text">&copy; <span id="year"></span> Veiga Management</p>
-        </div>
+  <div class="footer">
+    <div class="footer__group">
+      <div class="footer__block w-fixed">
+        <img class="footer__logo" src={content.logo.filename} alt="" />
+        <p class="bold">{content.tagline.toUpperCase()}</p>
+      </div>
+      <div class="footer__block">
+        <h6 class="h5">Plan du site</h6>
+        <nav>
+          <ul class="footer__list">
+            {
+              sitemapSorted.map((link: any) => (
+                <li>
+                  <a class="link" href={cleanHref(link.full_slug)}>
+                    {link.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__block">
+        <h6 class="h5">Suivez-nous</h6>
+        <ul class="footer__social-list">
+          {
+            socials.map((social: any) => {
+              if (social.href) {
+                return (
+                  <li>
+                    <a title={social.name} href={social.href}>
+                      <img
+                        class="footer__social-logo"
+                        src={social.logo}
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                );
+              }
+            })
+          }
+        </ul>
+        <nav>
+          <ul class="footer__list">
+            {
+              legalSorted.map((link: any) => (
+                <li>
+                  <a class="link" href={cleanHref(link.full_slug)}>
+                    {link.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
     </div>
+    <div class="footer__copyright">
+      <p class="text">&copy; <span id="year"></span> Veiga Management</p>
+    </div>
+  </div>
 </footer>
 
 <script>
-    const now = new Date();
-    const year = now.getFullYear();
-    const el = document.querySelector("#year") as HTMLElement;
-    el.innerText = year.toString();
+  const now = new Date();
+  const year = now.getFullYear();
+  const el = document.querySelector("#year") as HTMLElement;
+  el.innerText = year.toString();
 </script>
 
 <style scoped>
-    .footer__wrapper {
-        background: var(--background);
-        color: var(--white);
-    }
+  .footer__wrapper {
+    background: var(--background);
+    color: var(--white);
+  }
 
+  .footer {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 120px 0 48px 0;
+  }
+
+  .footer__group {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 48px;
+  }
+
+  .footer__block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer__block.w-fixed {
+    max-width: 360px;
+    width: 100%;
+  }
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer__logo {
+    max-width: 215px;
+  }
+  .footer__social-list {
+    display: flex;
+    gap: 8px;
+  }
+  .footer__social-logo {
+    width: 32px;
+    height: 32px;
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+  @media (max-width: 1150px) {
     .footer {
-        max-width: 1120px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 120px 0 48px 0;
+      padding: 120px 1rem 48px 1rem;
     }
-
+  }
+  @media screen and (max-width: 1100px) {
     .footer__group {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
+      margin: 0 1rem;
     }
-
-    .footer__block {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+    .w-fixed {
+      grid-column: span 2 / span 2;
     }
-    .footer__block.w-fixed {
-        max-width: 360px;
-        width: 100%;
+    .footer {
+      display: flex;
+      flex-direction: column;
     }
-    .footer__list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+  }
+  @media screen and (max-width: 550px) {
+    .footer__group {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
     }
-
-    .footer__logo {
-        max-width: 215px;
+    .footer {
+      padding: 3rem 1rem;
     }
-    .footer__social-list {
-        display: flex;
-        gap: 8px;
-    }
-    .footer__social-logo {
-        width: 32px;
-        height: 32px;
-    }
-    .footer__copyright {
-        text-align: center;
-    }
-    @media (max-width:1150px){
-      .footer{
-       
-        padding: 120px 1rem 48px 1rem;
-      }
-    }
-    @media screen and (max-width: 1100px) {
-        .footer__group {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 48px;
-            margin: 0 1rem;
-        }
-        .w-fixed {
-            grid-column: span 2 / span 2;
-        }
-        .footer {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    @media screen and (max-width: 550px) {
-        .footer__group {
-            display: flex;
-            flex-direction: column;
-            margin:0;
-        }
-        .footer {
-            padding:3rem 1rem;
-        }
-    }
+  }
 </style>

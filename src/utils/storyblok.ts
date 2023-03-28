@@ -1,9 +1,7 @@
-import {apiPlugin, storyblokInit} from "@storyblok/js"
+import { apiPlugin, storyblokInit } from "@storyblok/js";
 
-const {storyblokApi}= storyblokInit({
-
+const { storyblokApi } = storyblokInit({
   accessToken: import.meta.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
-
 });
-export {storyblokApi}
+export { storyblokApi };

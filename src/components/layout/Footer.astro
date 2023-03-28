@@ -27,18 +27,22 @@ const socials = [
     {
         logo: Facebook,
         href: content.facebook,
+        name:'Facebook'
     },
     {
         logo: Instagram,
         href: content.instagram,
+        name:'Instagram'
     },
     {
         logo: Linkedin,
         href: content.linkedin,
+        name:'LinkedIn'
     },
     {
         logo: Twitter,
         href: content.twitter,
+        name:'Twitter'
     },
 ];
 
@@ -89,7 +93,7 @@ const isHome = (slug: string) => {
                             if (social.href) {
                                 return (
                                     <li>
-                                        <a href={social.href}>
+                                        <a title={social.name} href={social.href}>
                                             <img
                                                 class="footer__social-logo"
                                                 src={social.logo}

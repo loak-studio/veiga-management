@@ -39,7 +39,8 @@ const sortedLinks = sortLinks(content.navigation, rels);
   let olderScrollValue = 0
   window.addEventListener('scroll',(e)=>{
     if(window.scrollY < 100){
-      window.scrollY > 100
+      
+      navContainer.classList.remove('header__container--hidden')
       return
     }
     if(olderScrollValue > window.scrollY && window.scrollY > 100){

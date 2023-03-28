@@ -3,7 +3,7 @@ export default function SomeNumbers(props){
   const __html = renderRichText(props.blok.title)
     console.log(props.blok)
   return (
-    <div className="some-numbers" {...storyblokEditable(props.blok)}>
+    <div className={"some-numbers" + (props.blok.arrow ?  " " + 'some-numbers__arrow':'')} {...storyblokEditable(props.blok)}>
       <h2 className="some-numbers__title h2" dangerouslySetInnerHTML={{__html}}/>
       <span className="some-numbers__description text">{props.blok.description}</span>
       <ul className="some-numbers__list">

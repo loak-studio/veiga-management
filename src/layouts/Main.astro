@@ -71,8 +71,15 @@ const { meta } = Astro.props;
 </html>
 
 <style scoped>
+  body{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height: 100vh;
+  }
   main {
     margin-top: 98px;
+    flex:1;
   }
   .no-scroll {
     overflow: hidden;

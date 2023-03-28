@@ -6,7 +6,7 @@ import Facebook from "../../assets/footer/facebook.svg";
 import Twitter from "../../assets/footer/twitter.svg";
 import Linkedin from "../../assets/footer/linkedin.svg";
 import Instagram from "../../assets/footer/instagram.svg";
-
+import { cleanHref } from "../../utils/clean-href";
 const config = async () => {
     const { data } = await (storyblokApi as StoryblokClient).get(
         "cdn/stories/configuration",
@@ -45,14 +45,6 @@ const socials = [
         name:'Twitter'
     },
 ];
-
-
-const isHome = (slug: string) => {
-    if (slug == "home") {
-        return true;
-    }
-    return false;
-};
 ---
 
 <footer class="footer__wrapper">
@@ -71,10 +63,7 @@ const isHome = (slug: string) => {
                                 <li>
                                     <a
                                         class="link"
-                                        href={
-                                            isHome(link.full_slug)
-                                                ? "/"
-                                                : "/" + link.full_slug
+                                        href={cleanHref(link.full_slug)
                                         }
                                     >
                                         {link.name}
@@ -114,9 +103,7 @@ const isHome = (slug: string) => {
                                     <a
                                         class="link"
                                         href={
-                                            isHome(link.full_slug)
-                                                ? "/"
-                                                : "/" + link.full_slug
+                                           cleanHref(link.full_slug)
                                         }
                                     >
                                         {link.name}

@@ -3,6 +3,7 @@ import "hamburgers/dist/hamburgers.min.css"
 import type { StoryblokClient } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
 import { sortLinks } from "../../utils/sort-multi-select";
+import { cleanHref } from "../../utils/clean-href";
 const config = async () => {
     const { data } = await (storyblokApi as StoryblokClient).get(
         "cdn/stories/configuration",
@@ -18,39 +19,6 @@ const data = await config();
 const content = data.story.content;
 const rels = data.rels;
 const sortedLinks = sortLinks(content.navigation, rels);
-
-const isHome = (slug: string) => {
-    if (slug == "home") {
-        return true;
-    }
-    return false;
-};
-
-const isActive = (slug: string) => {
-    if (slug == "home") {
-        slug = "/";
-    }
-    if (Astro.url.pathname == slug) {
-        return true;
-    }
-    return false;
-};
-
-const cleanHref = (slug: string)=>{
-  let href = ""
-  href = slug
-  if(slug === "home"){
-    href = "/"
-  }
-  if(href.slice(-1) !=="/"){
-    href = href + "/"
-  }
-  if(href.slice(0) !== "/"){
-    href = "/"+href
-  }
-  console.log(href)
-  return href
-}
 ---
 
 <script>
@@ -80,9 +48,7 @@ const cleanHref = (slug: string)=>{
                                 class:list={[
                                     "nav__link",
                                     "h6",
-                                    isActive(cleanHref(link.full_slug))
-                                        ? "nav__link--active"
-                                        : null,
+                                    Astro.url.pathname == cleanHref(link.full_slug) ? 'nav__link--active':null
                                 ]}
                                 href={cleanHref(link.full_slug)
                                 }

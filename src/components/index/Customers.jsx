@@ -19,9 +19,9 @@ export default function Customers(props) {
       </ul>
       <ul className="customers__brands">
         {props.blok.brands.map((brand, index) => (
-          <li className="customers__brand">
-            <figure className="customers__brand-logo">
-              <img src={brand.filename} alt="" />
+          <li key={index} className="customers__brand">
+            <figure title={brand.alt} className="customers__brand-logo">
+              <img alt={brand.alt} src={brand.filename} />
             </figure>
           </li>
         ))}

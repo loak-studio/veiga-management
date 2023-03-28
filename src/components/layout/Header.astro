@@ -35,6 +35,22 @@ const sortedLinks = sortLinks(content.navigation, rels);
     button.classList.toggle("is-active");
     html.classList.toggle("no-scroll");
   });
+
+  let olderScrollValue = 0
+  window.addEventListener('scroll',(e)=>{
+    if(window.scrollY < 100){
+      window.scrollY > 100
+      return
+    }
+    if(olderScrollValue > window.scrollY && window.scrollY > 100){
+      //Go up
+      navContainer.classList.remove('header__container--hidden')
+    }else{
+      //GO down
+      navContainer.classList.add('header__container--hidden')
+    }
+    olderScrollValue = window.scrollY
+  })
 </script>
 
 <div id="navbar" class="header__container">
@@ -84,6 +100,10 @@ const sortedLinks = sortLinks(content.navigation, rels);
     top: 0;
     z-index: 5;
     border-bottom: 2px solid grey;
+    transition: transform 300ms;
+  }
+  .header__container--hidden{
+    transform: translateY(-100%);
   }
   .header {
     max-width: 1280px;

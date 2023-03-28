@@ -12,9 +12,11 @@
 .button__red{
   background: var(--secondary);
   border-color: var(--secondary);
+  color:white;
 }
-.button:hover{
-  background: transparent;
+.button__red:hover{
+  color: var(--secondary);
+  background: white;
 }
 .button__white{
   border-color: white;
@@ -22,4 +24,9 @@
 .button__white:hover{
   background: white;
   color: black;
+}
+.button__black:hover{
+  border-color: var(--background);
+  background: var(--background);
+  color:white;
 }

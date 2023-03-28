@@ -8,20 +8,18 @@ import Customers from "../components/index/Customers.jsx"
 import CustomerItem from "../components/index/CustomerItem.jsx"
 import SomeNumbers from "../components/index/SomeNumbers.jsx"
 import SomeNumbersItem from "../components/index/SomeNumbersItem.jsx"
+import ContactForm from "../components/global/ContactForm.jsx"
 const bindedComponents = {
-  feature: SomeComponent,
-  grid: SomeComponent,
-  teaser: SomeComponent,
-  ContainerBackgroundSpace: ContainerBackgroundSpace,
-  Hero:Hero,
-  OurServices:OurServices,
-  HeroServiceItem:HeroServiceItem,
-  Customers:Customers,
-  CustomerItem:CustomerItem,
+  ContainerBackgroundSpace,
+  Hero,
+  OurServices,
+  HeroServiceItem,
+  Customers,
+  CustomerItem,
   Team:SomeComponent,
-  SomeNumbers:SomeNumbers,
+  SomeNumbers,
   SomeNumbersItem,
-  ContactForm:SomeComponent,
+  ContactForm,
   Button:Button
 }
 

@@ -2,6 +2,8 @@ import "./button.css"
 import {storyblokEditable} from "@storyblok/react"
 export default function Button(props) {
   const href = props.blok?.link?.cached_url
+  let currentStyle = props?.blok?.style ?? props.style
+  let currentLabel = props?.blok?.label ?? props.label
   const Element = href ? 'a' : 'button'
   const getClass = (style) => {
     switch (style) {
@@ -19,8 +21,8 @@ export default function Button(props) {
     }
   }
   return (
-    <Element {...storyblokEditable(props.blok)} href={"/" + href + "/"} className={"button"+ " " + getClass(props.blok.style)}>
-      <span className="text">{props.blok.label}</span>
+    <Element {...storyblokEditable(props.blok)} href={"/" + href + "/"} className={"button"+ " " + getClass(currentStyle)}>
+      <span className="text">{currentLabel}</span>
     </Element>
   )
 }

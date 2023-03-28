@@ -76,7 +76,7 @@ export default function Container(props) {
       </div>
       {props.blok.display_icons &&
         images.map((image, index) => (
-          <figure className={"container__icon" + " " + image.className}>
+          <figure key={index} className={"container__icon" + " " + image.className}>
             <img src={image.asset} alt="" />
           </figure>
         ))}

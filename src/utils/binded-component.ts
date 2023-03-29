@@ -9,6 +9,11 @@ import CustomerItem from "../components/index/CustomerItem.jsx";
 import SomeNumbers from "../components/index/SomeNumbers.jsx";
 import SomeNumbersItem from "../components/index/SomeNumbersItem.jsx";
 import ContactForm from "../components/global/ContactForm.jsx";
+import PageTitle from "../components/global/PageTitle.jsx"
+import ServiceItem from "../components/our-services/ServiceItem.jsx"
+import Video from "../components/global/Video.jsx"
+import Team from "../components/global/Team.tsx";
+import TeamItem from "../components/global/TeamItem.tsx";
 const bindedComponents = {
   ContainerBackgroundSpace,
   Hero,
@@ -16,11 +21,15 @@ const bindedComponents = {
   HeroServiceItem,
   Customers,
   CustomerItem,
-  Team: SomeComponent,
   SomeNumbers,
   SomeNumbersItem,
   ContactForm,
-  Button: Button,
+  Button,
+  ServiceItem,
+  PageTitle,
+  Video,
+  Team,
+  TeamItem
 };
 
 export { bindedComponents };

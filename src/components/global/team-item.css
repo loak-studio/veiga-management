@@ -1,0 +1,15 @@
+.team-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-item__name{
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.team-item__role{
+  text-align: center;
+}

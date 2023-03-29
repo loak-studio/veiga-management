@@ -1,0 +1,27 @@
+.team {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background: var(--secondary);
+    color: var(--white);
+}
+.team__arrow::after {
+    height: 140px;
+    width: 140px;
+    background: var(--secondary);
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -55px;
+    border-radius: 16px;
+}
+.team__title {
+    max-width: 684px;
+    margin: 0 auto 16px auto;
+    text-align: center;
+}
+.team__description {
+    text-align: center;
+}

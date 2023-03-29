@@ -17,6 +17,7 @@
     transform: translateX(-50%) rotate(45deg);
     bottom: -55px;
     border-radius: 16px;
+    z-index: 3;
 }
 .team__title {
     max-width: 684px;
@@ -32,6 +33,8 @@
   max-width: 1224px;
   margin: 0 auto;
   gap:20px;
+  z-index: 5;
+  position: relative;
 }
 [data-slider-button]{
   flex-shrink: 0;
@@ -47,13 +50,16 @@
 }
 @media (max-width:1240px) {
   .team{
-    padding: 3rem 1rem;
+    padding: 100px 1rem;
   }
   .team__list{
     grid-template-columns: repeat(3, minmax(0,1fr));
   }
 }
 @media (max-width:809px) {
+    .team{
+      padding: 3rem 1rem;
+    }
     .team__list{
       grid-template-columns: repeat(2, minmax(0,1fr));
     }

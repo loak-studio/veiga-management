@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier":"prettier -w src"
+    "prettier": "prettier -w src"
   },
   "dependencies": {
     "@astrojs/react": "^2.1.0",
@@ -20,7 +20,8 @@
     "astro": "^2.1.5",
     "hamburgers": "^1.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "prettier": "^2.8.7",

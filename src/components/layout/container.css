@@ -9,6 +9,9 @@
   position: relative;
   overflow-x: clip;
 }
+.container:has(.service-item){
+  padding-bottom: 0px;
+}
 .container__arrow::after {
   height: 140px;
   width: 140px;

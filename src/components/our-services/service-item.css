@@ -85,6 +85,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 300ms;
+}
+.social-item__link:hover{
+  opacity: .5;
 }
 .social-item__link a{
   height: 100%;

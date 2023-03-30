@@ -33,7 +33,7 @@
 .some-numbers__list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 1040px;
+  max-width: 1224px;
   margin: 0 auto;
 }
 

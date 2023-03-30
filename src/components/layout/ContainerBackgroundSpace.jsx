@@ -74,12 +74,14 @@ export default function Container(props) {
           <StoryblokComponent key={index} blok={b} />
         ))}
       </div>
-      {props.blok.display_icons &&
+     <div className="container__icons-container">
+     {props.blok.display_icons &&
         images.map((image, index) => (
           <figure key={index} className={"container__icon" + " " + image.className}>
             <img src={image.asset} alt="" />
           </figure>
         ))}
+     </div>
     </div>
   );
 }

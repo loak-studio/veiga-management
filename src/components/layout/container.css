@@ -9,7 +9,6 @@
   padding-bottom: 114px;
   position: relative;
   overflow-x: clip;
-  overflow-y: hidden;
 }
 .container:has(.service-item){
   padding-bottom: 0px;
@@ -25,7 +24,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: calc(100% - 1px);
-  z-index: 1;
+  z-index: 10;
 }
 .container__icons::before {
   width: 100%;

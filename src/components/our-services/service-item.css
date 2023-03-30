@@ -117,9 +117,6 @@
   }
 }
 @media (max-width: 1000px) {
-  .service-item{
-    padding: 3rem 1rem;
-  }
   .service-item__title{
     margin-bottom: 2rem;
   }
@@ -146,6 +143,9 @@
   }
 }
 @media (max-width:809px) {
+  .service-item{
+    padding: 3rem 1rem;
+  }
     .service-item__arrow::after{
       display: none;
     }

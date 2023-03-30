@@ -179,7 +179,7 @@ function ServiceItemSocialLink(props){
   domain = domain.hostname
   return(
     <li className="social-item__link">
-      <a href={props.link.cached_url}>
+      <a target="_blank" href={props.link.cached_url}>
         {domainToIcon[domain]}
       </a>
     </li>

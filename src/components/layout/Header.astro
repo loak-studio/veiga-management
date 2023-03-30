@@ -132,12 +132,27 @@ const sortedLinks = sortLinks(content.navigation, rels);
     padding: 10px;
     text-decoration: none;
     color: var(--white);
+    position: relative;
   }
-  .nav__link:hover {
-    border-bottom: var(--primary) 2px solid;
+  .nav__link::after{
+    content:'';
+    width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--primary);
   }
-  .nav__link--active {
-    border-bottom: var(--primary) 2px solid;
+  .nav__link:hover::after, .nav__item:active::after {
+
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .nav__link--active::after {
+    transform: scaleX(1);
   }
   .header__hamburger {
     display: none;

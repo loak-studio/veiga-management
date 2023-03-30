@@ -137,7 +137,7 @@ const Youtube = ()=>{
 export default function ServiceItem(props) {
   const descriptionHtml = renderRichText(props.blok.description)
   const testimonialHtml = renderRichText(props.blok.testimonial)
-  return <div style={{ background: props.blok.backgroundTransparent ? null : props.blok.backgroundColor.color }} className="service-item" {...storyblokEditable(props.blok)}>
+  return <div style={{ background: props.blok.backgroundTransparent ? null : props.blok.backgroundColor.color, color: props.blok.backgroundColor?.color}} className={"service-item" + (props.blok.arrow ? ' ' + 'service-item__arrow':'')} {...storyblokEditable(props.blok)}>
     <figure className="service-item__background-image">
       <img src={props.blok.backgroundImage?.filename} alt="" />
     </figure>

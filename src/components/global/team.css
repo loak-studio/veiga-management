@@ -36,9 +36,15 @@
   gap:20px;
   z-index: 5;
   position: relative;
+  align-items: center;
 }
 [data-slider-button]{
   flex-shrink: 0;
+  transition: opacity 300ms;
+  cursor:pointer;
+}
+[data-slider-button]:hover{
+  opacity: .5;
 }
 [data-slider-button="next"]{
   transform: rotate(180deg);

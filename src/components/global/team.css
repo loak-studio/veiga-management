@@ -5,6 +5,7 @@
     background: var(--secondary);
     color: var(--white);
     margin: 0 auto;
+    z-index: 0;
 }
 .team__arrow::after {
     height: 140px;

@@ -18,6 +18,11 @@
   overflow: hidden;
   aspect-ratio: 16/9;
 }
+.our-history-item__figure img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 @media (max-width:716px) {
   .our-history-item{
     padding: 0 1rem;

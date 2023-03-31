@@ -14,6 +14,7 @@ import ServiceItem from "../components/our-services/ServiceItem.jsx"
 import Video from "../components/global/Video.jsx"
 import Team from "../components/global/Team.tsx";
 import TeamItem from "../components/global/TeamItem.tsx";
+import OurHistoryItem from "../components/our-history/OurHistoryItem.jsx"
 const bindedComponents = {
   ContainerBackgroundSpace,
   Hero,
@@ -29,7 +30,8 @@ const bindedComponents = {
   PageTitle,
   Video,
   Team,
-  TeamItem
+  TeamItem,
+  OurHistoryItem
 };
 
 export { bindedComponents };

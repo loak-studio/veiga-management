@@ -1,8 +1,8 @@
 export default function BlogThumbnail(props){
-  console.log(props)
+  // console.log(props)
   return (
     <article>
-      post {props.blok.content.title}
+      <a href={"/blog/" + props.blok.slug}>{props.blok.content.title}</a>
     </article>
   )
 }

@@ -1,0 +1,33 @@
+---
+import type { StoryblokClient } from "@storyblok/js";
+import { storyblokApi } from "../../utils/storyblok";
+import { clearSlug } from "../../utils/remove-end-slash";
+import Main from "../../layouts/Main.astro";
+
+export async function getStaticPaths() {
+  const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
+    version: "draft",
+    starts_with:'blog',
+    is_startpage:0
+  });
+  return data.stories.map((page: any) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+      props: page,
+    };
+  });
+}
+const metatags = {
+  title: "Page",
+  description: "Description",
+  image:"",
+};
+const page = Astro.props;
+console.log(page)
+---
+
+<Main meta={metatags}>
+  <h1>{page.content.title}</h1>
+</Main>

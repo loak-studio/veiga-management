@@ -1,6 +1,5 @@
 import { storyblokEditable, renderRichText } from "@storyblok/react"
 export default function OurHistoryItem(props){
-  console.log(props)
   return(
   <div className="our-history-item" {...storyblokEditable(props.blok)}>
       {props.blok.title && <h2 className="our-history-item__title h2">{props.blok.title}</h2>}

@@ -1,4 +1,38 @@
+.blog-container{
+  background: #EEEEEE;
+  padding: 100px 0;
+}
 .blog{
   max-width: 1120px;
-  margin: 100px auto;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  width: 100%;
+  column-gap: 42px;
+}
+.blog > *:nth-child(even){
+  margin-top: 64px;
+}
+.blog> *:nth-child(odd){
+  margin-bottom: 64px;
+}
+@media (max-width: 1136px) {
+  .blog{
+    padding: 0 1rem;
+  }
+}
+@media (max-width:809px) {
+  .blog-container{
+    padding: 48px 0;
+  }
+    .blog{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .blog > *:nth-child(odd), .blog > *:nth-child(even){
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
 }

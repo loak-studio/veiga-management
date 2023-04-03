@@ -6,11 +6,13 @@ const data = await fetch("https://api.storyblok.com/v2/cdn/stories?starts_with=b
 
 export default function Blog(props) {
 
-  return <div className="blog" {...storyblokEditable(props.blok)}>
+  return <section className="blog-container">
+    <div className="blog" {...storyblokEditable(props.blok)}>
     {data.stories.map((story,index)=>{
       if(story.content.component == "blog-post"){
         return <BlogThumbnail key={index} blok={story}/>
       }
     })}
   </div>
+  </section>
 }

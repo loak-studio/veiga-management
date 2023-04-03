@@ -1,5 +1,5 @@
 ---
-import type { StoryblokClient } from "@storyblok/js";
+import { StoryblokClient, renderRichText } from "@storyblok/js";
 import { storyblokApi } from "../../utils/storyblok";
 import { clearSlug } from "../../utils/remove-end-slash";
 import Main from "../../layouts/Main.astro";
@@ -29,5 +29,5 @@ console.log(page)
 ---
 
 <Main meta={metatags}>
-  <h1>{page.content.title}</h1>
+  <h1 set:html={renderRichText(page.content.title)}/>
 </Main>

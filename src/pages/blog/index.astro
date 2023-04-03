@@ -1,0 +1,27 @@
+---
+import Blog from "../../components/blog/Blog.astro";
+import Main from "../../layouts/Main.astro"
+const metatags = {
+  title: "Veiga'ctu",
+  description: "Descr",
+  image: "#",
+};
+---
+
+<Main meta={metatags}>
+  <div
+  class="container"
+>
+  <div class="container__content">
+    <div class="page-title h4">
+      <span class="page-title__pretitle">
+           Veiga'ctu
+         </span>
+       <div class="page-title__title h1">
+         <h1>Restez à jour des dernières <b>actualités</b> de vos réseaux sociaux <b>préférés</b>.</h1>
+       </div>
+     </div>
+  </div>
+</div>
+<Blog/>
+</Main>

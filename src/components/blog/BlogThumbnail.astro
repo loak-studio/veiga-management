@@ -1,0 +1,37 @@
+---
+import { renderRichText } from "@storyblok/js";
+import BackgroundImage from "../../assets/blog-background.webp"
+const props = Astro.props
+const date = new Date(props.blok.content.date)
+  const title = renderRichText(props.blok.content.title)
+---
+<article class="blog-thumbnail">
+  {props.blok.content?.thumbnail?.filename &&
+    <figure class="blog-thumbnail__figure">
+      <img src={props.blok.content.thumbnail.filename} alt="" />
+    </figure>
+  }
+  {!props.blok.content?.thumbnail?.filename &&
+    <div class="blog-thumbnail__figure">
+      <figure class="blog-thumbnail-figure-background">
+        <img src={BackgroundImage} alt="" />
+      </figure>
+      <div class="h5 blog-thumbnail__thumbnail-title" set:html={title} />
+    </div>
+  }
+  <div class="blog-thumbnail__meta">
+    <h3 class="h5 blog-thumbnail__title" set:html={title } />
+    <div class="blog-thumbnail__footer-and-tag">
+      <div class="h6 blog-thumbnail__tag">
+        {props.blok.content.tag}
+      </div>
+      <div class="blog-thumbnail__footer text">
+        <span class="blog-thumbnail__author">{props.blok.content.author}</span>
+        <span>{date.toLocaleDateString('fr', { day: "2-digit", month: 'long', year: "numeric" })}</span>
+      </div>
+    </div>
+  </div>
+  <a class="blog-thumbnail__link" href={"/blog/" + props.blok.slug + "/"}>
+    <span class="blog-thumbnail__link-text sr-only">Lire l'article</span>
+  </a>
+</article>

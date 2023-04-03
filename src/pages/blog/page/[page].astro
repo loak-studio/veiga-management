@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     is_startpage:0
   });
 
-  return paginate(data.stories, { pageSize: 10 });
+  return paginate(data.stories, { pageSize: 8 });
 }
 const {page} = Astro.props
 const metatags = {
@@ -21,6 +21,7 @@ const metatags = {
   image:"",
 };
 
+console.log(page)
 ---
 
 <Main meta={metatags}>

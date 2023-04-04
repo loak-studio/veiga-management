@@ -30,7 +30,7 @@ export default function ContactForm(props) {
             ))}
           </div>
         </div>
-        <form method="POST" netlify className="contact-form__form" action="/contect?send=true" name="contact">
+        <form method="POST" data-netlify="true" className="contact-form__form" action="/contact/?send=true" name="contact">
           <Input name="name" id="name" label="Nom" required />
           <Input name="email" id="email" label="E-mail" type="email" required />
           <Input name="subject" id="subject" label="Objet" required />

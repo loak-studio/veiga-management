@@ -1,10 +1,9 @@
 
 import BackgroundImage from "../../assets/blog-background.webp"
+import {parseDateToFrench} from "../../utils/parse-date-to-french"
 import { renderRichText } from "@storyblok/react"
 export default function BlogThumbnail(props){
   const __html = renderRichText(props.blok.content.title)
-
-const date = new Date(props.blok.content.date)
   return(
 <article className="blog-thumbnail">
   {props.blok.content?.thumbnail?.filename &&
@@ -28,7 +27,7 @@ const date = new Date(props.blok.content.date)
       </div>
       <div className="blog-thumbnail__footer text">
         <span className="blog-thumbnail__author">{props.blok.content.author}</span>
-        <span>{date.toLocaleDateString('fr', { day: "2-digit", month: 'long', year: "numeric" })}</span>
+        <span>{parseDateToFrench(props.blok.content.date)}</span>
       </div>
     </div>
   </div>

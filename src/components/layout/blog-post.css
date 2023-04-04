@@ -1,0 +1,13 @@
+.blog-post{
+  max-width: 800px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}
+@media (max-width:816px) {
+  .blog-post{
+    padding: 0 1rem;
+    margin: 48px 0;
+  }
+}

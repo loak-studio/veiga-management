@@ -1,4 +1,4 @@
-.h1 {
+.h1, .blog-post h1 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -6,7 +6,7 @@
   line-height: 120%;
 }
 
-.h2 {
+.h2, .blog-post h2 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -14,7 +14,7 @@
   line-height: 48px;
 }
 
-.h3 {
+.h3, .blog-post h3 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -22,7 +22,7 @@
   line-height: 38px;
 }
 
-.h4 {
+.h4, .blog-post h4 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -30,7 +30,7 @@
   line-height: 34px;
 }
 
-.h5 {
+.h5, .blog-post h5 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -38,7 +38,7 @@
   line-height: 130%;
 }
 
-.h6 {
+.h6, .blog-post h6 {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -47,32 +47,32 @@
 }
 
 @media (max-width: 809px) {
-  .h1 {
+  .h1, .blog-post h1 {
     font-size: 32px;
   }
 
-  .h2 {
+  .h2, .blog-post h2 {
     font-size: 32px;
   }
 
-  .h3 {
+  .h3, .blog-post h3 {
     font-size: 28px;
   }
 
-  .h4 {
+  .h4, .blog-post h4 {
     font-size: 28px;
   }
 
-  .h5 {
+  .h5, .blog-post h5 {
     font-size: 24px;
   }
 
-  .h6 {
+  .h6, .blog-post h6 {
     font-size: 20px;
   }
 }
 
-.text {
+.text, .blog-post p {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 500;
@@ -80,7 +80,7 @@
   line-height: 130%;
 }
 
-.bold {
+.bold, .blog-post b {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 700;
@@ -88,7 +88,7 @@
   line-height: 130%;
 }
 
-.link {
+.link, .blog-post a {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 500;
@@ -106,4 +106,22 @@
   font-style: italic;
   font-size: 16px;
   line-height: 130%;
+}
+
+.blog-post ul{
+  list-style: square;
+  padding-left: 1rem;
+}
+.blog-post img{
+  border-radius: 1rem;
+}
+.blog-post blockquote p{
+  text-align: center;
+
+  font-style: italic;
+}
+
+.blog-post blockquote + p{
+ text-align: center;
+ font-weight: 700;
 }

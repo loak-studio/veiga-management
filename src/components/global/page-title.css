@@ -1,5 +1,10 @@
 .page-title{
   margin-bottom: 100px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .page-title__title{
   text-align: center;
@@ -13,6 +18,21 @@
   text-align: center;
   display: block;
   margin-bottom: 2rem;
+}
+.page-title__tag{
+  border:2px solid white;
+  margin-bottom: 2rem;
+  padding: 8px 12px;
+  border-radius: 52px;
+}
+.page-title__post-title{
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.page-title__author::after{
+  content:'|';
+  margin: 0 26px;
 }
 @media (max-width: 1136px) {
   .page-title{

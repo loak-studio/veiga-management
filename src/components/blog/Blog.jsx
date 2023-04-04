@@ -6,19 +6,29 @@ const data = await fetch("https://api.storyblok.com/v2/cdn/stories?starts_with=b
   return response.json()
 }
 )
-export default function Blog({ blok }) {
+export default function Blog({ blok, articles, currentPage }) {
+  console.log(articles)
   return (
     <section className="blog-container">
       <div className="blog">
-        {data.stories.map((story, index) => {
-          console.log(story.content.component)
+        {!articles &&
+        data.stories.map((story, index) => {
           if (story.content.component == "blog-post") {
             
             return <BlogThumbnail key={index} blok={story} />
           }
-        })}
+        })
+        }
+        {articles &&
+        articles.map((story, index) => {
+          if (story.content.component == "blog-post") {
+            
+            return <BlogThumbnail key={index} blok={story} />
+          }
+        })
+        }
       </div>
-      <Paginate current={1} max={Math.ceil(totalEntries/8)} />
+      <Paginate current={currentPage ?? 1} max={Math.ceil(totalEntries/8)} />
     </section>
   )
 }

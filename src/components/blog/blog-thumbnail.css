@@ -28,12 +28,12 @@
   overflow: hidden;
   position: relative;
   background: white;
-  transition: transform 300ms;
+  transition: scale 300ms;
 }
 
 .blog-thumbnail:hover{
   outline: 2px solid var(--primary);
-  transform: scale(1.02);
+  scale: 1.02;
 }
 .blog-thumbnail__figure{
   width: 100%;

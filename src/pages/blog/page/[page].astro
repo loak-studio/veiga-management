@@ -6,6 +6,7 @@ import { storyblokApi } from "../../../utils/storyblok";
 import type { StoryblokClient } from "@storyblok/js";
 import Main from "../../../layouts/Main.astro";
 import Paginate from "../../../components/blog/Paginate";
+import Blog from "../../../components/blog/Blog";
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
@@ -22,11 +23,8 @@ const metatags = {
   description: "Description",
   image:"",
 };
-console.log(page)
 ---
 
 <Main meta={metatags}>
-  {page.data.map(article=><p>{article.name}</p>)}
-  
-  <Paginate current={page.currentPage} max={page.lastPage} />
+  <Blog currentPage={page.currentPage} articles={page.data}/>
 </Main>

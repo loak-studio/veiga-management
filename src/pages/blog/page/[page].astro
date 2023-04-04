@@ -5,12 +5,13 @@ import type {GetStaticPathsOptions } from "astro";
 import { storyblokApi } from "../../../utils/storyblok";
 import type { StoryblokClient } from "@storyblok/js";
 import Main from "../../../layouts/Main.astro";
-import Pagination from "../../../components/blog/Pagination.astro";
+import Paginate from "../../../components/blog/Paginate";
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
     starts_with:'blog',
-    sort_by:'content.date:desc'
+    sort_by:'content.date:desc',
+    is_startpage:0
   });
 
   return paginate(data.stories, { pageSize: 8 });
@@ -21,10 +22,11 @@ const metatags = {
   description: "Description",
   image:"",
 };
-
+console.log(page)
 ---
 
 <Main meta={metatags}>
   {page.data.map(article=><p>{article.name}</p>)}
-  <Pagination currentPage={page.currentPage} maxPage={page.lastPage}/>
+  
+  <Paginate current={page.currentPage} max={page.lastPage} />
 </Main>

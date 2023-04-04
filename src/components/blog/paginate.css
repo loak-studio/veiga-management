@@ -1,0 +1,27 @@
+.paginate-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.paginate{
+  display: inline-flex;
+  gap:8px;
+  background: white;
+  padding:8px;
+}
+.paginate__item{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 300ms, color 300ms;
+}
+.paginate__item--active{
+  background: var(--primary);
+  color:white;
+}
+.paginate__item:not(.paginate__item--active):hover{
+  background: var(--primary);
+  color:white;
+}

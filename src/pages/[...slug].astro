@@ -18,6 +18,7 @@ export async function getStaticPaths() {
     return {
       params: {
         slug: page.full_slug === "home" ? undefined : clearSlug(page.full_slug),
+        
       },
       props: page,
     };

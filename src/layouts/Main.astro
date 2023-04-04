@@ -30,8 +30,10 @@ import "../components/our-history/our-history-item.css"
 import "../components/blog/blog.css"
 import "../components/blog/blog-thumbnail.css"
 import "../components/layout/blog-post.css"
+import "../components/blog/paginate.css"
 
 import "swiper/css/bundle";
+
 
 
 import Header from "../components/layout/Header.astro";
@@ -78,6 +80,7 @@ const { meta } = Astro.props;
     <meta property="twitter:image" content={meta.image} />
     <script src="../components/global/team.js"></script>
     <script>
+      import "../animations/blog-thumbnail.js"
       import {loadSwiper} from "../components/global/team.js"
       import {launchCounter} from "../components/index/some-numbers.js"
       loadSwiper()

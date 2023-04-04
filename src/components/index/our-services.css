@@ -11,7 +11,9 @@
   width: 100%;
   margin: 0 auto 64px auto;
 }
-
+.our-services__items > *{
+  opacity: 0;
+}
 .our-services__items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

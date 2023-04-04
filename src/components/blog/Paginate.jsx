@@ -39,7 +39,6 @@ const Previous = ({current, max}) =>{
   }
 }
 const Next = ({current, max}) =>{
-  console.log(current, max)
   if((current) < max){
     return <a title="Page suivante" className="paginate__next" href={"/blog/page/" + (current +1) +"/"}></a>
   }

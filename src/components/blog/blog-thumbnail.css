@@ -1,4 +1,4 @@
-.blog-thumbnail__title b, .blog-thumbnail__thumbnail-title b{
+.blog-thumbnail__title b{
   color: var(--secondary)
 }
 .blog-thumbnail__title{
@@ -9,6 +9,9 @@
 .blog-thumbnail__thumbnail-title{
   color:white;
   position: absolute;
+}
+.blog-thumbnail__thumbnail-title b{
+  color:var(--primary);
 }
 
 .blog-thumbnail-figure-background{
@@ -32,7 +35,7 @@
 }
 
 .blog-thumbnail:hover{
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--secondary);
   scale: 1.02;
 }
 .blog-thumbnail__figure{

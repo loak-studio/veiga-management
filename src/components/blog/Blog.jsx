@@ -7,7 +7,6 @@ const data = await fetch("https://api.storyblok.com/v2/cdn/stories?starts_with=b
 }
 )
 export default function Blog({ blok, articles, currentPage }) {
-  console.log(articles)
   return (
     <section className="blog-container">
       <div className="blog">

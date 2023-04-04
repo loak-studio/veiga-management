@@ -2,7 +2,6 @@ import { renderRichText } from "@storyblok/react"
 import Container from "../layout/ContainerBackgroundSpace.jsx"
 import { parseDateToFrench } from "../../utils/parse-date-to-french"
 export default function BlogPost(props) {
-  console.log(props)
   const __html = renderRichText(props.blok.title)
   const content__html = renderRichText(props.blok.content)
   return <article>

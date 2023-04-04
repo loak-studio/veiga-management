@@ -1,6 +1,5 @@
 import { storyblokEditable, renderRichText } from "@storyblok/react"
 export default function PageTitle(props){
-  console.log('PAGE----TITLE',JSON.stringify(props.blok, null, 2))
   const __html = renderRichText(props.blok.title)
   return (<div className="page-title h4" {...storyblokEditable(props.blok)}>
     {props.blok.pretitle && <span className="page-title__pretitle">

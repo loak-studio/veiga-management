@@ -80,8 +80,10 @@ const { meta } = Astro.props;
     <meta property="twitter:image" content={meta.image} />
     <script src="../components/global/team.js"></script>
     <script>
+      import "../animations/container-icons.js"
       import "../animations/blog-thumbnail.js"
       import "../components/global/contact-form.js"
+      import "../animations/hero.js"
       import {loadSwiper} from "../components/global/team.js"
       import {launchCounter} from "../components/index/some-numbers.js"
       loadSwiper()

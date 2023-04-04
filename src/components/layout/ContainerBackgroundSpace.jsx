@@ -14,47 +14,47 @@ import smallYoutube from "../../assets/hero/youtube_petit.png";
 
 const images = [
   {
-    className: "small-facebook",
+    className: "small-facebook from-right",
     asset: smallFacebook,
   },
   {
-    className: "big-instagram",
+    className: "big-instagram from-right",
     asset: bigInstagram,
   },
   {
-    className: "big-pinterest",
+    className: "big-pinterest from-left",
     asset: bigPinterest,
   },
   {
-    className: "right-smartphone",
+    className: "right-smartphone from-right",
     asset: rightSmartphone,
   },
   {
-    className: "left-smartphone",
+    className: "left-smartphone from-left",
     asset: leftSmartphone,
   },
   {
-    className: "big-tiktok",
+    className: "big-tiktok from-right",
     asset: bigTiktok,
   },
   {
-    className: "small-tiktok",
+    className: "small-tiktok from-left",
     asset: smallTiktok,
   },
   {
-    className: "small-twitter",
+    className: "small-twitter from-left",
     asset: smallTwitter,
   },
   {
-    className: "big-twitter",
+    className: "big-twitter from-left",
     asset: bigTwitter,
   },
   {
-    className: "big-youtube",
+    className: "big-youtube from-right",
     asset: bigYoutube,
   },
   {
-    className: "small-youtube",
+    className: "small-youtube from-left",
     asset: smallYoutube,
   },
 ];

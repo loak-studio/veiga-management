@@ -1,3 +1,6 @@
+.hero > *{
+  opacity: 0;
+}
 .hero__title {
   max-width: 1120px;
   text-align: center;

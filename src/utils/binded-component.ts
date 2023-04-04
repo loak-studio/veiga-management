@@ -15,7 +15,9 @@ import Video from "../components/global/Video.jsx"
 import Team from "../components/global/Team.tsx";
 import TeamItem from "../components/global/TeamItem.tsx";
 import OurHistoryItem from "../components/our-history/OurHistoryItem.jsx"
-
+import Page from "../components/layout/Page.jsx"
+import BlogPost from "../components/layout/BlogPost.jsx"
+import Blog from "../components/blog/Blog.jsx"
 const bindedComponents = {
   ContainerBackgroundSpace,
   Hero,
@@ -33,6 +35,9 @@ const bindedComponents = {
   Team,
   TeamItem,
   OurHistoryItem,
+  page:Page,
+  "blog-post":BlogPost,
+  Blog
 };
 
 export { bindedComponents };

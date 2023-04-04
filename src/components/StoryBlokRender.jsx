@@ -21,9 +21,9 @@ function StoryBlokRender({ token }) {
   }
   return (
     <>
-      {story.content.body.map((blok, index) => (
-        <StoryblokComponent key={index} blok={blok} />
-      ))}
+   
+        <StoryblokComponent blok={story.content} />
+    
     </>
   );
 }

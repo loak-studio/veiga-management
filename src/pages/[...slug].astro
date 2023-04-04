@@ -12,7 +12,7 @@ import {
 import { bindedComponents } from "../utils/binded-component";
 export async function getStaticPaths() {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
-    version: "draft"
+    version: "draft",
   });
   return data.stories.map((page: any) => {
     return {
@@ -42,11 +42,5 @@ storyblokInit({
 ---
 
 <Main meta={metatags}>
-  {
-    page.content &&
-      page.content.body &&
-      page.content.body.map((blok, index) => (
-        <StoryblokComponent key={index} blok={blok} />
-      ))
-  }
+  <StoryblokComponent blok={page.content} />
 </Main>

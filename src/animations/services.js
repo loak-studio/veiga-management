@@ -1,7 +1,8 @@
 import { animate, inView, spring, stagger } from "motion"
 
 const ourServices = document.querySelector('.our-services')
-const items = ourServices.querySelectorAll('.our-services__items > *')
+if(ourServices){
+  const items = ourServices.querySelectorAll('.our-services__items > *')
 
 inView(ourServices,()=>{
     animate(items, { y: [20, 0], opacity: [0,1] },{
@@ -10,3 +11,4 @@ inView(ourServices,()=>{
       easing: spring(),
     })
 }, {amount:.6})
+}

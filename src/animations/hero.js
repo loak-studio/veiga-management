@@ -1,7 +1,8 @@
 import { animate, inView, spring, stagger } from "motion"
 
 const hero = document.querySelector('.hero')
-const heroItems = hero.querySelectorAll('.hero > *')
+if(hero){
+  const heroItems = hero.querySelectorAll('.hero > *')
 
 inView(hero,()=>{
     animate(heroItems, { y: [50, 0], opacity: [0,1] },{
@@ -10,3 +11,4 @@ inView(hero,()=>{
       easing: spring(),
     })
 })
+}

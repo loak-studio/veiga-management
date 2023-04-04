@@ -1,7 +1,8 @@
 import { animate, inView, spring, stagger } from "motion"
 
 const customers = document.querySelector('.customers')
-const customer = customers.querySelectorAll('.customers__list > *')
+if(customers){
+  const customer = customers.querySelectorAll('.customers__list > *')
 
 const brands = customers.querySelectorAll('.customers__brands > *')
 inView(customers,()=>{
@@ -18,3 +19,5 @@ inView(customers,()=>{
       })
     }, 800)
 }, {amount:.3})
+
+}

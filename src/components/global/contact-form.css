@@ -1,7 +1,7 @@
 .contact-form {
   display: flex;
   padding: 36px 0;
-  color: var(--background)
+  color: var(--background);
 ;}
 .contact-form.contact-form--full-width {
   background: white;
@@ -29,6 +29,26 @@
 .contact-form__form {
   max-width: 500px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.contact-form__form-sent{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: white;
+  transform: translateX(100%);
+  transition: transform 300ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+.contact-form__form-sent--visible{
+  transform: translateX(0);
 }
 @media (max-width:1248px) {
   

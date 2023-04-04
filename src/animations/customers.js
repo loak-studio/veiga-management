@@ -17,4 +17,4 @@ inView(customers,()=>{
         easing: spring(),
       })
     }, 800)
-}, {amount:.6})
+}, {amount:.3})

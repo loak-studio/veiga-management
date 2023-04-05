@@ -1,5 +1,6 @@
 import "./button.css";
 import { storyblokEditable } from "@storyblok/react";
+import {cleanHref} from "../../utils/clean-href"
 export default function Button(props) {
   const href = props.blok?.link?.cached_url;
   let currentStyle = props?.blok?.style ?? props.style;
@@ -9,13 +10,10 @@ export default function Button(props) {
     switch (style) {
       case "red":
         return "button__red";
-        break;
       case "white":
         return "button__white";
-        break;
       case "black":
         return "button__black";
-        break;
       default:
         break;
     }
@@ -23,7 +21,7 @@ export default function Button(props) {
   return (
     <Element
       {...storyblokEditable(props.blok)}
-      href={"/" + href + "/"}
+      href={href ? cleanHref(href) : null}
       className={"button" + " " + getClass(currentStyle)}
     >
       <span className="text">{currentLabel}</span>

@@ -35,6 +35,7 @@
   position: relative;
   background: white;
   transition: scale 300ms;
+  opacity: 0;
 }
 
 .blog-thumbnail:hover{

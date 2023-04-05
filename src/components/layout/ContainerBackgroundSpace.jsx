@@ -69,24 +69,25 @@ export default function Container(props) {
         (props.blok.arrow ? " " + "container__arrow" : "")
       }
     >
-      {props.children &&
-        props.children
-      }
-      {!props.children &&
-      <div className="container__content">
-      {props.blok?.blocks?.map((b, index) => (
-        <StoryblokComponent key={index} blok={b} />
-      ))}
-    </div>
-      }
-     <div className="container__icons-container">
-     {props.blok.display_icons &&
-        images.map((image, index) => (
-          <figure key={index} className={"container__icon" + " " + image.className}>
-            <img src={image.asset} alt="" />
-          </figure>
-        ))}
-     </div>
+      {props.children && props.children}
+      {!props.children && (
+        <div className="container__content">
+          {props.blok?.blocks?.map((b, index) => (
+            <StoryblokComponent key={index} blok={b} />
+          ))}
+        </div>
+      )}
+      <div className="container__icons-container">
+        {props.blok.display_icons &&
+          images.map((image, index) => (
+            <figure
+              key={index}
+              className={"container__icon" + " " + image.className}
+            >
+              <img src={image.asset} alt="" />
+            </figure>
+          ))}
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import { storyblokEditable, renderRichText } from "@storyblok/react"
+import { storyblokEditable, renderRichText } from "@storyblok/react";
 
-const Facebook = ()=>{
+const Facebook = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +15,9 @@ const Facebook = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-const Instagram = ()=>{
+const Instagram = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -40,10 +40,9 @@ const Instagram = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-
-const Linkedin = ()=>{
+const Linkedin = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +57,9 @@ const Linkedin = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-const Tiktok = ()=>{
+const Tiktok = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +74,9 @@ const Tiktok = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-const Twitch = ()=>{
+const Twitch = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -96,9 +95,9 @@ const Twitch = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-const Twitter = ()=>{
+const Twitter = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -113,9 +112,9 @@ const Twitter = ()=>{
       ></path>
     </svg>
   );
-}
+};
 
-const Youtube = ()=>{
+const Youtube = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -130,73 +129,125 @@ const Youtube = ()=>{
       ></path>
     </svg>
   );
-}
-
-
+};
 
 export default function ServiceItem(props) {
-  const descriptionHtml = renderRichText(props.blok.description)
-  const testimonialHtml = renderRichText(props.blok.testimonial)
-  return <div style={{ background: props.blok.backgroundTransparent ? null : props.blok.backgroundColor.color, color: props.blok.backgroundColor?.color}} className={"service-item" + (props.blok.arrow ? ' ' + 'service-item__arrow':'')} {...storyblokEditable(props.blok)}>
-    <figure className="service-item__background-image">
-      <img src={props.blok.backgroundImage?.filename} alt="" />
-    </figure>
-    <div className="service-item__splash">
-  
-    </div>
-    <div className="service-item__container">
-      <h2  style={{background: props.blok?.titleBackgroundColor?.color}} className="service-item__title h5">{props.blok.title}</h2>
-      <div className="service-item__body">
-        <div className="service-item__aside" style={{color: props.blok?.textColor?.color}}>
-          <figure className="service-item__customer-figure">
-            <img src={props.blok.customerPicture.filename + "/m/300x300/"} alt="" />
-          </figure>
-          <span className="service-item__customer-role h6">
-            {props.blok.role}
-          </span>
-          <ul className="service-item__links" style={{borderColor: props.blok?.textColor?.color, color:props.blok?.textColor?.color}}>
-            {props.blok.twitter?.url && <ServiceItemSocialLink link={props.blok.twitter}/>}
-            {props.blok.tiktok?.url && <ServiceItemSocialLink link={props.blok.tiktok}/>}
-            {props.blok.twitch?.url && <ServiceItemSocialLink link={props.blok.twitch}/>}
-            {props.blok.instagram?.url && <ServiceItemSocialLink link={props.blok.instagram}/>}
-            {props.blok.facebook?.url && <ServiceItemSocialLink link={props.blok.facebook}/>}
-            {props.blok.youtube?.url && <ServiceItemSocialLink link={props.blok.youtube}/>}
-          </ul>
-          <span className="service-item__followers text bold">
-            {props.blok.followers}
-          </span>
-        </div>
-        <div className="service-item__content">
-          <h3 className="service-item__customer-name h3" style={{color: props.blok?.textColor?.color}}>{props.blok.customerName}</h3>
-          <div className="service-item__description text" style={{color: props.blok?.textColor?.color}} dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
-          <div className="service-item__testimonial text" style={{background: props.blok?.testimonialBackgroundColor?.color, color: props.blok?.testimonialColor?.color}} dangerouslySetInnerHTML={{ __html: testimonialHtml }} />
+  const descriptionHtml = renderRichText(props.blok.description);
+  const testimonialHtml = renderRichText(props.blok.testimonial);
+  return (
+    <div
+      style={{
+        background: props.blok.backgroundTransparent
+          ? null
+          : props.blok.backgroundColor.color,
+        color: props.blok.backgroundColor?.color,
+      }}
+      className={
+        "service-item" + (props.blok.arrow ? " " + "service-item__arrow" : "")
+      }
+      {...storyblokEditable(props.blok)}
+    >
+      <figure className="service-item__background-image">
+        <img src={props.blok.backgroundImage?.filename} alt="" />
+      </figure>
+      <div className="service-item__splash"></div>
+      <div className="service-item__container">
+        <h2
+          style={{ background: props.blok?.titleBackgroundColor?.color }}
+          className="service-item__title h5"
+        >
+          {props.blok.title}
+        </h2>
+        <div className="service-item__body">
+          <div
+            className="service-item__aside"
+            style={{ color: props.blok?.textColor?.color }}
+          >
+            <figure className="service-item__customer-figure">
+              <img
+                src={props.blok.customerPicture.filename + "/m/300x300/"}
+                alt=""
+              />
+            </figure>
+            <span className="service-item__customer-role h6">
+              {props.blok.role}
+            </span>
+            <ul
+              className="service-item__links"
+              style={{
+                borderColor: props.blok?.textColor?.color,
+                color: props.blok?.textColor?.color,
+              }}
+            >
+              {props.blok.twitter?.url && (
+                <ServiceItemSocialLink link={props.blok.twitter} />
+              )}
+              {props.blok.tiktok?.url && (
+                <ServiceItemSocialLink link={props.blok.tiktok} />
+              )}
+              {props.blok.twitch?.url && (
+                <ServiceItemSocialLink link={props.blok.twitch} />
+              )}
+              {props.blok.instagram?.url && (
+                <ServiceItemSocialLink link={props.blok.instagram} />
+              )}
+              {props.blok.facebook?.url && (
+                <ServiceItemSocialLink link={props.blok.facebook} />
+              )}
+              {props.blok.youtube?.url && (
+                <ServiceItemSocialLink link={props.blok.youtube} />
+              )}
+            </ul>
+            <span className="service-item__followers text bold">
+              {props.blok.followers}
+            </span>
+          </div>
+          <div className="service-item__content">
+            <h3
+              className="service-item__customer-name h3"
+              style={{ color: props.blok?.textColor?.color }}
+            >
+              {props.blok.customerName}
+            </h3>
+            <div
+              className="service-item__description text"
+              style={{ color: props.blok?.textColor?.color }}
+              dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+            />
+            <div
+              className="service-item__testimonial text"
+              style={{
+                background: props.blok?.testimonialBackgroundColor?.color,
+                color: props.blok?.testimonialColor?.color,
+              }}
+              dangerouslySetInnerHTML={{ __html: testimonialHtml }}
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  );
 }
 
-
-function ServiceItemSocialLink(props){
-  let domain = (new URL(props.link.cached_url))
-  domain = domain.hostname
-  return(
+function ServiceItemSocialLink(props) {
+  let domain = new URL(props.link.cached_url);
+  domain = domain.hostname;
+  return (
     <li className="social-item__link">
       <a target="_blank" href={props.link.cached_url}>
         {domainToIcon[domain]}
       </a>
     </li>
-  )
+  );
 }
 
 const domainToIcon = {
-  "twitter.com":<Twitter/>,
-  "linkedin.com":<Linkedin/>,
-  "youtube.com":<Youtube/>,
-  "youtu.be":<Youtube/>,
-  "instagram.com":<Instagram/>,
-  "facebook.com":<Facebook/>,
-  "tiktok.com":<Tiktok/>,
-  "twitch.tv":<Twitch/>
-}
-
+  "twitter.com": <Twitter />,
+  "linkedin.com": <Linkedin />,
+  "youtube.com": <Youtube />,
+  "youtu.be": <Youtube />,
+  "instagram.com": <Instagram />,
+  "facebook.com": <Facebook />,
+  "tiktok.com": <Tiktok />,
+  "twitch.tv": <Twitch />,
+};

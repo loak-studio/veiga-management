@@ -1,31 +1,31 @@
-.our-history-item{
+.our-history-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
   max-width: 700px;
   width: 100%;
   margin: 0 auto 64px auto;
   opacity: 0;
 }
-.our-history-item__year{
+.our-history-item__year {
   color: var(--primary);
 }
-.our-history-item__title{
+.our-history-item__title {
   margin-bottom: 64px;
 }
-.our-history-item__figure{
+.our-history-item__figure {
   border-radius: 1rem;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
-.our-history-item__figure img{
+.our-history-item__figure img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-@media (max-width:716px) {
-  .our-history-item{
+@media (max-width: 716px) {
+  .our-history-item {
     padding: 0 1rem;
   }
 }

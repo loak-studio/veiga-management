@@ -12,7 +12,7 @@
   height: 140px;
   width: 140px;
   background: var(--secondary);
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 50%;
@@ -50,7 +50,7 @@
 }
 
 [data-slider-button]:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 [data-slider-button="next"] {
@@ -64,7 +64,7 @@
   margin: 0 auto;
 }
 
-@media (max-width:1240px) {
+@media (max-width: 1240px) {
   .team {
     padding: 100px 1rem;
   }
@@ -74,7 +74,7 @@
   }
 }
 
-@media (max-width:809px) {
+@media (max-width: 809px) {
   .team {
     padding: 3rem 1rem;
   }

@@ -36,22 +36,21 @@ const sortedLinks = sortLinks(content.navigation, rels);
     html.classList.toggle("no-scroll");
   });
 
-  let olderScrollValue = 0
-  window.addEventListener('scroll',(e)=>{
-    if(window.scrollY < 100){
-      
-      navContainer.classList.remove('header__container--hidden')
-      return
+  let olderScrollValue = 0;
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY < 100) {
+      navContainer.classList.remove("header__container--hidden");
+      return;
     }
-    if(olderScrollValue > window.scrollY && window.scrollY > 100){
+    if (olderScrollValue > window.scrollY && window.scrollY > 100) {
       //Go up
-      navContainer.classList.remove('header__container--hidden')
-    }else{
+      navContainer.classList.remove("header__container--hidden");
+    } else {
       //GO down
-      navContainer.classList.add('header__container--hidden')
+      navContainer.classList.add("header__container--hidden");
     }
-    olderScrollValue = window.scrollY
-  })
+    olderScrollValue = window.scrollY;
+  });
 </script>
 
 <div id="navbar" class="header__container">
@@ -102,7 +101,7 @@ const sortedLinks = sortLinks(content.navigation, rels);
     z-index: 15;
     transition: transform 300ms;
   }
-  .header__container--hidden{
+  .header__container--hidden {
     transform: translateY(-100%);
   }
   .header {
@@ -133,20 +132,20 @@ const sortedLinks = sortLinks(content.navigation, rels);
     color: var(--white);
     position: relative;
   }
-  .nav__link::after{
-    content:'';
+  .nav__link::after {
+    content: "";
     width: 100%;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
     position: absolute;
     left: 0;
     bottom: 0;
     height: 2px;
     background: var(--primary);
   }
-  .nav__link:hover::after, .nav__item:active::after {
-
+  .nav__link:hover::after,
+  .nav__item:active::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }

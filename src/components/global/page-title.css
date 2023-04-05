@@ -1,4 +1,4 @@
-.page-title{
+.page-title {
   margin-bottom: 100px;
   position: relative;
   z-index: 10;
@@ -6,36 +6,36 @@
   flex-direction: column;
   align-items: center;
 }
-.page-title__title{
+.page-title__title {
   text-align: center;
   max-width: 1120px;
   margin: 0 auto;
 }
-.page-title__title b{
+.page-title__title b {
   color: var(--primary);
 }
-.page-title__pretitle{
+.page-title__pretitle {
   text-align: center;
   display: block;
   margin-bottom: 2rem;
 }
-.page-title__tag{
-  border:2px solid white;
+.page-title__tag {
+  border: 2px solid white;
   margin-bottom: 2rem;
   padding: 8px 12px;
   border-radius: 52px;
 }
-.page-title__post-title{
+.page-title__post-title {
   display: flex;
   margin-top: 2rem;
   justify-content: center;
 }
-.page-title__author::after{
-  content:'|';
+.page-title__author::after {
+  content: "|";
   margin: 0 26px;
 }
 @media (max-width: 1136px) {
-  .page-title{
+  .page-title {
     padding: 0 1rem;
     margin-top: 52px;
     margin-bottom: 100px;

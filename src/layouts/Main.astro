@@ -18,23 +18,21 @@ import "../components/index/some-numbers-item.css";
 
 import "../components/global/contact-form.css";
 import "../components/global/input.css";
-import "../components/global/page-title.css"
-import "../components/global/team.css"
-import "../components/global/team-item.css"
-import "../components/global/video.css"
+import "../components/global/page-title.css";
+import "../components/global/team.css";
+import "../components/global/team-item.css";
+import "../components/global/video.css";
 
-import "../components/our-services/service-item.css"
+import "../components/our-services/service-item.css";
 
-import "../components/our-history/our-history-item.css"
+import "../components/our-history/our-history-item.css";
 
-import "../components/blog/blog.css"
-import "../components/blog/blog-thumbnail.css"
-import "../components/layout/blog-post.css"
-import "../components/blog/paginate.css"
+import "../components/blog/blog.css";
+import "../components/blog/blog-thumbnail.css";
+import "../components/layout/blog-post.css";
+import "../components/blog/paginate.css";
 
 import "swiper/css/bundle";
-
-
 
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
@@ -80,19 +78,19 @@ const { meta } = Astro.props;
     <meta property="twitter:image" content={meta.image} />
     <script src="../components/global/team.js"></script>
     <script>
-      import "../animations/container-icons.js"
-      import "../animations/blog-thumbnail.js"
-      import "../components/global/contact-form.js"
-      import "../animations/hero.js"
-      import "../animations/services.js"
-      import "../animations/customers.js"
-      import "../animations/service-section.js"
-      import "../animations/history-item.js"
-      import "../animations/team.js"
-      import {loadSwiper} from "../components/global/team.js"
-      import {launchCounter} from "../components/index/some-numbers.js"
-      loadSwiper()
-      launchCounter()
+      import "../animations/container-icons.js";
+      import "../animations/blog-thumbnail.js";
+      import "../components/global/contact-form.js";
+      import "../animations/hero.js";
+      import "../animations/services.js";
+      import "../animations/customers.js";
+      import "../animations/service-section.js";
+      import "../animations/history-item.js";
+      import "../animations/team.js";
+      import { loadSwiper } from "../components/global/team.js";
+      import { launchCounter } from "../components/index/some-numbers.js";
+      loadSwiper();
+      launchCounter();
     </script>
   </head>
   <body>
@@ -105,15 +103,15 @@ const { meta } = Astro.props;
 </html>
 
 <style scoped>
-  body{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-height: 100vh;
   }
   main {
     margin-top: 90px;
-    flex:1;
+    flex: 1;
   }
   .no-scroll {
     overflow: hidden;

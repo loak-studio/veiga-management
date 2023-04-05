@@ -11,7 +11,7 @@
   width: 100%;
   margin: 0 auto 64px auto;
 }
-.our-services__items > *{
+.our-services__items > * {
   opacity: 0;
 }
 .our-services__items {

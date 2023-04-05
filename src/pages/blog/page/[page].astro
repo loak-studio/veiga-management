@@ -1,6 +1,5 @@
 ---
-import type {GetStaticPathsOptions } from "astro";
-
+import type { GetStaticPathsOptions } from "astro";
 
 import { storyblokApi } from "../../../utils/storyblok";
 import type { StoryblokClient } from "@storyblok/js";
@@ -10,21 +9,21 @@ import Blog from "../../../components/blog/Blog";
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
-    starts_with:'blog',
-    sort_by:'content.date:desc',
-    is_startpage:0
+    starts_with: "blog",
+    sort_by: "content.date:desc",
+    is_startpage: 0,
   });
 
   return paginate(data.stories, { pageSize: 8 });
 }
-const {page} = Astro.props
+const { page } = Astro.props;
 const metatags = {
   title: "Page",
   description: "Description",
-  image:"",
+  image: "",
 };
 ---
 
 <Main meta={metatags}>
-  <Blog currentPage={page.currentPage} articles={page.data}/>
+  <Blog currentPage={page.currentPage} articles={page.data} />
 </Main>

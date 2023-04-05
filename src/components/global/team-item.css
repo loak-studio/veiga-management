@@ -1,4 +1,4 @@
-.team-item{
+.team-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,11 +6,11 @@
   opacity: 0;
 }
 
-.team-item__name{
+.team-item__name {
   margin-top: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
-.team-item__role{
+.team-item__role {
   text-align: center;
 }

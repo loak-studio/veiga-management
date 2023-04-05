@@ -1,4 +1,4 @@
-.video{
+.video {
   background: var(--background);
   padding: 100px 0;
   display: flex;
@@ -6,34 +6,34 @@
   align-items: center;
 }
 
-.video__title{
-  color:white;
+.video__title {
+  color: white;
   text-align: center;
 }
-.video__title b{
+.video__title b {
   color: var(--primary);
 }
-.video__iframe{
+.video__iframe {
   margin-top: 64px;
   max-width: 1116px;
   width: 100%;
   aspect-ratio: 16/9;
 }
 
-.video__description{
-  color:white;
+.video__description {
+  color: white;
   margin-top: 1rem;
 }
-.video__caption{
+.video__caption {
   margin-top: 64px;
-  color:white;
+  color: white;
 }
-.video__buttons{
+.video__buttons {
   margin-top: 64px;
 }
 
-@media (max-width:809px) {
-  .video{
+@media (max-width: 809px) {
+  .video {
     padding: 48px 1rem;
   }
 }

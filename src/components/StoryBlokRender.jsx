@@ -21,9 +21,7 @@ function StoryBlokRender({ token }) {
   }
   return (
     <>
-   
-        <StoryblokComponent blok={story.content} />
-    
+      <StoryblokComponent blok={story.content} />
     </>
   );
 }

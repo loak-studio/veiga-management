@@ -47,7 +47,8 @@
   width: 100%;
   object-fit: contain;
 }
-.customers__list > *, .customers__brands > *{
+.customers__list > *,
+.customers__brands > * {
   opacity: 0;
 }
 @media (max-width: 1150px) {
@@ -77,7 +78,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
   }
-  .customers__arrow::after{
+  .customers__arrow::after {
     display: none;
   }
 }

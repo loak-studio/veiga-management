@@ -85,12 +85,16 @@
 }
 
 .text,
-.blog-post p {
+.blog-post p, .image-with-caption {
   font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
+}
+.image-with-caption figcaption{
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .bold,
@@ -130,13 +134,17 @@
 .blog-post img {
   border-radius: 1rem;
 }
-.blog-post blockquote p {
+.blog-post .caption blockquote {
   text-align: center;
-
   font-style: italic;
 }
 
-.blog-post blockquote + p {
+.blog-post .caption figcaption {
   text-align: center;
   font-weight: 700;
+  margin-top: 2rem;
+}
+
+.blog-post img{
+  text-align: center;
 }

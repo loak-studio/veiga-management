@@ -18,6 +18,7 @@ import OurHistoryItem from "../components/our-history/OurHistoryItem.jsx"
 import Page from "../components/layout/Page.jsx"
 import BlogPost from "../components/layout/BlogPost.jsx"
 import Blog from "../components/blog/Blog.jsx"
+import DocumentComponent from "../components/global/DocumentComponent.jsx"
 const bindedComponents = {
   ContainerBackgroundSpace,
   Hero,
@@ -37,7 +38,8 @@ const bindedComponents = {
   OurHistoryItem,
   page:Page,
   "blog-post":BlogPost,
-  Blog
+  Blog,
+  "Document":DocumentComponent
 };
 
 export { bindedComponents };

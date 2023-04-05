@@ -1,6 +1,6 @@
 import BackgroundImage from "../../assets/blog-background.webp";
 import { parseDateToFrench } from "../../utils/parse-date-to-french";
-import { renderRichText } from "@storyblok/react";
+import { renderRichText } from "@storyblok/js";
 export default function BlogThumbnail(props) {
   const __html = renderRichText(props.blok.content.title);
   return (

@@ -141,6 +141,9 @@ export default function ServiceItem(props) {
     <figure className="service-item__background-image">
       <img src={props.blok.backgroundImage?.filename} alt="" />
     </figure>
+    <div className="service-item__splash">
+  
+    </div>
     <div className="service-item__container">
       <h2  style={{background: props.blok?.titleBackgroundColor?.color}} className="service-item__title h5">{props.blok.title}</h2>
       <div className="service-item__body">

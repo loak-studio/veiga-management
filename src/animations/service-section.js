@@ -7,7 +7,6 @@ services.forEach((service)=>{
   const content = service.querySelector('.service-item__content')
   const background = service.querySelector('.service-item__background-image')
   inView(service,()=>{
-    console.log(title)
     animate(title, { y: [20, 0], opacity: [0,1] },{
      
       duration: 0.2,

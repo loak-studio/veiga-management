@@ -35,7 +35,6 @@ export async function getStaticPaths() {
   });
 
   return filteredStories.map((page: any) => {
-    console.log("BUILDING... ", page.content.component);
     return {
       params: {
         slug: parseSlug(page.full_slug),

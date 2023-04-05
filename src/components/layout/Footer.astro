@@ -11,7 +11,7 @@ const config = async () => {
   const { data } = await (storyblokApi as StoryblokClient).get(
     "cdn/stories/configuration",
     {
-      version: "draft",
+      version: import.meta.env.DEV ? 'draft' :'published',
       resolve_relations: ["navigation", "sitemap", "legal"],
     }
   );

@@ -34,6 +34,13 @@
   content: "|";
   margin: 0 26px;
 }
+.page-title__description{
+  margin-top: 2rem;
+  text-align: center;
+}
+.page-title__buttons{
+  margin-top: 2rem;
+}
 @media (max-width: 1136px) {
   .page-title {
     padding: 0 1rem;

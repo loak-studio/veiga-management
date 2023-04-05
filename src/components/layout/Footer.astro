@@ -55,7 +55,7 @@ const socials = [
         <p class="bold">{content.tagline.toUpperCase()}</p>
       </div>
       <div class="footer__block">
-        <h6 class="h5">Plan du site</h6>
+        <h4 class="h5">Plan du site</h4>
         <nav>
           <ul class="footer__list">
             {
@@ -78,7 +78,7 @@ const socials = [
               if (social.href) {
                 return (
                   <li>
-                    <a title={social.name} href={social.href}>
+                    <a target="_blank" title={social.name} href={social.href}>
                       <img
                         class="footer__social-logo"
                         src={social.logo}

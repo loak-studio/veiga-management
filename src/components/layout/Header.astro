@@ -9,7 +9,7 @@ const config = async () => {
     "cdn/stories/configuration",
     {
       version: "draft",
-      resolve_relations: "Navigation",
+      resolve_relations: "navigation",
     }
   );
   return data;
@@ -79,20 +79,6 @@ const sortedLinks = sortLinks(content.navigation, rels);
             </li>
           ))
         }
-        <li class="nav__item">
-          <a
-            class:list={[
-              "nav__link",
-              "h6",
-              Astro.url.pathname == "/blog/"
-                ? "nav__link--active"
-                : null,
-            ]}
-            href="/blog/"
-          >
-            Veiga'ctu
-          </a>
-        </li>
       </ul>
     </nav>
     <button

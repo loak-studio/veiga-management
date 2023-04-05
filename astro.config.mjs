@@ -9,7 +9,6 @@ export default defineConfig({
   site:"https://veiga-management.com",
   integrations: [react(), sitemap({
     filter:(page)=>{
-      console.log(page)
       if(page =='https://veiga-management.com/preview/'){
         return false
       }

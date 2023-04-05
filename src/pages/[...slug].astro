@@ -10,15 +10,35 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 import { bindedComponents } from "../utils/binded-component";
+
 export async function getStaticPaths() {
+  const parseSlug = (slug: string) => {
+    switch (slug) {
+      case "home":
+        return undefined;
+      case "404-error":
+        return "404";
+      default:
+        return clearSlug(slug);
+    }
+  };
+
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: "draft",
   });
-  return data.stories.map((page: any) => {
+
+  const filteredStories = data.stories.filter((story) => {
+    if (story.content.component !== "configuration") {
+      return true;
+    }
+    return false;
+  });
+
+  return filteredStories.map((page: any) => {
+    console.log("BUILDING... ", page.content.component);
     return {
       params: {
-        slug: page.full_slug === "home" ? undefined : clearSlug(page.full_slug),
-        
+        slug: parseSlug(page.full_slug),
       },
       props: page,
     };

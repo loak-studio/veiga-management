@@ -1,4 +1,3 @@
-import SomeComponent from "../components/SomeComponent.jsx";
 import ContainerBackgroundSpace from "../components/layout/ContainerBackgroundSpace.jsx";
 import Hero from "../components/index/Hero.jsx";
 import Button from "../components/layout/Button.jsx";

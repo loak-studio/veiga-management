@@ -30,5 +30,5 @@ services.forEach((service)=>{
       duration: 1,
       easing: spring(),
     })
-  }, {amount:.5})
+  }, {amount:.3})
 })

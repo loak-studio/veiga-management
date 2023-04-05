@@ -23,6 +23,9 @@
   width: 100%;
   object-fit: cover;
 }
+.blog-thumbnail__tag{
+  color: var(--secondary)
+}
 
 .blog-thumbnail{
   max-width: 539px;

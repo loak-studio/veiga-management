@@ -148,7 +148,7 @@ export default function ServiceItem(props) {
       {...storyblokEditable(props.blok)}
     >
       <figure className="service-item__background-image">
-        <img src={props.blok.backgroundImage?.filename} alt="" />
+        <img loading="lazy" src={props.blok.backgroundImage?.filename} alt="" />
       </figure>
       <div className="service-item__splash"></div>
       <div className="service-item__container">
@@ -197,6 +197,10 @@ export default function ServiceItem(props) {
               {props.blok.youtube?.url && (
                 <ServiceItemSocialLink link={props.blok.youtube} />
               )}
+
+              {props.blok.linkedin?.url && (
+                <ServiceItemSocialLink link={props.blok.linkedin} />
+              )}
             </ul>
             <span className="service-item__followers text bold">
               {props.blok.followers}
@@ -231,7 +235,7 @@ export default function ServiceItem(props) {
 
 function ServiceItemSocialLink(props) {
   let domain = new URL(props.link.cached_url);
-  domain = domain.hostname;
+  domain = domain.hostname.replace('www.', '');
   return (
     <li className="social-item__link">
       <a target="_blank" href={props.link.cached_url}>

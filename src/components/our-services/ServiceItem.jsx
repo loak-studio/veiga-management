@@ -165,6 +165,8 @@ export default function ServiceItem(props) {
           >
             <figure className="service-item__customer-figure">
               <img
+              width={300}
+              height={400}
                 src={props.blok.customerPicture.filename + "/m/300x300/"}
                 alt=""
               />
@@ -235,10 +237,11 @@ export default function ServiceItem(props) {
 
 function ServiceItemSocialLink(props) {
   let domain = new URL(props.link.cached_url);
+  console.log(domain)
   domain = domain.hostname.replace('www.', '');
   return (
     <li className="social-item__link">
-      <a target="_blank" href={props.link.cached_url}>
+      <a title={"Consuler " + props.link.cached_url} target="_blank" href={props.link.cached_url}>
         {domainToIcon[domain]}
       </a>
     </li>

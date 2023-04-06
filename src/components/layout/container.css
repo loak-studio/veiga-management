@@ -1,6 +1,9 @@
 .container {
   padding-top: 120px;
-  background-image: url("/assets/background.png");
+  background-image: image-set(
+    url('/assets/background.webp') type('image.webp'),
+    url('/assets/background.png') type('image.png')
+  );
   background-color: #131214;
   color: white;
   background-size: 100% auto;

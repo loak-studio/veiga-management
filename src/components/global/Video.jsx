@@ -38,7 +38,7 @@ export default function Video(props) {
   <path d="M7 4v16l13 -8z" />
 </svg>
         </button>
-        <img className="video__iframe-thumbnail" src={"https://i3.ytimg.com/vi/" + youtube_parser(props.blok.youtubeLink.url) + "/maxresdefault.jpg"} alt="" />
+        <img width={1280} height={720} className="video__iframe-thumbnail" src={"https://i3.ytimg.com/vi/" + youtube_parser(props.blok.youtubeLink.url) + "/maxresdefault.jpg"} alt="" />
 
       </div>
       {props.blok.caption && (

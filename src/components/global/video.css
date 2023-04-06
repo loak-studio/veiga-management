@@ -42,7 +42,11 @@
 }
 .video__iframe-thumbnail{
   opacity: .5;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 .video__play-button:hover{
   background: var(--primary);
   color: white;

@@ -22,18 +22,25 @@ export default function Video(props) {
         className="video__description text"
         dangerouslySetInnerHTML={{ __html: descriptionHtml }}
       />
-      <iframe
-        className="video__iframe"
+      <div className="video__iframe"
         src={
           "https://www.youtube-nocookie.com/embed/" +
           youtube_parser(props.blok.youtubeLink.url) +
-          "?controls=0"
+          "?controls=0&autoplay=1"
         }
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+        allowFullScreen>
+        <button title="Jouer la vidéo" className="video__play-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4v16l13 -8z" />
+</svg>
+        </button>
+        <img className="video__iframe-thumbnail" src={"https://i3.ytimg.com/vi/" + youtube_parser(props.blok.youtubeLink.url) + "/maxresdefault.jpg"} alt="" />
+
+      </div>
       {props.blok.caption && (
         <span className="text video__caption">{props.blok.caption}</span>
       )}

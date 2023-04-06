@@ -18,6 +18,34 @@
   max-width: 1116px;
   width: 100%;
   aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: black;
+}
+.video__play-button{
+  position: absolute;
+  z-index: 5;
+  color:var(--primary);
+  background: white;
+  padding: 1rem;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  transition: background 300ms;
+  cursor: pointer;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video__iframe-thumbnail{
+  opacity: .5;
+}
+.video__play-button:hover{
+  background: var(--primary);
+  color: white;
 }
 
 .video__description {

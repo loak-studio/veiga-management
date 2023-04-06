@@ -37,7 +37,8 @@ export default function Team(props: any) {
             </div>
             <button title="Suivant" data-slider-button="next">
               <figure>
-                <img src={SliderArrow} alt="" />
+                <img width={30}
+                height={30} src={SliderArrow} alt="" />
               </figure>
             </button>
           </>

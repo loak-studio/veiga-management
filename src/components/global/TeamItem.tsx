@@ -5,7 +5,6 @@ export default function TeamItem(props: any) {
     <div className="team-item" {...storyblokEditable(props.blok)}>
       <figure className="team-item__figure">
         <img
-          loading="lazy"
           width={208}
           height={208}
           src={props.blok.picture.filename + "/m/208x208/"}

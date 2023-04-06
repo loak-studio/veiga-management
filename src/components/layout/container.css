@@ -97,6 +97,11 @@
   right: 489px;
   top: 646px;
 }
+.container__icon img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 @media (max-width: 809px) {
   .container {
     background-position: top;

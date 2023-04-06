@@ -51,7 +51,10 @@ const socials = [
   <div class="footer">
     <div class="footer__group">
       <div class="footer__block w-fixed">
-        <img width={430} height={209} class="footer__logo" src={content.logo.filename} alt="" />
+        <figure class="footer__logo" >
+
+        <img width={430} height={209} src={content.logo.filename} alt="" />
+        </figure>
         <p class="bold">{content.tagline.toUpperCase()}</p>
       </div>
       <div class="footer__block">
@@ -156,6 +159,11 @@ const socials = [
 
   .footer__logo {
     max-width: 215px;
+  }
+  .footer__logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
   .footer__social-list {
     display: flex;

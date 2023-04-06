@@ -23,6 +23,11 @@
   max-width: 185px;
   margin: 0 auto 64px auto;
 }
+.hero__logo img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 .hero {
   margin-bottom: 270px;
   padding: 0 1rem;

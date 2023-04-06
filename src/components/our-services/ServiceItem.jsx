@@ -166,7 +166,7 @@ export default function ServiceItem(props) {
             <figure className="service-item__customer-figure">
               <img
               width={300}
-              height={400}
+              height={300}
                 src={props.blok.customerPicture.filename + "/m/300x300/"}
                 alt=""
               />

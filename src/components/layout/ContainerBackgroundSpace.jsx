@@ -131,7 +131,7 @@ export default function Container(props) {
               className={"container__icon" + " " + image.className}
             >
               <picture>
-              <source srcset={image.webp} type="image/webp" />
+              <source srcSet={image.webp} type="image/webp" />
               <img width={image.width} height={image.height} src={image.asset} alt="" />
               </picture>
             </figure>

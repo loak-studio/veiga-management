@@ -8,7 +8,7 @@ export default function BlogPost(props) {
       console.log(component)
       switch (component) {
         case "ImageWithCaption":
-          return `<figure class="image-with-caption text"><img src="${blok.image.filename}"/><figcaption>${blok.caption}</figcaption></figure>`
+          return `<figure class="image-with-caption text"><img alt="${blok.caption}" src="${blok.image.filename}"/><figcaption>${blok.caption}</figcaption></figure>`
         case "Caption":
           return`
             <figure class="caption">

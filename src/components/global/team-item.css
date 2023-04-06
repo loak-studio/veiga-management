@@ -13,3 +13,11 @@
 .team-item__role {
   text-align: center;
 }
+.team-item__figure{
+  max-width: 208px;
+}
+.team-item__figure img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

@@ -6,6 +6,8 @@ export default function TeamItem(props: any) {
       <figure className="team-item__figure">
         <img
           loading="lazy"
+          width={208}
+          height={208}
           src={props.blok.picture.filename + "/m/208x208/"}
           alt=""
         />

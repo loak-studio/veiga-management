@@ -22,7 +22,8 @@ export default function Team(props: any) {
           <>
             <button title="Précédent" data-slider-button="previous">
               <figure>
-                <img src={SliderArrow} alt="" />
+                <img width={30}
+                height={30} src={SliderArrow} alt="" />
               </figure>
             </button>
             <div className="swiper">

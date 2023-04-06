@@ -10,7 +10,7 @@ export default function Hero(props) {
   return (
     <div className="hero" {...storyblokEditable(props?.blok)}>
       <figure className="hero__logo">
-        <img src={props.blok.logo.filename} alt="" />
+        <img width={430} height={209} src={props.blok.logo.filename} alt="" />
       </figure>
       <h1 className="h1 hero__title">{props?.blok?.title}</h1>
       <div

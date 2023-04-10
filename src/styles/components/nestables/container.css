@@ -171,3 +171,7 @@
     top: 365px;
   }
 }
+
+.container__icons-container > figure{
+  transition: transform 100ms ease-out;
+}

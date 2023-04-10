@@ -31,77 +31,88 @@ const images = [
     asset: smallFacebook,
     width:135,
     height:129,
-    webp:smallFacebookWebp
+    webp:smallFacebookWebp,
+    value: 5
   },
   {
     className: "big-instagram from-right",
     asset: bigInstagram,
     width:177,
     height:175,
-    webp:bigInstagramWebp
+    webp:bigInstagramWebp,
+    value: 4
   },
   {
     className: "big-pinterest from-left",
     asset: bigPinterest,
     width:155,
     height:150,
-    webp: bigPinterestWebp
+    webp: bigPinterestWebp,
+    value: 3
   },
   {
     className: "right-smartphone from-right",
     asset: rightSmartphone,
     width:415,
     height:568,
-    webp:rightSmartphoneWebp
+    webp:rightSmartphoneWebp,
+    value: 2
   },
   {
     className: "left-smartphone from-left",
     asset: leftSmartphone,
     width:315,
     height:358,
-    webp:leftSmartphoneWebp
+    webp:leftSmartphoneWebp,
+    value: 1
   },
   {
     className: "big-tiktok from-right",
     asset: bigTiktok,
     width:230,
     height:232,
-    webp:bigTiktokWebp
+    webp:bigTiktokWebp,
+    value: 2
   },
   {
     className: "small-tiktok from-left",
     asset: smallTiktok,
     width:83,
     height:82,
-    webp: smallTiktokWebp
+    webp: smallTiktokWebp,
+    value: 3
   },
   {
     className: "small-twitter from-left",
     asset: smallTwitter,
     width:121,
     height:123,
-    webp: smallTwitterWebp
+    webp: smallTwitterWebp,
+    value: 4
   },
   {
     className: "big-twitter from-left",
     asset: bigTwitter,
     width:245,
     height:243,
-    webp:bigTwitterWebp
+    webp:bigTwitterWebp,
+    value: 5
   },
   {
     className: "big-youtube from-right",
     asset: bigYoutube,
     width:258,
     height:274,
-    webp:bigYoutubeWebp
+    webp:bigYoutubeWebp,
+    value: 8
   },
   {
     className: "small-youtube from-left",
     asset: smallYoutube,
     width:116,
     height:109,
-    webp: smallYoutubeWebp
+    webp: smallYoutubeWebp,
+    value: 6
   },
 ];
 
@@ -129,6 +140,7 @@ export default function Container(props:any) {
             <figure
               key={index}
               className={"container__icon" + " " + image.className}
+              data-parallax={image.value}
             >
               <picture>
               <source srcSet={image.webp} type="image/webp" />

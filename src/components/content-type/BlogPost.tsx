@@ -1,6 +1,6 @@
 import { renderRichText } from "@storyblok/react";
-import Container from "../nestables/ContainerBackgroundSpace.jsx";
-import {parseDateToFrench} from "../../utils/parse-date-to-french"
+import Container from "../nestables/ContainerBackgroundSpace.js";
+import {parseDateToFrench} from "../../utils/parse-date-to-french.js"
 export default function BlogPost(props) {
   const __html = renderRichText(props.blok.title);
   const content__html = renderRichText(props.blok.content,{

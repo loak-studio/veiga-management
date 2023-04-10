@@ -1,5 +1,5 @@
 import BlogThumbnail from "./BlogThumbnail.jsx";
-import Paginate from "./Paginate.jsx";
+import Paginate from "./Paginate";
 let totalEntries;
 const data = await fetch(
   "https://api.storyblok.com/v2/cdn/stories?starts_with=blog/&is_startpage=0&sort_by=content.date:desc&page=1&per_page=8&cv=1680250222&token=" +
@@ -9,7 +9,7 @@ const data = await fetch(
   totalEntries = new Headers(response.headers).get("total");
   return response.json();
 });
-export default function Blog({ blok, articles, currentPage }) {
+export default function Blog({  articles, currentPage }) {
   return (
     <section className="blog-container">
       <div className="blog">

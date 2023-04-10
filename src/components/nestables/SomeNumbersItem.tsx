@@ -7,7 +7,7 @@ export default function SomeNumbersItem(props) {
     <li className="some-numbers-item" {...storyblokEditable(props.blok)}>
       <span className="some-numbers-item__number h1">
         {items?.length > 0 && items[0]}
-        <span akhi={numberValue} className="value">
+        <span data-value={numberValue} className="value">
           {numberValue}
         </span>
         {items?.length > 1 && items[1]}

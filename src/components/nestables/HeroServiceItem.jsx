@@ -1,4 +1,4 @@
-import "./hero-service-item.css";
+
 import { renderRichText, storyblokEditable } from "@storyblok/react";
 
 export default function HeroServiceItem(props) {

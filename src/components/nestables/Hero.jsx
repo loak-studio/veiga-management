@@ -1,4 +1,4 @@
-import "./hero.css";
+
 import {
   StoryblokComponent,
   storyblokEditable,

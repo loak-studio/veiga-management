@@ -1,9 +1,9 @@
-import "./team.css";
+
 import { storyblokEditable } from "@storyblok/react";
 import TeamItem from "./TeamItem";
 import Swiper from "swiper";
 import { useEffect } from "react";
-import { loadSwiper } from "./team.js";
+import  { loadSwiper } from "../../scripts/components/team"
 import SliderArrow from "../../assets/slider-arrow.svg";
 export default function Team(props: any) {
   useEffect(() => {

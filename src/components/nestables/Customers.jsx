@@ -1,4 +1,4 @@
-import "./customer.css";
+
 import {
   renderRichText,
   StoryblokComponent,

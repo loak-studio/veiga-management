@@ -4,8 +4,7 @@ import type { GetStaticPathsOptions } from "astro";
 import { storyblokApi } from "../../../utils/storyblok";
 import type { StoryblokClient } from "@storyblok/js";
 import Main from "../../../layouts/Main.astro";
-import Paginate from "../../../components/blog/Paginate";
-import Blog from "../../../components/blog/Blog";
+import Blog from "../../../components/nestables/Blog";
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
     version: import.meta.env.DEV ? 'draft' :'published',

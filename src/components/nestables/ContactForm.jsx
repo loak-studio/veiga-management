@@ -4,7 +4,7 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 import Input from "./Input";
-import Button from "../layout/Button.jsx";
+import Button from "./Button"
 export default function ContactForm(props) {
   const __html = renderRichText(props.blok.title);
   return (

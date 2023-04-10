@@ -1,4 +1,4 @@
-import "./container.css";
+
 import { StoryblokComponent } from "@storyblok/react";
 import smallFacebook from "../../assets/hero/facebook_petit.png";
 import bigInstagram from "../../assets/hero/instagram_grand.png";

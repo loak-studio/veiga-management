@@ -237,7 +237,6 @@ export default function ServiceItem(props) {
 
 function ServiceItemSocialLink(props) {
   let domain = new URL(props.link.cached_url);
-  console.log(domain)
   domain = domain.hostname.replace('www.', '');
   return (
     <li className="social-item__link">

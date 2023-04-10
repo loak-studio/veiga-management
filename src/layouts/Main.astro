@@ -1,41 +1,8 @@
 ---
-import "../styles/reset.css";
-import "../styles/font.css";
-import "../styles/colors.css";
-import "../styles/typography.css";
-import "../styles/accessibility.css";
-
-import "../components/layout/container.css";
-import "../components/layout/button.css";
-
-import "../components/index/customer-item.css";
-import "../components/index/customer.css";
-import "../components/index/hero.css";
-import "../components/index/hero-service-item.css";
-import "../components/index/our-services.css";
-import "../components/index/some-numbers.css";
-import "../components/index/some-numbers-item.css";
-
-import "../components/global/contact-form.css";
-import "../components/global/input.css";
-import "../components/global/page-title.css";
-import "../components/global/team.css";
-import "../components/global/team-item.css";
-import "../components/global/video.css";
-
-import "../components/our-services/service-item.css";
-
-import "../components/our-history/our-history-item.css";
-
-import "../components/blog/blog.css";
-import "../components/blog/blog-thumbnail.css";
-import "../components/layout/blog-post.css";
-import "../components/blog/paginate.css";
-
 import "swiper/css/bundle";
-
-import Header from "../components/layout/Header.astro";
-import Footer from "../components/layout/Footer.astro";
+import Header from "../components/nestables/Header.astro";
+import Footer from "../components/nestables/Footer.astro";
+import.meta.glob("../styles/**/*.css");
 interface Meta {
   title: string;
   description: string;
@@ -76,22 +43,8 @@ const { meta } = Astro.props;
     <meta property="twitter:title" content={meta.title} />
     <meta property="twitter:description" content={meta.description} />
     <meta property="twitter:image" content={meta.image} />
-    <script src="../components/global/team.js"></script>
     <script>
-      import "../animations/container-icons.js";
-      import "../animations/blog-thumbnail.js";
-      import "../components/global/contact-form.js";
-      import "../animations/hero.js";
-      import "../animations/services.js";
-      import "../animations/customers.js";
-      import "../animations/service-section.js";
-      import "../animations/history-item.js";
-      import "../animations/team.js";
-      import "../components/global/video.js"
-      import { loadSwiper } from "../components/global/team.js";
-      import { launchCounter } from "../components/index/some-numbers.js";
-      loadSwiper();
-      launchCounter();
+      import "../scripts/index"
     </script>
   </head>
   <body>

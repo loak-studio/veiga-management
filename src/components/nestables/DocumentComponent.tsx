@@ -1,10 +1,10 @@
 import { renderRichText, storyblokEditable } from "@storyblok/react";
 
-export default function DocumentComponent(props) {
-  const __html = renderRichText(props.blok.content);
+export default function DocumentComponent({blok}:any) {
+  const __html = renderRichText(blok.content);
   return (
     <article
-      {...storyblokEditable(props.blok)}
+      {...storyblokEditable(blok)}
       className="blog-post"
       dangerouslySetInnerHTML={{ __html }}
     />

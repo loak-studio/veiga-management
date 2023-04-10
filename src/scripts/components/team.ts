@@ -2,7 +2,7 @@ import Swiper from "swiper";
 
 const loadSwiper = () => {
   if (document.querySelector(".swiper")) {
-    const buttons = document.querySelectorAll("[data-slider-button]");
+    const buttons = Array.from(document.querySelectorAll("[data-slider-button]")) as HTMLButtonElement[];
     const swiper = new Swiper(".swiper", {
       speed: 500,
       slidesPerView: 1,

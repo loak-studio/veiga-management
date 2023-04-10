@@ -3,8 +3,8 @@ import {
   StoryblokComponent,
   storyblokEditable,
 } from "@storyblok/react";
-export default function Video(props) {
-  function youtube_parser(url) {
+export default function Video(props:any) {
+  function youtube_parser(url:string) {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     var match = url.match(regExp);
@@ -45,7 +45,7 @@ export default function Video(props) {
         <span className="text video__caption">{props.blok.caption}</span>
       )}
       <div className="video__buttons">
-        {props.blok.buttons.map((button, index) => (
+        {props.blok.buttons.map((button:any, index:number) => (
           <StoryblokComponent blok={button} key={index} />
         ))}
       </div>

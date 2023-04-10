@@ -1,16 +1,16 @@
 import BackgroundImage from "../../assets/blog-background.webp";
 import { parseDateToFrench } from "../../utils/parse-date-to-french";
 import { renderRichText } from "@storyblok/js";
-export default function BlogThumbnail(props) {
-  const __html = renderRichText(props.blok.content.title);
+export default function BlogThumbnail({blok}: any) {
+  const __html = renderRichText(blok.content.title);
   return (
     <article className="blog-thumbnail">
-      {props.blok.content?.thumbnail?.filename && (
+      {blok.content?.thumbnail?.filename && (
         <figure className="blog-thumbnail__figure">
-          <img src={props.blok.content.thumbnail.filename} alt="" />
+          <img src={blok.content.thumbnail.filename} alt="" />
         </figure>
       )}
-      {!props.blok.content?.thumbnail?.filename && (
+      {!blok.content?.thumbnail?.filename && (
         <div className="blog-thumbnail__figure">
           <figure className="blog-thumbnail-figure-background">
             <img src={BackgroundImage} alt="" />
@@ -27,18 +27,18 @@ export default function BlogThumbnail(props) {
           dangerouslySetInnerHTML={{ __html }}
         />
         <div className="blog-thumbnail__footer-and-tag">
-          <div className="h6 blog-thumbnail__tag">{props.blok.content.tag}</div>
+          <div className="h6 blog-thumbnail__tag">{blok.content.tag}</div>
           <div className="blog-thumbnail__footer text">
             <span className="blog-thumbnail__author">
-              {props.blok.content.author}
+              {blok.content.author}
             </span>
-            <span>{parseDateToFrench(props.blok.content.date)}</span>
+            <span>{parseDateToFrench(blok.content.date)}</span>
           </div>
         </div>
       </div>
       <a
         className="blog-thumbnail__link"
-        href={"/blog/" + props.blok.slug + "/"}
+        href={"/blog/" + blok.slug + "/"}
       >
         <span className="blog-thumbnail__link-text sr-only">
           Lire l'article

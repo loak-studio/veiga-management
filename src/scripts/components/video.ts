@@ -10,7 +10,7 @@ if(videos){
       })
       video.replaceWith(iframe)
     }
-    const button = video.querySelector('.video__play-button')
+    const button = video.querySelector('.video__play-button') as HTMLButtonElement
     video.addEventListener('click',startVideo)
     button.addEventListener('click',startVideo)
   })

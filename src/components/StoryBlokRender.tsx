@@ -5,7 +5,7 @@ import {
   useStoryblok,
   StoryblokComponent,
 } from "@storyblok/react";
-function StoryBlokRender({ token }) {
+function StoryBlokRender({ token }: any) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
@@ -15,7 +15,7 @@ function StoryBlokRender({ token }) {
     use: [apiPlugin],
     components: bindedComponents,
   });
-  const story = useStoryblok(urlParams.get("page"), { version: "draft" });
+  const story = useStoryblok(urlParams.get("page") as string, { version: "draft" });
   if (!story.content) {
     return <div>Loading...</div>;
   }

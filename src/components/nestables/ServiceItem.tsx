@@ -131,100 +131,100 @@ const Youtube = () => {
   );
 };
 
-export default function ServiceItem(props) {
-  const descriptionHtml = renderRichText(props.blok.description);
-  const testimonialHtml = renderRichText(props.blok.testimonial);
+export default function ServiceItem({blok}:any) {
+  const descriptionHtml = renderRichText(blok.description);
+  const testimonialHtml = renderRichText(blok.testimonial);
   return (
     <div
       style={{
-        background: props.blok.backgroundTransparent
+        background: blok.backgroundTransparent
           ? null
-          : props.blok.backgroundColor.color,
-        color: props.blok.backgroundColor?.color,
+          : blok.backgroundColor.color,
+        color: blok.backgroundColor?.color,
       }}
       className={
-        "service-item" + (props.blok.arrow ? " " + "service-item__arrow" : "")
+        "service-item" + (blok.arrow ? " " + "service-item__arrow" : "")
       }
-      {...storyblokEditable(props.blok)}
+      {...storyblokEditable(blok)}
     >
       <figure className="service-item__background-image">
-        <img loading="lazy" src={props.blok.backgroundImage?.filename} alt="" />
+        <img loading="lazy" src={blok.backgroundImage?.filename} alt="" />
       </figure>
       <div className="service-item__splash"></div>
       <div className="service-item__container">
         <h2
-          style={{ background: props.blok?.titleBackgroundColor?.color }}
+          style={{ background: blok?.titleBackgroundColor?.color }}
           className="service-item__title h5"
         >
-          {props.blok.title}
+          {blok.title}
         </h2>
         <div className="service-item__body">
           <div
             className="service-item__aside"
-            style={{ color: props.blok?.textColor?.color }}
+            style={{ color: blok?.textColor?.color }}
           >
             <figure className="service-item__customer-figure">
               <img
               width={300}
               height={300}
-                src={props.blok.customerPicture.filename + "/m/300x300/"}
+                src={blok.customerPicture.filename + "/m/300x300/"}
                 alt=""
               />
             </figure>
             <span className="service-item__customer-role h6">
-              {props.blok.role}
+              {blok.role}
             </span>
             <ul
               className="service-item__links"
               style={{
-                borderColor: props.blok?.textColor?.color,
-                color: props.blok?.textColor?.color,
+                borderColor: blok?.textColor?.color,
+                color: blok?.textColor?.color,
               }}
             >
-              {props.blok.twitter?.url && (
-                <ServiceItemSocialLink link={props.blok.twitter} />
+              {blok.twitter?.url && (
+                <ServiceItemSocialLink link={blok.twitter} />
               )}
-              {props.blok.tiktok?.url && (
-                <ServiceItemSocialLink link={props.blok.tiktok} />
+              {blok.tiktok?.url && (
+                <ServiceItemSocialLink link={blok.tiktok} />
               )}
-              {props.blok.twitch?.url && (
-                <ServiceItemSocialLink link={props.blok.twitch} />
+              {blok.twitch?.url && (
+                <ServiceItemSocialLink link={blok.twitch} />
               )}
-              {props.blok.instagram?.url && (
-                <ServiceItemSocialLink link={props.blok.instagram} />
+              {blok.instagram?.url && (
+                <ServiceItemSocialLink link={blok.instagram} />
               )}
-              {props.blok.facebook?.url && (
-                <ServiceItemSocialLink link={props.blok.facebook} />
+              {blok.facebook?.url && (
+                <ServiceItemSocialLink link={blok.facebook} />
               )}
-              {props.blok.youtube?.url && (
-                <ServiceItemSocialLink link={props.blok.youtube} />
+              {blok.youtube?.url && (
+                <ServiceItemSocialLink link={blok.youtube} />
               )}
 
-              {props.blok.linkedin?.url && (
-                <ServiceItemSocialLink link={props.blok.linkedin} />
+              {blok.linkedin?.url && (
+                <ServiceItemSocialLink link={blok.linkedin} />
               )}
             </ul>
             <span className="service-item__followers text bold">
-              {props.blok.followers}
+              {blok.followers}
             </span>
           </div>
           <div className="service-item__content">
             <h3
               className="service-item__customer-name h3"
-              style={{ color: props.blok?.textColor?.color }}
+              style={{ color: blok?.textColor?.color }}
             >
-              {props.blok.customerName}
+              {blok.customerName}
             </h3>
             <div
               className="service-item__description text"
-              style={{ color: props.blok?.textColor?.color }}
+              style={{ color: blok?.textColor?.color }}
               dangerouslySetInnerHTML={{ __html: descriptionHtml }}
             />
             <div
               className="service-item__testimonial text"
               style={{
-                background: props.blok?.testimonialBackgroundColor?.color,
-                color: props.blok?.testimonialColor?.color,
+                background: blok?.testimonialBackgroundColor?.color,
+                color: blok?.testimonialColor?.color,
               }}
               dangerouslySetInnerHTML={{ __html: testimonialHtml }}
             />
@@ -235,13 +235,13 @@ export default function ServiceItem(props) {
   );
 }
 
-function ServiceItemSocialLink(props) {
-  let domain = new URL(props.link.cached_url);
-  domain = domain.hostname.replace('www.', '');
+function ServiceItemSocialLink({link}:any) {
+  let domain = new URL(link.cached_url);
+  const cleanedDomain = domain.hostname.replace('www.', '');
   return (
     <li className="social-item__link">
-      <a title={"Consuler " + props.link.cached_url} target="_blank" href={props.link.cached_url}>
-        {domainToIcon[domain]}
+      <a title={"Consuler " + link.cached_url} target="_blank" href={link.cached_url}>
+        {(domainToIcon as any)[cleanedDomain]}
       </a>
     </li>
   );

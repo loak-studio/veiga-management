@@ -3,24 +3,24 @@ import {
   storyblokEditable,
   renderRichText,
 } from "@storyblok/react";
-export default function SomeNumbers(props) {
-  const __html = renderRichText(props.blok.title);
+export default function SomeNumbers({blok}:any) {
+  const __html = renderRichText(blok.title);
   return (
     <div
       className={
-        "some-numbers" + (props.blok.arrow ? " " + "some-numbers__arrow" : "")
+        "some-numbers" + (blok.arrow ? " " + "some-numbers__arrow" : "")
       }
-      {...storyblokEditable(props.blok)}
+      {...storyblokEditable(blok)}
     >
       <h2
         className="some-numbers__title h2"
         dangerouslySetInnerHTML={{ __html }}
       />
       <span className="some-numbers__description text">
-        {props.blok.description}
+        {blok.description}
       </span>
       <ul className="some-numbers__list">
-        {props.blok.numbers.map((number, index) => (
+        {blok.numbers.map((number:any, index:number) => (
           <StoryblokComponent key={index} blok={number} />
         ))}
       </ul>

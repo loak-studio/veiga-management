@@ -105,7 +105,7 @@ const images = [
   },
 ];
 
-export default function Container(props) {
+export default function Container(props:any) {
   return (
     <div
       className={
@@ -118,7 +118,7 @@ export default function Container(props) {
       {props.children && props.children}
       {!props.children && (
         <div className="container__content">
-          {props.blok?.blocks?.map((b, index) => (
+          {props.blok?.blocks?.map((b:any, index:number) => (
             <StoryblokComponent key={index} blok={b} />
           ))}
         </div>

@@ -1,4 +1,4 @@
-export default function Input({ name, id, label, type = "text", required }) {
+export default function Input({ name, id, label, type = "text", required }: any) {
   if (type == "textarea") {
     return (
       <div className="input">
@@ -10,7 +10,7 @@ export default function Input({ name, id, label, type = "text", required }) {
           className="input__input"
           name={name}
           id={id}
-          rows="2"
+          rows={2}
         ></textarea>
       </div>
     );

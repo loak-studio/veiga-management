@@ -1,7 +1,6 @@
 
 import { storyblokEditable } from "@storyblok/react";
 import TeamItem from "./TeamItem";
-import Swiper from "swiper";
 import { useEffect } from "react";
 import  { loadSwiper } from "../../scripts/components/team"
 import SliderArrow from "../../assets/slider-arrow.svg";
@@ -28,7 +27,7 @@ export default function Team(props: any) {
             </button>
             <div className="swiper">
               <div className="swiper-wrapper">
-                {props.blok.members.map((member, index) => (
+                {props.blok.members.map((member:any, index:number) => (
                   <div key={index} className="swiper-slide">
                     <TeamItem blok={member} />
                   </div>
@@ -45,7 +44,7 @@ export default function Team(props: any) {
         )}
         {props.blok.display_all && (
           <div className="team__list">
-            {props.blok.members.map((member, index) => (
+            {props.blok.members.map((member:any, index:number) => (
               <TeamItem key={index} blok={member} />
             ))}
           </div>

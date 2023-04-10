@@ -1,42 +1,42 @@
-export default function Paginate(props) {
+export default function Paginate({current,max}:any) {
   return (
     <div className="paginate-container">
       <div className="paginate">
-        <Previous current={props.current} />
-        {props.max - props.current <= 2 && (
-          <PageLink max={props.max} current={props.current} plus={-6} />
+        <Previous current={current} />
+        {max - current <= 2 && (
+          <PageLink max={max} current={current} plus={-6} />
         )}
-        {props.max - props.current <= 1 && (
-          <PageLink max={props.max} current={props.current} plus={-5} />
+        {max - current <= 1 && (
+          <PageLink max={max} current={current} plus={-5} />
         )}
-        {props.max - props.current <= 0 && (
-          <PageLink max={props.max} current={props.current} plus={-4} />
+        {max - current <= 0 && (
+          <PageLink max={max} current={current} plus={-4} />
         )}
-        <PageLink max={props.max} current={props.current} plus={-3} />
-        <PageLink max={props.max} current={props.current} plus={-2} />
-        <PageLink max={props.max} current={props.current} plus={-1} />
+        <PageLink max={max} current={current} plus={-3} />
+        <PageLink max={max} current={current} plus={-2} />
+        <PageLink max={max} current={current} plus={-1} />
         <span className="paginate__item paginate__item--active text">
-          {props.current}
+          {current}
         </span>
-        <PageLink max={props.max} current={props.current} plus={1} />
-        <PageLink max={props.max} current={props.current} plus={2} />
-        <PageLink max={props.max} current={props.current} plus={3} />
-        {props.current <= 3 && (
-          <PageLink max={props.max} current={props.current} plus={4} />
+        <PageLink max={max} current={current} plus={1} />
+        <PageLink max={max} current={current} plus={2} />
+        <PageLink max={max} current={current} plus={3} />
+        {current <= 3 && (
+          <PageLink max={max} current={current} plus={4} />
         )}
-        {props.current <= 2 && (
-          <PageLink max={props.max} current={props.current} plus={5} />
+        {current <= 2 && (
+          <PageLink max={max} current={current} plus={5} />
         )}
-        {props.current <= 1 && (
-          <PageLink max={props.max} current={props.current} plus={6} />
+        {current <= 1 && (
+          <PageLink max={max} current={current} plus={6} />
         )}
-        <Next current={props.current} max={props.max} />
+        <Next current={current} max={max} />
       </div>
     </div>
   );
 }
 
-const PageLink = ({ max, current, plus }) => {
+const PageLink = ({ max, current, plus }:any) => {
   let newNumber = current + plus;
   if (newNumber > 0 && newNumber <= max) {
     return (
@@ -48,9 +48,11 @@ const PageLink = ({ max, current, plus }) => {
       </a>
     );
   }
+
+  return <></>
 };
 
-const Previous = ({ current, max }) => {
+const Previous = ({ current, max }:any) => {
   if (current - 1 > 0) {
     return (
       <a
@@ -63,7 +65,7 @@ const Previous = ({ current, max }) => {
     return <p className="paginate__previous paginate__previous--disabled"></p>;
   }
 };
-const Next = ({ current, max }) => {
+const Next = ({ current, max }:any) => {
   if (current < max) {
     return (
       <a

@@ -5,15 +5,15 @@ import {
 } from "@storyblok/react";
 import Input from "./Input";
 import Button from "./Button"
-export default function ContactForm(props) {
-  const __html = renderRichText(props.blok.title);
+export default function ContactForm({blok}:any) {
+  const __html = renderRichText(blok.title);
   return (
     <div
       className={
         "contact-form" +
-        (props.blok.full_width ? " " + "contact-form--full-width" : "")
+        (blok.full_width ? " " + "contact-form--full-width" : "")
       }
-      {...storyblokEditable(props.blok)}
+      {...storyblokEditable(blok)}
     >
       <div className="contact-form__container">
         <div className="contact-form__aside">
@@ -22,10 +22,10 @@ export default function ContactForm(props) {
             dangerouslySetInnerHTML={{ __html }}
           />
           <p className="contact-form__description text">
-            {props.blok.description}
+            {blok.description}
           </p>
           <div className="contact-form__buttons">
-            {props.blok.buttons.map((button, index) => (
+            {blok.buttons.map((button:any, index:number) => (
               <StoryblokComponent key={index} blok={button} />
             ))}
           </div>

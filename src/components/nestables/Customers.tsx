@@ -4,21 +4,21 @@ import {
   StoryblokComponent,
   storyblokEditable,
 } from "@storyblok/react";
-export default function Customers(props) {
-  const __html = renderRichText(props.blok.title);
+export default function Customers({blok}:any) {
+  const __html = renderRichText(blok.title);
   return (
     <div
-      className={"customers h2" + (props.blok.arrow ? " customers__arrow" : "")}
-      {...storyblokEditable(props.blok)}
+      className={"customers h2" + (blok.arrow ? " customers__arrow" : "")}
+      {...storyblokEditable(blok)}
     >
       <h2 className="customers__title" dangerouslySetInnerHTML={{ __html }} />
       <ul className="customers__list">
-        {props.blok.Customers.map((customer, index) => (
+        {blok.Customers.map((customer:any, index:number) => (
           <StoryblokComponent key={index} blok={customer} />
         ))}
       </ul>
       <ul className="customers__brands">
-        {props.blok.brands.map((brand, index) => (
+        {blok.brands.map((brand:any, index:number) => (
           <li key={index} className="customers__brand">
             <figure title={brand.alt} className="customers__brand-logo">
               <img loading="lazy" alt={brand.alt} src={brand.filename} />

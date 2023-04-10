@@ -9,7 +9,7 @@ const launchCounter = () => {
     ".some-numbers",
     () => {
       counters.forEach((counter) => {
-        const con = new CountUp(counter, counter.getAttribute("akhi"), {
+        const con = new CountUp(counter, counter.dataset.value, {
           duration: 2,
         });
         con.start();

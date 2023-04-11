@@ -3,17 +3,17 @@
   position: relative;
 }
 .customers__arrow::after {
-  height: 140px;
-  width: 140px;
-  background: white;
-  z-index: 3;
+  height: 67px;
+  width: 177px;
+  background:white;
+  -webkit-mask-image: url("/arrow.svg");
   content: "";
   display: block;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  bottom: -155px;
-  border-radius: 16px;
+  transform: translateX(-50%);
+  top: calc(100% + 99px);
+  z-index: 10;
 }
 .customers__title {
   max-width: 861px;

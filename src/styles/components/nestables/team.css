@@ -5,20 +5,20 @@
   background: var(--secondary);
   color: var(--white);
   margin: 0 auto;
-  z-index: 0;
+  z-index: 1;
 }
 
 .team__arrow::after {
-  height: 140px;
-  width: 140px;
+  height: 67px;
+  width: 177px;
   background: var(--secondary);
+  -webkit-mask-image: url("/arrow.svg");
   content: "";
   display: block;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  bottom: -55px;
-  border-radius: 16px;
+  transform: translateX(-50%);
+  top: calc(100% - 1px);
   z-index: 3;
 }
 

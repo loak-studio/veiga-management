@@ -14,7 +14,7 @@ export default function CustomerItem({blok}:any) {
       <h3 className="customer-item__name h5">{blok.name}</h3>
       <span className="customer-item__role text">{blok.role}</span>
       <span className="customer-item__followers text bold">
-        {blok.followers} abonnés
+        {blok.followersPrefix}<span className="customer-item__followers-count">{blok.followersValue}</span>{blok.followersSuffix} abonnés
       </span>
     </li>
   );

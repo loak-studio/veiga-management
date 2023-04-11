@@ -18,6 +18,5 @@ if(container){
       const value : number = parseInt(icon?.dataset?.parallax as string) ?? 1
       icon.style.marginTop = `-${current / value}px`
     })
-    console.log(current)
   })
 }

@@ -5,18 +5,13 @@ const launchCounter = () => {
   counters.forEach((counter) => {
     counter.innerHTML = "0";
   });
-  inView(
-    ".some-numbers",
-    () => {
       counters.forEach((counter) => {
         const con = new CountUp(counter, parseFloat(counter.dataset.value as string), {
-          duration: 2,
+          duration: 5,
+          scrollSpyOnce:true
         });
         con.start();
       });
-    },
-    { amount: 1 }
-  );
 };
 
 export { launchCounter };

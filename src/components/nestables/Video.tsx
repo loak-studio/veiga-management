@@ -3,8 +3,8 @@ import {
   StoryblokComponent,
   storyblokEditable,
 } from "@storyblok/react";
-export default function Video(props:any) {
-  function youtube_parser(url:string) {
+export default function Video(props: any) {
+  function youtube_parser(url: string) {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     var match = url.match(regExp);
@@ -23,20 +23,20 @@ export default function Video(props:any) {
         dangerouslySetInnerHTML={{ __html: descriptionHtml }}
       />
       <div className="video__iframe"
-        src={
+        data-src={
           "https://www.youtube-nocookie.com/embed/" +
           youtube_parser(props.blok.youtubeLink.url) +
           "?controls=0&autoplay=1"
         }
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen>
+        data-title="YouTube video player"
+        data-frameBorder="0"
+        data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        data-allowFullScreen>
         <button title="Jouer la vidéo" className="video__play-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M7 4v16l13 -8z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7 4v16l13 -8z" />
+          </svg>
         </button>
         <img width={1280} height={720} className="video__iframe-thumbnail" src={"https://i3.ytimg.com/vi/" + youtube_parser(props.blok.youtubeLink.url) + "/maxresdefault.jpg"} alt="" />
 
@@ -45,7 +45,7 @@ export default function Video(props:any) {
         <span className="text video__caption">{props.blok.caption}</span>
       )}
       <div className="video__buttons">
-        {props.blok.buttons.map((button:any, index:number) => (
+        {props.blok.buttons.map((button: any, index: number) => (
           <StoryblokComponent blok={button} key={index} />
         ))}
       </div>

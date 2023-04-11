@@ -1,12 +1,15 @@
-const videos = document.querySelectorAll('.video__iframe')
+const videos = Array.from(document.querySelectorAll('.video__iframe')) as HTMLElement[]
 
-if(videos){
+if(videos.length > 0){
   videos.forEach(video=>{
     const startVideo = ()=>{
       const attributes = Array.from(video.attributes)
       const iframe = document.createElement('iframe')
-      attributes.forEach(attribute=>{
-        iframe.setAttribute(attribute.name, attribute.value)
+      for (var d in video.dataset) {
+        iframe.setAttribute(d, video.dataset[d] as string)
+      }
+      video.classList.forEach(c=>{
+        iframe.classList.add(c)
       })
       video.replaceWith(iframe)
     }

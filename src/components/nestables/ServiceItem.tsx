@@ -205,7 +205,9 @@ export default function ServiceItem({blok}:any) {
               )}
             </ul>
             <span className="service-item__followers text bold">
-              {blok.followers}
+              {blok.followersPrefix}
+              <span className="countup">{blok.followersValue}</span>
+              {blok.followersSuffix}
             </span>
           </div>
           <div className="service-item__content">

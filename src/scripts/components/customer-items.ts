@@ -1,7 +1,6 @@
 import { CountUp } from "countup.js";
-import { inView } from "motion"
 
-const items = Array.from(document.querySelectorAll('.customer-item__followers-count')) as HTMLElement[]
+const items = Array.from(document.querySelectorAll('.countup')) as HTMLElement[]
 
 if(items.length > 0){
   items.forEach(item=>{

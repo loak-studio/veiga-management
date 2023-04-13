@@ -67,6 +67,6 @@
   }
   .contact-form__container {
     gap: 64px;
-    padding: 1rem;
+    padding: 3rem 1rem;
   }
 }

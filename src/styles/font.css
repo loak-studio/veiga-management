@@ -7,16 +7,17 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("/font/NeueMontreal-Medium.otf");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neue Montreal";
   src: url("/font/NeueMontreal-Bold.otf");
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/font/NeueMontreal-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }

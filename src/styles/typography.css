@@ -88,7 +88,7 @@
 .blog-post p, .image-with-caption {
   font-family: "Neue Montreal";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 130%;
 }
@@ -110,7 +110,7 @@
 .blog-post a {
   font-family: "Neue Montreal";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 130%;
   text-decoration-line: underline;

@@ -2,7 +2,7 @@ import { storyblokEditable, renderRichText, StoryblokComponent } from "@storyblo
 export default function PageTitle({blok}:any) {
   const __html = renderRichText(blok.title);
   return (
-    <div className="page-title h4" {...storyblokEditable(blok)}>
+    <div className={"page-title h4" + " " + blok.margins} {...storyblokEditable(blok)}>
       {blok.pretitle && (
         <span className="page-title__pretitle">{blok.pretitle}</span>
       )}

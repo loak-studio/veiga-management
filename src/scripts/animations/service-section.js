@@ -3,21 +3,12 @@ import { animate, inView, spring, stagger } from "motion";
 const services = document.querySelectorAll(".service-item");
 if(services){
   services.forEach((service) => {
-    const title = service.querySelector(".service-item__title");
     const aside = service.querySelector(".service-item__aside");
     const content = service.querySelector(".service-item__content");
     const background = service.querySelector(".service-item__background-image");
     inView(
       service,
       () => {
-        animate(
-          title,
-          { y: [20, 0], opacity: [0, 1] },
-          {
-            duration: 0.2,
-            easing: spring(),
-          }
-        );
         animate(
           aside,
           { x: [-50, 0], opacity: [0, 1] },

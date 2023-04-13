@@ -125,7 +125,6 @@
   width: 100%;
 }
 .service-item__title {
-  opacity: 0;
   color: white;
   background: var(--secondary);
   display: inline-block;

@@ -36,6 +36,14 @@ const sortedLinks = sortLinks(content.navigation, rels);
     html.classList.toggle("no-scroll");
   });
 
+  document.addEventListener('keydown',(event)=>{
+    if(event.key =="Escape"){
+      nav.classList.remove("header__nav--active");
+    button.classList.remove("is-active");
+    html.classList.remove("no-scroll");
+    }
+  })
+
   let olderScrollValue = 0;
   window.addEventListener("scroll", (e) => {
     if (window.scrollY < 100) {
@@ -183,7 +191,7 @@ const sortedLinks = sortLinks(content.navigation, rels);
       pointer-events: all;
       opacity: 1;
       transform: translateX(0);
-      background: var(--secondary);
+      background: black;
     }
     .nav__list {
       flex-direction: column;

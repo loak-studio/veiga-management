@@ -8,7 +8,8 @@ const launchCounter = () => {
       counters.forEach((counter) => {
         const con = new CountUp(counter, parseFloat(counter.dataset.value as string), {
           duration: 5,
-          enableScrollSpy:true
+          enableScrollSpy:true,
+          scrollSpyOnce:true
         });
         con.start();
       });

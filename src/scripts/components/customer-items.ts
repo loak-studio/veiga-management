@@ -9,6 +9,7 @@ if(items.length > 0){
       const con = new CountUp(item, tFloat, {
         duration: 5,
         enableScrollSpy:true,
+        scrollSpyOnce:true,
         decimal:',',
         decimalPlaces:t.includes('.') ? 1: 0
       });

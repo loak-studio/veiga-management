@@ -13,7 +13,6 @@ import "./components/container"
 import "./components/customer-items"
 
 import { loadSwiper } from "./components/team";
-import { launchCounter } from "./components/some-numbers";
+import "./components/some-numbers";
 
 loadSwiper();
-launchCounter();

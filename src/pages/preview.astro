@@ -1,12 +1,14 @@
 ---
 import { StoryBlokRender } from "../components/StoryBlokRender";
 import Main from "../layouts/Main.astro";
+import "../styles/loading.css"
 const metatags = {
   title: "Preview",
   description: "",
   image: "",
 };
 ---
+
 <Main meta={metatags}>
   <StoryBlokRender token={import.meta.env.STORYBLOK_TOKEN} client:only />
 </Main>

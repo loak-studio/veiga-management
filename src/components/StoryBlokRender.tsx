@@ -27,7 +27,9 @@ function StoryBlokRender({ token }: any) {
     });
 },[story])
   if (!story.content) {
-    return <div>Loading...</div>;
+    return <div className="loading">
+      <div className="lds-circle"><div></div></div>
+    </div>;
   }
   return (
     <>

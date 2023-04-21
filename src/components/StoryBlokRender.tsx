@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { bindedComponents } from "../utils/binded-component";
 import {
   apiPlugin,
@@ -16,6 +17,15 @@ function StoryBlokRender({ token }: any) {
     components: bindedComponents,
   });
   const story = useStoryblok(urlParams.get("page") as string, { version: "draft" });
+  useEffect(()=>{
+    console.log('story updated')
+    const items = Array.from(
+      document.querySelectorAll("main *")
+    ) as HTMLElement[];
+    items.forEach((item) => {
+      item.style.opacity = "1";
+    });
+},[story])
   if (!story.content) {
     return <div>Loading...</div>;
   }

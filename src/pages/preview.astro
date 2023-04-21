@@ -7,16 +7,6 @@ const metatags = {
   image: "",
 };
 ---
-
-<script>
-  setTimeout(() => {
-    const items = Array.from(document.querySelectorAll('*')) as HTMLElement[]
-    items.forEach((item) => {
-      item.style.opacity = "1";
-    });
-  }, 1000);
-</script>
-
 <Main meta={metatags}>
   <StoryBlokRender token={import.meta.env.STORYBLOK_TOKEN} client:only />
 </Main>

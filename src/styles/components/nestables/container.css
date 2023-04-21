@@ -52,6 +52,7 @@
 .container__icon {
   position: absolute;
   opacity: 0;
+  z-index: 0;
 }
 .container__icon.small-youtube {
   left: 0;
@@ -109,7 +110,6 @@
   }
   .container__icon.big-youtube {
     width: 150px;
-    z-index: 3;
   }
   .container__icon.big-instagram{
     width: 90px;

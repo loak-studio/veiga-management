@@ -1,9 +1,13 @@
 .blog-post {
   max-width: 800px;
-  margin: 100px auto;
+  margin: 0px auto;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.blog-post__article{
+  background: white;
 }
 @media (max-width: 816px) {
   .blog-post {

@@ -22,7 +22,7 @@ export default function BlogPost(props:any) {
     }
   });
   return (
-    <article>
+    <article className="blog-post__article">
       <Container blok={{ arrow: false, display_icons: true }}>
         <div className="page-title h4">
           <span className="page-title__tag text">{props.blok.tag}</span>

@@ -47,6 +47,12 @@ export default function ContactForm({blok}:any) {
             type="textarea"
             required
           />
+          <label className="contact-form__cgv" htmlFor="cgv">
+            <input required type="checkbox" name="cgv" id="cgv" />
+            <p className="text">
+            En soumettant ce formulaire, vous acceptez que les informations que vous fournissez soient utilisées dans le cadre de votre demande de contact. En cochant cette case, vous confirmez que vous avez lu et compris notre <a className="link" href="/politique-de-confidentialite/">politique de confidentialité</a> et que vous acceptez que nous utilisions vos données personnelles dans les conditions décrites.
+            </p>
+          </label>
           <Button style="red" label="Envoyer mon message" />
           <div className="contact-form__form-sent">
             <svg

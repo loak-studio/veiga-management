@@ -9,7 +9,7 @@ export default function HeroServiceItem({blok}:any) {
         <img src={blok.icon.filename} alt="" />
       </figure>
       <div
-        className="hero-service-item__text h6"
+        className="hero-service-item__text h6 richtext"
         dangerouslySetInnerHTML={{ __html }}
       />
     </li>

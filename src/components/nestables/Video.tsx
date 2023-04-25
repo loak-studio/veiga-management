@@ -15,11 +15,11 @@ export default function Video(props: any) {
   return (
     <div className="video" {...storyblokEditable(props.blok)}>
       <h2
-        className="video__title h2"
+        className="video__title h2 richtext"
         dangerouslySetInnerHTML={{ __html: titleHtml }}
       />
       <div
-        className="video__description text"
+        className="video__description text richtext"
         dangerouslySetInnerHTML={{ __html: descriptionHtml }}
       />
       <div className="video__iframe"

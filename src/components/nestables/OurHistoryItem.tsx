@@ -15,7 +15,7 @@ export default function OurHistoryItem({blok}:any) {
       </figure>
       <span className="our-history-item__year h3">{blok.year}</span>
       <div
-        className="our-history-item__description text"
+        className="our-history-item__description text richtext"
         dangerouslySetInnerHTML={{
           __html: renderRichText(blok.description),
         }}

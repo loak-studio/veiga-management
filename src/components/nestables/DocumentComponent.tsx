@@ -5,7 +5,7 @@ export default function DocumentComponent({blok}:any) {
   return (
     <article
       {...storyblokEditable(blok)}
-      className="blog-post"
+      className="blog-post richtext"
       dangerouslySetInnerHTML={{ __html }}
     />
   );

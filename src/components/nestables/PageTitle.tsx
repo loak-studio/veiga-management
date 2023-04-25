@@ -7,7 +7,7 @@ export default function PageTitle({blok}:any) {
         <span className="page-title__pretitle">{blok.pretitle}</span>
       )}
       <div
-        className="page-title__title h1"
+        className="page-title__title h1 richtext"
         dangerouslySetInnerHTML={{ __html }}
       />
       {blok.description && <p className="page-title__description text">{blok.description}</p>}

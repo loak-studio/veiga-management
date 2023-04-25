@@ -10,7 +10,7 @@ export default function OurServices({blok}:any) {
   return (
     <div className="our-services" {...storyblokEditable(blok)}>
       <h2
-        className="our-services__title h2"
+        className="our-services__title h2 richtext"
         dangerouslySetInnerHTML={{ __html }}
       ></h2>
       <p className="our-services__description text">{blok.description}</p>

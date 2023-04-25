@@ -218,12 +218,12 @@ export default function ServiceItem({blok}:any) {
               {blok.customerName}
             </h3>
             <div
-              className="service-item__description text"
+              className="service-item__description text richtext"
               style={{ color: blok?.textColor?.color }}
               dangerouslySetInnerHTML={{ __html: descriptionHtml }}
             />
             <div
-              className="service-item__testimonial text"
+              className="service-item__testimonial text richtext"
               style={{
                 background: blok?.testimonialBackgroundColor?.color,
                 color: blok?.testimonialColor?.color,

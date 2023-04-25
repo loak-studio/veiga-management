@@ -16,14 +16,14 @@ export default function BlogThumbnail({blok}: any) {
             <img src={BackgroundImage} alt="" />
           </figure>
           <div
-            className="h5 blog-thumbnail__thumbnail-title"
+            className="h5 blog-thumbnail__thumbnail-title richtext"
             dangerouslySetInnerHTML={{ __html }}
           />
         </div>
       )}
       <div className="blog-thumbnail__meta">
         <h3
-          className="h5 blog-thumbnail__title"
+          className="h5 blog-thumbnail__title richtext"
           dangerouslySetInnerHTML={{ __html }}
         />
         <div className="blog-thumbnail__footer-and-tag">

@@ -14,7 +14,7 @@ export default function Hero({blok}:any) {
       </figure>
       <h1 className="h1 hero__title">{blok?.title}</h1>
       <div
-        className="text hero__richtext"
+        className="text hero__richtext richtext"
         dangerouslySetInnerHTML={{ __html }}
       ></div>
       <div className="hero__buttons">

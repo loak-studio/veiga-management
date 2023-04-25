@@ -27,7 +27,7 @@ export default function BlogPost(props:any) {
         <div className="page-title h4">
           <span className="page-title__tag text">{props.blok.tag}</span>
           <div
-            className="page-title__title h1"
+            className="page-title__title h1 richtext"
             dangerouslySetInnerHTML={{ __html }}
           />
           <div className="page-title__post-title">
@@ -41,7 +41,7 @@ export default function BlogPost(props:any) {
         </div>
       </Container>
       <article
-        className="blog-post"
+        className="blog-post richtext"
         dangerouslySetInnerHTML={{ __html: content__html }}
       />
     </article>

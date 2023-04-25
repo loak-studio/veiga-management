@@ -18,7 +18,7 @@ export default function ContactForm({blok}:any) {
       <div className="contact-form__container">
         <div className="contact-form__aside">
           <h2
-            className="contact-form__title h2"
+            className="contact-form__title h2 richtext"
             dangerouslySetInnerHTML={{ __html }}
           />
           <p className="contact-form__description text">

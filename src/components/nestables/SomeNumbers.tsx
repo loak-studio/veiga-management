@@ -13,7 +13,7 @@ export default function SomeNumbers({blok}:any) {
       {...storyblokEditable(blok)}
     >
       <h2
-        className="some-numbers__title h2"
+        className="some-numbers__title h2 richtext"
         dangerouslySetInnerHTML={{ __html }}
       />
       <span className="some-numbers__description text">

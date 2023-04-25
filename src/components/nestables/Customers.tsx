@@ -11,7 +11,7 @@ export default function Customers({blok}:any) {
       className={"customers h2" + (blok.arrow ? " customers__arrow" : "")}
       {...storyblokEditable(blok)}
     >
-      <h2 className="customers__title" dangerouslySetInnerHTML={{ __html }} />
+      <h2 className="customers__title richtext" dangerouslySetInnerHTML={{ __html }} />
       <ul className="customers__list">
         {blok.Customers.map((customer:any, index:number) => (
           <StoryblokComponent key={index} blok={customer} />

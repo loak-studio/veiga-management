@@ -21,6 +21,16 @@ const loadSwiper = () => {
         },
       },
     });
+    const preloadNext = (n:number) => {
+      swiper
+          .slides
+          .slice(swiper.activeIndex, swiper.activeIndex + n + 1)
+          .map(slide => slide.querySelector('img'))
+          .forEach(s => s?.setAttribute('loading', 'eager'));
+  };
+  swiper.on('slideChange',()=>{
+    preloadNext(2)
+  })
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         switch (button.dataset.sliderButton) {
@@ -35,6 +45,7 @@ const loadSwiper = () => {
         }
       });
     });
+    
   }
 };
 

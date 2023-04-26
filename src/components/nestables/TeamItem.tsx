@@ -9,6 +9,7 @@ export default function TeamItem({ blok }: any) {
           height={208}
           src={blok.picture.filename + "/m/208x208/"}
           alt=""
+          loading="lazy"
         />
       </figure>
       <span className="h3 team-item__name">{blok.name}</span>

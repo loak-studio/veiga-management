@@ -1,12 +1,12 @@
 /_astro/*
   Cache-Control: public
-  Cache-Control: max-age=604800
+  Cache-Control: max-age=2592000
 /splash/*
   Cache-Control: public
   Cache-Control: max-age=604800
 /assets/*
   Cache-Control: public
-  Cache-Control: max-age=86400
+  Cache-Control: max-age=2592000
 /font/*
   Cache-Control: public
   Cache-Control: max-age=365000000

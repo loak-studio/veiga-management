@@ -10,7 +10,6 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 import { bindedComponents } from "../utils/binded-component";
-import { LoakCookieBanner } from "@loak/cookie-banner";
 
 export async function getStaticPaths() {
   const parseSlug = (slug: string) => {
@@ -64,16 +63,5 @@ storyblokInit({
 
 <Main meta={metatags}>
   <StoryblokComponent blok={page.content} />
-  <LoakCookieBanner cookies={[
-    {
-      label:'Google',
-      script:"https://localhost:3000/google.js",
-      id:"google"
-    },
-    {
-      label:'Facebook pixel',
-      script:"https://localhost:3000/facebook.js",
-      id:"pixel"
-    },
-  ]} />
+ 
 </Main>

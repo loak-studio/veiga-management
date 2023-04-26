@@ -1,4 +1,4 @@
-export default function Paginate({current,max}:any) {
+export default function Paginate({ current, max }: any) {
   return (
     <div className="paginate-container">
       <div className="paginate">
@@ -21,22 +21,16 @@ export default function Paginate({current,max}:any) {
         <PageLink max={max} current={current} plus={1} />
         <PageLink max={max} current={current} plus={2} />
         <PageLink max={max} current={current} plus={3} />
-        {current <= 3 && (
-          <PageLink max={max} current={current} plus={4} />
-        )}
-        {current <= 2 && (
-          <PageLink max={max} current={current} plus={5} />
-        )}
-        {current <= 1 && (
-          <PageLink max={max} current={current} plus={6} />
-        )}
+        {current <= 3 && <PageLink max={max} current={current} plus={4} />}
+        {current <= 2 && <PageLink max={max} current={current} plus={5} />}
+        {current <= 1 && <PageLink max={max} current={current} plus={6} />}
         <Next current={current} max={max} />
       </div>
     </div>
   );
 }
 
-const PageLink = ({ max, current, plus }:any) => {
+const PageLink = ({ max, current, plus }: any) => {
   let newNumber = current + plus;
   if (newNumber > 0 && newNumber <= max) {
     return (
@@ -49,10 +43,10 @@ const PageLink = ({ max, current, plus }:any) => {
     );
   }
 
-  return <></>
+  return <></>;
 };
 
-const Previous = ({ current, max }:any) => {
+const Previous = ({ current, max }: any) => {
   if (current - 1 > 0) {
     return (
       <a
@@ -65,7 +59,7 @@ const Previous = ({ current, max }:any) => {
     return <p className="paginate__previous paginate__previous--disabled"></p>;
   }
 };
-const Next = ({ current, max }:any) => {
+const Next = ({ current, max }: any) => {
   if (current < max) {
     return (
       <a

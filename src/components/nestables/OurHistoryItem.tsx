@@ -1,5 +1,5 @@
 import { storyblokEditable, renderRichText } from "@storyblok/react";
-export default function OurHistoryItem({blok}:any) {
+export default function OurHistoryItem({ blok }: any) {
   return (
     <div className="our-history-item" {...storyblokEditable(blok)}>
       {blok.title && (

@@ -1,7 +1,6 @@
-
 import { renderRichText, storyblokEditable } from "@storyblok/react";
 
-export default function HeroServiceItem({blok}:any) {
+export default function HeroServiceItem({ blok }: any) {
   const __html = renderRichText(blok.title);
   return (
     <li className="hero-service-item" {...storyblokEditable(blok)}>

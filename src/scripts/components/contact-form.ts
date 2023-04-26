@@ -1,6 +1,6 @@
 const form = document.querySelector(".contact-form__form") as HTMLFormElement;
 if (form) {
-  const handleSubmit = (event : SubmitEvent) => {
+  const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault();
 
     const myForm = event.target as HTMLFormElement;
@@ -12,8 +12,10 @@ if (form) {
       body: new URLSearchParams(formData as any).toString(),
     })
       .then(() => {
-        const sentElement = document.querySelector(".contact-form__form-sent") as HTMLElement
-          sentElement.classList.add("contact-form__form-sent--visible");
+        const sentElement = document.querySelector(
+          ".contact-form__form-sent"
+        ) as HTMLElement;
+        sentElement.classList.add("contact-form__form-sent--visible");
       })
       .catch((error) => alert(error));
   };

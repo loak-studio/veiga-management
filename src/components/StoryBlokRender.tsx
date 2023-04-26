@@ -16,20 +16,26 @@ function StoryBlokRender({ token }: any) {
     use: [apiPlugin],
     components: bindedComponents,
   });
-  const story = useStoryblok(urlParams.get("page") as string, { version: "draft" });
-  useEffect(()=>{
-    console.log('story updated')
+  const story = useStoryblok(urlParams.get("page") as string, {
+    version: "draft",
+  });
+  useEffect(() => {
+    console.log("story updated");
     const items = Array.from(
       document.querySelectorAll("main *")
     ) as HTMLElement[];
     items.forEach((item) => {
       item.style.opacity = "1";
     });
-},[story])
+  }, [story]);
   if (!story.content) {
-    return <div className="loading">
-      <div className="lds-circle"><div></div></div>
-    </div>;
+    return (
+      <div className="loading">
+        <div className="lds-circle">
+          <div></div>
+        </div>
+      </div>
+    );
   }
   return (
     <>

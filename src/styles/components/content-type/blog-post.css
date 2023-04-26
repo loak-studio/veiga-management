@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 2rem;
 }
-.blog-post__article{
+.blog-post__article {
   background: white;
 }
 @media (max-width: 816px) {

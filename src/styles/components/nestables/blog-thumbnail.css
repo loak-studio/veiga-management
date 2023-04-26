@@ -10,7 +10,7 @@
   color: white;
   position: absolute;
   text-align: center;
-  padding:8px;
+  padding: 8px;
 }
 .blog-thumbnail__thumbnail-title b {
   color: var(--primary);
@@ -86,13 +86,12 @@
   margin-left: 26px;
   margin-right: 26px;
 }
-@media (max-width:900px) {
-  
-  .blog-thumbnail__footer-and-tag{
+@media (max-width: 900px) {
+  .blog-thumbnail__footer-and-tag {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap:8px;
+    gap: 8px;
   }
 }
 @media (max-width: 809px) {

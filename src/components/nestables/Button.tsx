@@ -1,7 +1,6 @@
-
 import { storyblokEditable } from "@storyblok/react";
-import {cleanHref} from "../../utils/clean-href"
-export default function Button(props:any) {
+import { cleanHref } from "../../utils/clean-href";
+export default function Button(props: any) {
   const href = props.blok?.link?.cached_url;
   let currentStyle = props?.blok?.style ?? props.style;
   let currentLabel = props?.blok?.label ?? props.label;

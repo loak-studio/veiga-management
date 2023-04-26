@@ -1,11 +1,10 @@
-
 import {
   StoryblokComponent,
   storyblokEditable,
   renderRichText,
 } from "@storyblok/react";
 
-export default function Hero({blok}:any) {
+export default function Hero({ blok }: any) {
   const __html = renderRichText(blok.description);
   return (
     <div className="hero" {...storyblokEditable(blok)}>
@@ -18,7 +17,7 @@ export default function Hero({blok}:any) {
         dangerouslySetInnerHTML={{ __html }}
       ></div>
       <div className="hero__buttons">
-        {blok.content.map((button:any, index:any) => (
+        {blok.content.map((button: any, index: any) => (
           <StoryblokComponent blok={button} key={index} />
         ))}
       </div>

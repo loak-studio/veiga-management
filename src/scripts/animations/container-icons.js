@@ -9,7 +9,7 @@ const iconsLeft = document.querySelectorAll(
 const iconsRight = document.querySelectorAll(
   ".container__icons-container .from-right"
 );
-if(containerBackgroundSpace && iconsLeft.length > 0 && iconsRight.length  >0){
+if (containerBackgroundSpace && iconsLeft.length > 0 && iconsRight.length > 0) {
   inView(containerBackgroundSpace, () => {
     animate(
       iconsLeft,
@@ -30,5 +30,4 @@ if(containerBackgroundSpace && iconsLeft.length > 0 && iconsRight.length  >0){
       }
     );
   });
-  
 }

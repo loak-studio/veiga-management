@@ -1,4 +1,10 @@
-export default function Input({ name, id, label, type = "text", required }: any) {
+export default function Input({
+  name,
+  id,
+  label,
+  type = "text",
+  required,
+}: any) {
   if (type == "textarea") {
     return (
       <div className="input">

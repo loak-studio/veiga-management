@@ -50,9 +50,9 @@
 .contact-form__form-sent--visible {
   transform: translateX(0);
 }
-.contact-form__cgv{
+.contact-form__cgv {
   display: flex;
-  gap:1rem;
+  gap: 1rem;
   align-items: flex-start;
   margin-bottom: 3rem;
 }

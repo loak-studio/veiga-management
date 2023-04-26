@@ -8,9 +8,9 @@ import "./animations/history-item";
 import "./animations/team";
 
 import "./components/contact-form";
-import "./components/video"
-import "./components/container"
-import "./components/customer-items"
+import "./components/video";
+import "./components/container";
+import "./components/customer-items";
 
 import { loadSwiper } from "./components/team";
 import "./components/some-numbers";

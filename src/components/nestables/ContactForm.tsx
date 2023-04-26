@@ -4,8 +4,8 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 import Input from "./Input";
-import Button from "./Button"
-export default function ContactForm({blok}:any) {
+import Button from "./Button";
+export default function ContactForm({ blok }: any) {
   const __html = renderRichText(blok.title);
   return (
     <div
@@ -21,11 +21,9 @@ export default function ContactForm({blok}:any) {
             className="contact-form__title h2 richtext"
             dangerouslySetInnerHTML={{ __html }}
           />
-          <p className="contact-form__description text">
-            {blok.description}
-          </p>
+          <p className="contact-form__description text">{blok.description}</p>
           <div className="contact-form__buttons">
-            {blok.buttons.map((button:any, index:number) => (
+            {blok.buttons.map((button: any, index: number) => (
               <StoryblokComponent key={index} blok={button} />
             ))}
           </div>
@@ -50,7 +48,15 @@ export default function ContactForm({blok}:any) {
           <label className="contact-form__cgv" htmlFor="cgv">
             <input required type="checkbox" name="cgv" id="cgv" />
             <p className="text">
-            En soumettant ce formulaire, vous acceptez que les informations que vous fournissez soient utilisées dans le cadre de votre demande de contact. En cochant cette case, vous confirmez que vous avez lu et compris notre <a className="link" href="/politique-de-confidentialite/">politique de confidentialité</a> et que vous acceptez que nous utilisions vos données personnelles dans les conditions décrites.
+              En soumettant ce formulaire, vous acceptez que les informations
+              que vous fournissez soient utilisées dans le cadre de votre
+              demande de contact. En cochant cette case, vous confirmez que vous
+              avez lu et compris notre{" "}
+              <a className="link" href="/politique-de-confidentialite/">
+                politique de confidentialité
+              </a>{" "}
+              et que vous acceptez que nous utilisions vos données personnelles
+              dans les conditions décrites.
             </p>
           </label>
           <Button style="red" label="Envoyer mon message" />

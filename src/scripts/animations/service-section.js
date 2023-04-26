@@ -1,7 +1,7 @@
 import { animate, inView, spring, stagger } from "motion";
 
 const services = document.querySelectorAll(".service-item");
-if(services){
+if (services) {
   services.forEach((service) => {
     const aside = service.querySelector(".service-item__aside");
     const content = service.querySelector(".service-item__content");
@@ -18,7 +18,7 @@ if(services){
             easing: spring(),
           }
         );
-  
+
         animate(
           content,
           { y: [50, 0], opacity: [0, 1] },
@@ -28,7 +28,7 @@ if(services){
             easing: spring(),
           }
         );
-  
+
         animate(
           background,
           { opacity: [0, 1] },
@@ -42,5 +42,4 @@ if(services){
       { amount: 0.3 }
     );
   });
-  
 }

@@ -131,7 +131,7 @@ const Youtube = () => {
   );
 };
 
-export default function ServiceItem({blok}:any) {
+export default function ServiceItem({ blok }: any) {
   const descriptionHtml = renderRichText(blok.description);
   const testimonialHtml = renderRichText(blok.testimonial);
   return (
@@ -165,15 +165,13 @@ export default function ServiceItem({blok}:any) {
           >
             <figure className="service-item__customer-figure">
               <img
-              width={300}
-              height={300}
+                width={300}
+                height={300}
                 src={blok.customerPicture.filename + "/m/300x300/"}
                 alt=""
               />
             </figure>
-            <span className="service-item__customer-role h6">
-              {blok.role}
-            </span>
+            <span className="service-item__customer-role h6">{blok.role}</span>
             <ul
               className="service-item__links"
               style={{
@@ -184,12 +182,8 @@ export default function ServiceItem({blok}:any) {
               {blok.twitter?.url && (
                 <ServiceItemSocialLink link={blok.twitter} />
               )}
-              {blok.tiktok?.url && (
-                <ServiceItemSocialLink link={blok.tiktok} />
-              )}
-              {blok.twitch?.url && (
-                <ServiceItemSocialLink link={blok.twitch} />
-              )}
+              {blok.tiktok?.url && <ServiceItemSocialLink link={blok.tiktok} />}
+              {blok.twitch?.url && <ServiceItemSocialLink link={blok.twitch} />}
               {blok.instagram?.url && (
                 <ServiceItemSocialLink link={blok.instagram} />
               )}
@@ -237,12 +231,16 @@ export default function ServiceItem({blok}:any) {
   );
 }
 
-function ServiceItemSocialLink({link}:any) {
+function ServiceItemSocialLink({ link }: any) {
   let domain = new URL(link.cached_url);
-  const cleanedDomain = domain.hostname.replace('www.', '');
+  const cleanedDomain = domain.hostname.replace("www.", "");
   return (
     <li className="social-item__link">
-      <a title={"Consuler " + link.cached_url} target="_blank" href={link.cached_url}>
+      <a
+        title={"Consuler " + link.cached_url}
+        target="_blank"
+        href={link.cached_url}
+      >
         {(domainToIcon as any)[cleanedDomain]}
       </a>
     </li>

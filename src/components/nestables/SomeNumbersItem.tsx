@@ -1,6 +1,6 @@
 import { storyblokEditable } from "@storyblok/react";
 
-export default function SomeNumbersItem({blok}: any) {
+export default function SomeNumbersItem({ blok }: any) {
   const items = blok.number.match(/[^0-9]/g);
   let numberValue = blok.number.replace(/[^0-9]/g, "");
   return (

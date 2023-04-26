@@ -1,8 +1,7 @@
-
 import { storyblokEditable } from "@storyblok/react";
 import TeamItem from "./TeamItem";
 import { useEffect } from "react";
-import  { loadSwiper } from "../../scripts/components/team"
+import { loadSwiper } from "../../scripts/components/team";
 import SliderArrow from "../../assets/slider-arrow.svg";
 export default function Team(props: any) {
   useEffect(() => {
@@ -21,13 +20,12 @@ export default function Team(props: any) {
           <>
             <button title="Précédent" data-slider-button="previous">
               <figure>
-                <img width={30}
-                height={30} src={SliderArrow} alt="" />
+                <img width={30} height={30} src={SliderArrow} alt="" />
               </figure>
             </button>
             <div className="swiper">
               <div className="swiper-wrapper">
-                {props.blok.members.map((member:any, index:number) => (
+                {props.blok.members.map((member: any, index: number) => (
                   <div key={index} className="swiper-slide">
                     <TeamItem blok={member} />
                   </div>
@@ -36,15 +34,14 @@ export default function Team(props: any) {
             </div>
             <button title="Suivant" data-slider-button="next">
               <figure>
-                <img width={30}
-                height={30} src={SliderArrow} alt="" />
+                <img width={30} height={30} src={SliderArrow} alt="" />
               </figure>
             </button>
           </>
         )}
         {props.blok.display_all && (
           <div className="team__list">
-            {props.blok.members.map((member:any, index:number) => (
+            {props.blok.members.map((member: any, index: number) => (
               <TeamItem key={index} blok={member} />
             ))}
           </div>

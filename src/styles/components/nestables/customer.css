@@ -7,7 +7,7 @@
 .customers__arrow::after {
   height: 67px;
   width: 177px;
-  background:white;
+  background: white;
   -webkit-mask-image: url("/arrow.svg");
   content: "";
   display: block;

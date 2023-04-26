@@ -1,6 +1,6 @@
 import { renderRichText, storyblokEditable } from "@storyblok/react";
 
-export default function TeamItem({blok}: any) {
+export default function TeamItem({ blok }: any) {
   return (
     <div className="team-item" {...storyblokEditable(blok)}>
       <figure className="team-item__figure">

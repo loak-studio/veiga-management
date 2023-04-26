@@ -6,11 +6,11 @@
   flex-direction: column;
   align-items: center;
 }
-.page-title.medium{
+.page-title.medium {
   margin-bottom: 50px;
 }
 
-.page-title.small{
+.page-title.small {
   margin-bottom: 0px;
 }
 .page-title__title {
@@ -41,11 +41,11 @@
   content: "|";
   margin: 0 26px;
 }
-.page-title__description{
+.page-title__description {
   margin-top: 2rem;
   text-align: center;
 }
-.page-title__buttons{
+.page-title__buttons {
   margin-top: 2rem;
 }
 @media (max-width: 1136px) {

@@ -1,6 +1,6 @@
 .container {
   padding-top: 120px;
-  background-image: url("/assets/background.webp") ;
+  background-image: url("/assets/background.webp");
 
   background-color: #131214;
   color: white;
@@ -99,36 +99,36 @@
   right: 489px;
   top: 646px;
 }
-.container__icon img{
+.container__icon img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
 @media (max-width: 1350px) {
-  .container__icon.big-tiktok{
+  .container__icon.big-tiktok {
     width: 100px;
   }
   .container__icon.big-youtube {
     width: 150px;
   }
-  .container__icon.big-instagram{
+  .container__icon.big-instagram {
     width: 90px;
     right: 150px;
   }
-  .container__icon.big-twitter{
+  .container__icon.big-twitter {
     width: 150px;
     left: 25px;
   }
-  .container__icon.big-tiktok{
+  .container__icon.big-tiktok {
     right: 50px;
     top: 150px;
   }
-  .container__icon.small-twitter{
-    left: 150px
+  .container__icon.small-twitter {
+    left: 150px;
   }
 }
 @media (max-width: 1100px) {
-  .container__icon.big-youtube{
+  .container__icon.big-youtube {
     width: 75px;
     right: 20px;
   }
@@ -202,6 +202,6 @@
   }
 }
 
-.container__icons-container > figure{
+.container__icons-container > figure {
   transition: transform 100ms ease-out;
 }

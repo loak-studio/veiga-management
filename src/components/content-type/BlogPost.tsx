@@ -1,25 +1,25 @@
 import { renderRichText } from "@storyblok/react";
 import Container from "../nestables/ContainerBackgroundSpace.js";
-import {parseDateToFrench} from "../../utils/parse-date-to-french.js"
-export default function BlogPost(props:any) {
+import { parseDateToFrench } from "../../utils/parse-date-to-french.js";
+export default function BlogPost(props: any) {
   const __html = renderRichText(props.blok.title);
-  const content__html = renderRichText(props.blok.content,{
-    resolver:(component,blok)=>{
+  const content__html = renderRichText(props.blok.content, {
+    resolver: (component, blok) => {
       switch (component) {
         case "ImageWithCaption":
-          return `<figure class="image-with-caption text"><img alt="${blok.caption}" src="${blok.image.filename}"/><figcaption>${blok.caption}</figcaption></figure>`
+          return `<figure class="image-with-caption text"><img alt="${blok.caption}" src="${blok.image.filename}"/><figcaption>${blok.caption}</figcaption></figure>`;
         case "Caption":
-          return`
+          return `
             <figure class="caption">
               <blockquote class="text">${blok.caption}</blockquote>
               <figcaption class="text bold">${blok.author}</figcaption>
             </figure>
-          `
+          `;
         default:
           break;
       }
-      return component
-    }
+      return component;
+    },
   });
   return (
     <article className="blog-post__article">

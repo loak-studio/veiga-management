@@ -11,7 +11,7 @@ const config = async () => {
   const { data } = await (storyblokApi as StoryblokClient).get(
     "cdn/stories/configuration",
     {
-      version: import.meta.env.DEV ? 'draft' :'published',
+      version: import.meta.env.DEV ? "draft" : "published",
       resolve_relations: ["navigation", "sitemap", "legal"],
     }
   );
@@ -51,9 +51,8 @@ const socials = [
   <div class="footer">
     <div class="footer__group">
       <div class="footer__block w-fixed">
-        <figure class="footer__logo" >
-
-        <img width={430} height={209} src={content.logo.filename} alt="" />
+        <figure class="footer__logo">
+          <img width={430} height={209} src={content.logo.filename} alt="" />
         </figure>
         <p class="bold">{content.tagline.toUpperCase()}</p>
       </div>
@@ -110,7 +109,9 @@ const socials = [
       </div>
     </div>
     <div class="footer__copyright">
-      <p class="text">&copy; <span id="year">{new Date().getFullYear()}</span> Veiga Management</p>
+      <p class="text">
+        &copy; <span id="year">{new Date().getFullYear()}</span> Veiga Management
+      </p>
     </div>
   </div>
 </footer>
@@ -160,7 +161,7 @@ const socials = [
   .footer__logo {
     max-width: 215px;
   }
-  .footer__logo img{
+  .footer__logo img {
     height: 100%;
     width: 100%;
     object-fit: contain;

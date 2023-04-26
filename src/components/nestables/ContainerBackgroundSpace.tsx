@@ -1,4 +1,3 @@
-
 import { StoryblokComponent } from "@storyblok/react";
 import smallFacebook from "../../assets/hero/facebook_petit.png";
 import bigInstagram from "../../assets/hero/instagram_grand.png";
@@ -24,99 +23,98 @@ import bigTwitterWebp from "../../assets/hero/twitter_grand.webp";
 import bigYoutubeWebp from "../../assets/hero/youtube_grand.webp";
 import smallYoutubeWebp from "../../assets/hero/youtube_petit.webp";
 
-
 const images = [
   {
     className: "small-facebook from-right",
     asset: smallFacebook,
-    width:135,
-    height:129,
-    webp:smallFacebookWebp,
-    value: 5
+    width: 135,
+    height: 129,
+    webp: smallFacebookWebp,
+    value: 5,
   },
   {
     className: "big-instagram from-right",
     asset: bigInstagram,
-    width:177,
-    height:175,
-    webp:bigInstagramWebp,
-    value: 4
+    width: 177,
+    height: 175,
+    webp: bigInstagramWebp,
+    value: 4,
   },
   {
     className: "big-pinterest from-left",
     asset: bigPinterest,
-    width:155,
-    height:150,
+    width: 155,
+    height: 150,
     webp: bigPinterestWebp,
-    value: 3
+    value: 3,
   },
   {
     className: "right-smartphone from-right",
     asset: rightSmartphone,
-    width:415,
-    height:568,
-    webp:rightSmartphoneWebp,
-    value: 2
+    width: 415,
+    height: 568,
+    webp: rightSmartphoneWebp,
+    value: 2,
   },
   {
     className: "left-smartphone from-left",
     asset: leftSmartphone,
-    width:315,
-    height:358,
-    webp:leftSmartphoneWebp,
-    value: 1
+    width: 315,
+    height: 358,
+    webp: leftSmartphoneWebp,
+    value: 1,
   },
   {
     className: "big-tiktok from-right",
     asset: bigTiktok,
-    width:230,
-    height:232,
-    webp:bigTiktokWebp,
-    value: 2
+    width: 230,
+    height: 232,
+    webp: bigTiktokWebp,
+    value: 2,
   },
   {
     className: "small-tiktok from-left",
     asset: smallTiktok,
-    width:83,
-    height:82,
+    width: 83,
+    height: 82,
     webp: smallTiktokWebp,
-    value: 3
+    value: 3,
   },
   {
     className: "small-twitter from-left",
     asset: smallTwitter,
-    width:121,
-    height:123,
+    width: 121,
+    height: 123,
     webp: smallTwitterWebp,
-    value: 4
+    value: 4,
   },
   {
     className: "big-twitter from-left",
     asset: bigTwitter,
-    width:245,
-    height:243,
-    webp:bigTwitterWebp,
-    value: 5
+    width: 245,
+    height: 243,
+    webp: bigTwitterWebp,
+    value: 5,
   },
   {
     className: "big-youtube from-right",
     asset: bigYoutube,
-    width:258,
-    height:274,
-    webp:bigYoutubeWebp,
-    value: 8
+    width: 258,
+    height: 274,
+    webp: bigYoutubeWebp,
+    value: 8,
   },
   {
     className: "small-youtube from-left",
     asset: smallYoutube,
-    width:116,
-    height:109,
+    width: 116,
+    height: 109,
     webp: smallYoutubeWebp,
-    value: 6
+    value: 6,
   },
 ];
 
-export default function Container(props:any) {
+export default function Container(props: any) {
   return (
     <div
       className={
@@ -129,7 +127,7 @@ export default function Container(props:any) {
       {props.children && props.children}
       {!props.children && (
         <div className="container__content">
-          {props.blok?.blocks?.map((b:any, index:number) => (
+          {props.blok?.blocks?.map((b: any, index: number) => (
             <StoryblokComponent key={index} blok={b} />
           ))}
         </div>
@@ -143,8 +141,13 @@ export default function Container(props:any) {
               data-parallax={image.value}
             >
               <picture>
-              <source srcSet={image.webp} type="image/webp" />
-              <img width={image.width} height={image.height} src={image.asset} alt="" />
+                <source srcSet={image.webp} type="image/webp" />
+                <img
+                  width={image.width}
+                  height={image.height}
+                  src={image.asset}
+                  alt=""
+                />
               </picture>
             </figure>
           ))}

@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   };
 
   const { data } = await (storyblokApi as StoryblokClient).get("cdn/stories", {
-    version: import.meta.env.DEV ? 'draft':'published',
+    version: import.meta.env.DEV ? "draft" : "published",
   });
 
   const filteredStories = data.stories.filter((story) => {
@@ -67,11 +67,13 @@ storyblokInit({
     window.axeptioSettings = {
       clientId: "64463c8cca5e0f7f2a0e94c7",
     };
-     
-    (function(d, s) {
-      var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-      e.async = true; e.src = "//static.axept.io/sdk.js";
+
+    (function (d, s) {
+      var t = d.getElementsByTagName(s)[0],
+        e = d.createElement(s);
+      e.async = true;
+      e.src = "//static.axept.io/sdk.js";
       t.parentNode.insertBefore(e, t);
     })(document, "script");
-    </script>
+  </script>
 </Main>

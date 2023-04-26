@@ -24,10 +24,10 @@
   position: relative;
   background: black;
 }
-.video__play-button{
+.video__play-button {
   position: absolute;
   z-index: 5;
-  color:var(--primary);
+  color: var(--primary);
   background: white;
   padding: 1rem;
   height: 70px;
@@ -35,19 +35,19 @@
   border-radius: 50%;
   transition: background 300ms;
   cursor: pointer;
-  padding:0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.video__iframe-thumbnail{
-  opacity: .5;
+.video__iframe-thumbnail {
+  opacity: 0.5;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.video__play-button:hover{
+.video__play-button:hover {
   background: var(--primary);
   color: white;
 }

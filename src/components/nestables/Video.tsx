@@ -22,7 +22,8 @@ export default function Video(props: any) {
         className="video__description text richtext"
         dangerouslySetInnerHTML={{ __html: descriptionHtml }}
       />
-      <div className="video__iframe"
+      <div
+        className="video__iframe"
         data-src={
           "https://www.youtube-nocookie.com/embed/" +
           youtube_parser(props.blok.youtubeLink.url) +
@@ -31,15 +32,35 @@ export default function Video(props: any) {
         data-title="YouTube video player"
         data-frame-border="0"
         data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        data-allow-fullscreen>
+        data-allow-fullscreen
+      >
         <button title="Jouer la vidéo" className="video__play-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M7 4v16l13 -8z" />
           </svg>
         </button>
-        <img width={1280} height={720} className="video__iframe-thumbnail" src={"https://i3.ytimg.com/vi/" + youtube_parser(props.blok.youtubeLink.url) + "/maxresdefault.jpg"} alt="" />
-
+        <img
+          width={1280}
+          height={720}
+          className="video__iframe-thumbnail"
+          src={
+            "https://i3.ytimg.com/vi/" +
+            youtube_parser(props.blok.youtubeLink.url) +
+            "/maxresdefault.jpg"
+          }
+          alt=""
+        />
       </div>
       {props.blok.caption && (
         <span className="text video__caption">{props.blok.caption}</span>

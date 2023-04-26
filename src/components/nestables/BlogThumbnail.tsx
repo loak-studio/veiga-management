@@ -1,7 +1,7 @@
 import BackgroundImage from "../../assets/blog-background.webp";
 import { parseDateToFrench } from "../../utils/parse-date-to-french";
 import { renderRichText } from "@storyblok/js";
-export default function BlogThumbnail({blok}: any) {
+export default function BlogThumbnail({ blok }: any) {
   const __html = renderRichText(blok.content.title);
   return (
     <article className="blog-thumbnail">
@@ -36,10 +36,7 @@ export default function BlogThumbnail({blok}: any) {
           </div>
         </div>
       </div>
-      <a
-        className="blog-thumbnail__link"
-        href={"/blog/" + blok.slug + "/"}
-      >
+      <a className="blog-thumbnail__link" href={"/blog/" + blok.slug + "/"}>
         <span className="blog-thumbnail__link-text sr-only">
           Lire l'article
         </span>

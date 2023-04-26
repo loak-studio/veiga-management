@@ -1,7 +1,7 @@
 import { animate, inView } from "motion";
 
 const thumbnails = document.querySelectorAll(".blog-thumbnail");
-if(thumbnails){
+if (thumbnails) {
   thumbnails.forEach((t) => {
     t.style.opacity = 0;
   });

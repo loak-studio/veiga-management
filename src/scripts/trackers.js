@@ -1,4 +1,4 @@
-const GA_TOKEN="G-F0NV64MXSD"
+const GA_TOKEN="G-Q0MBV2E9F8"
 const FB_TOKEN=""
 
 window.axeptioSettings = {

@@ -6,6 +6,9 @@
   text-align: center;
   margin: 0 auto;
 }
+.hero__title .red{
+  color:var(--primary)
+}
 .hero__richtext {
   max-width: 617px;
   margin: 2rem auto;

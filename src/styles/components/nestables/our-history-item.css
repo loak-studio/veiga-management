@@ -14,6 +14,9 @@
 .our-history-item__title {
   margin-bottom: 64px;
 }
+.our-history-item__title .red{
+  color: var(--primary)
+}
 .our-history-item__figure {
   border-radius: 1rem;
   overflow: hidden;

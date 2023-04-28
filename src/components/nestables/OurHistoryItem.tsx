@@ -1,9 +1,10 @@
 import { storyblokEditable, renderRichText } from "@storyblok/react";
 export default function OurHistoryItem({ blok }: any) {
+  const title__html = renderRichText(blok.title)
   return (
     <div className="our-history-item" {...storyblokEditable(blok)}>
       {blok.title && (
-        <h2 className="our-history-item__title h2">{blok.title}</h2>
+        <div dangerouslySetInnerHTML={{__html:title__html}} className="our-history-item__title h2"/>
       )}
       <figure className="our-history-item__figure">
         <img

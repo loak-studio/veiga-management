@@ -7,7 +7,7 @@ export default function BlogThumbnail({ blok }: any) {
     <article className="blog-thumbnail">
       {blok.content?.thumbnail?.filename && (
         <figure className="blog-thumbnail__figure">
-          <img src={blok.content.thumbnail.filename} alt="" />
+          <img src={blok.content.thumbnail.filename + "/m/529x230"} alt="" />
         </figure>
       )}
       {!blok.content?.thumbnail?.filename && (

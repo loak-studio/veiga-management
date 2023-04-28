@@ -9,6 +9,9 @@
 .blog-post__article {
   background: white;
 }
+.blog-post .red{
+  color: var(--secondary)
+}
 @media (max-width: 816px) {
   .blog-post {
     padding: 0 1rem;

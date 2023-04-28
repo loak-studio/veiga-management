@@ -1,9 +1,10 @@
-import { storyblokEditable } from "@storyblok/react";
+import { renderRichText, storyblokEditable } from "@storyblok/react";
 import TeamItem from "./TeamItem";
 import { useEffect } from "react";
 import { loadSwiper } from "../../scripts/components/team";
 import SliderArrow from "../../assets/slider-arrow.svg";
 export default function Team(props: any) {
+  const title__html = renderRichText(props.blok.title)
   useEffect(() => {
     loadSwiper();
   }, []);
@@ -12,7 +13,7 @@ export default function Team(props: any) {
       className={"team h2" + (props.blok.arrow ? " team__arrow" : "")}
       {...storyblokEditable(props.blok)}
     >
-      <h2 className="team__title">{props.blok.title}</h2>
+      <div dangerouslySetInnerHTML={{__html:title__html}} className="team__title"/>
       <p className="team__description text">{props.blok.description}</p>
 
       <div className="team__slider">

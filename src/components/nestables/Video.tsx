@@ -27,7 +27,7 @@ export default function Video(props: any) {
         data-src={
           "https://www.youtube-nocookie.com/embed/" +
           youtube_parser(props.blok.youtubeLink.url) +
-          "?controls=0&autoplay=1"
+          "?autoplay=1"
         }
         data-title="YouTube video player"
         data-frame-border="0"

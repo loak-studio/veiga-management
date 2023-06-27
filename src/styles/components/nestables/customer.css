@@ -39,6 +39,7 @@
   justify-content: center;
   margin: 64px 0 0px 0;
   gap: 64px;
+  flex-wrap: wrap;
 }
 .customers__brand-logo {
   width: 64px;

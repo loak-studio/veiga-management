@@ -22,9 +22,11 @@ export default function Customers({ blok }: any) {
       <ul className="customers__brands">
         {blok.brands.map((brand: any, index: number) => (
           <li key={index} className="customers__brand">
-            <figure title={brand.alt} className="customers__brand-logo">
-              <img loading="lazy" alt={brand.alt} src={brand.filename} />
-            </figure>
+            <a target="_blank" href={brand.source}>
+              <figure title={brand.alt} className="customers__brand-logo">
+                <img loading="lazy" alt={brand.alt} src={brand.filename} />
+              </figure>
+            </a>
           </li>
         ))}
       </ul>

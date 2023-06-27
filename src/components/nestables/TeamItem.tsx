@@ -7,7 +7,7 @@ export default function TeamItem({ blok }: any) {
         <img
           width={208}
           height={208}
-          src={blok.picture.filename + "/m/208x208/"}
+          src={blok.picture.filename + "/m/416x416/"}
           alt=""
           loading="lazy"
         />
